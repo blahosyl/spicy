@@ -8,8 +8,11 @@ assignees: blahosyl
 ---
 
 As a **role**,
+
 I want to **capability**,
+
 so that **received benefit**
 
-Acceptance Criteria
--[ ]
+### Acceptance Criteria
+- [ ] AC1 
+- [ ] AC2
