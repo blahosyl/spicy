@@ -14,5 +14,5 @@ I want to **capability**,
 so that **received benefit**
 
 ### Acceptance Criteria
-- [ ] AC1 
-- [ ] AC2
+- [ ] AC1 | 
+- [ ] AC2 | 
