@@ -2,8 +2,8 @@
 name: User Story
 about: Default User Story template
 title: 'USER STORY: <title>'
-projects: blahosyl/projects/5
-assignees: 'blahosyl'
+labels: ''
+assignees: blahosyl
 
 ---
 
