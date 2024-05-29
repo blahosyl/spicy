@@ -4,6 +4,7 @@ about: Default User Story template
 title: 'USER STORY: <Title>'
 labels: enhancement
 assignees: blahosyl
+epic: <Epic>
 
 ---
 
