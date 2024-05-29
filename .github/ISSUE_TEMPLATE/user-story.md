@@ -2,10 +2,8 @@
 name: User Story
 about: Default User Story template
 title: 'USER STORY: <Title>'
-labels: enhancement
+projects: Spicy Recipes
 assignees: blahosyl
-epic: <Epic>
-
 ---
 
 As a **role**,
