@@ -1,9 +1,10 @@
 ---
 name: User Story
 about: Default User Story template
-title: 'USER STORY: <Title>'
-projects: blahosyl/5
-assignees: blahosyl
+title: 'USER STORY: <title>'
+projects: blahosyl/projects/5
+assignees: 'blahosyl'
+
 ---
 
 As a **role**,
