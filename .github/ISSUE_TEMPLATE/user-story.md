@@ -2,7 +2,7 @@
 name: User Story
 about: Default User Story template
 title: 'USER STORY: <Title>'
-projects: Spicy Recipes
+projects: blahosyl/5
 assignees: blahosyl
 ---
 
