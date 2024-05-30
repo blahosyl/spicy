@@ -52,7 +52,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 ### Study/lookup cources
 
 
-- [https://github.com/orgs/community/discussions/10788](Show labels and Milestones in GitHub Projects Kanban board)
+- [Show labels and Milestones in GitHub Projects Kanban board](https://github.com/orgs/community/discussions/10788)
+- [Creating and editing milestones for issues and pull requests](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/creating-and-editing-milestones-for-issues-and-pull-requests)
 
 ### Code credits
 
