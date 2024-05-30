@@ -3,6 +3,7 @@ name: User Story
 about: Default User Story template
 title: 'USER STORY: '
 labels: ''
+projects: 'blahosyl/5'
 assignees: blahosyl
 
 ---
