@@ -37,7 +37,7 @@ class Ingredient(models.Model):
         """
         order from most to least recently updated
         """
-        ordering = ["ingr_name"]
+        ordering = ["ingr_name", "preparation"]
 
     def __str__(self):
         string = f"{self.ingr_name}"
