@@ -33,4 +33,7 @@ class Ingredient(models.Model):
     preparation = models.CharField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.ingr_name}, {self.preparation}"
+
 
