@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
+import dj_database_url #converts database URL to format understood by Django
 if os.path.isfile('env.py'):
     import env
 
@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hk(04s3=3lfpnje-u1$=kye1$!e3jzb8jb04t13ehh*y^umt**'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net',
                 '.herokuapp.com'
@@ -94,7 +94,10 @@ DATABASES = {
 #     }
 # }
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://*codeinstitute-ide.net/",
+    "https://https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/"
+]
 
 
 # Password validation
