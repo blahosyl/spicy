@@ -95,6 +95,13 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [1:N relationship where N must be at least one entry](https://stackoverflow.com/questions/7310121/1n-relationship-where-n-must-be-at-least-one-entry)
 - [database design one to many where many is at least one](https://stackoverflow.com/questions/655074/database-design-one-to-many-where-many-is-at-least-one)
 
+### General advice
+
+- Daisy McGirr: allauth social option
+- Leon Potgieter: Neon DB, help with [testing on local DB issue](https://code-institute-room.slack.com/archives/C02B3MJQABA/p1716915411743489?thread_ts=1716855535.547499&cid=C02B3MJQABA)
+
+
+
 ### Code credits
 
 ### Content
