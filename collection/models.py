@@ -19,4 +19,10 @@ class Recipe(models.Model):
     published = models.BooleanField(default=False)
 
     class Meta:
+        """
+        order from most to least recently updated
+        """
         ordering = ["-updated_on"]
+    
+    def __str__(self):
+        return f"{self.title} | {self.author}"
