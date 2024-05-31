@@ -31,6 +31,41 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## Design
 
+### Data models
+
+#### Recipe
+
+Partially based on the Post model of the I Think Therefore I Blog walkthrough, but changed several aspects:
+
+- Published is Boolean
+- Separated content into
+	- Instructions
+	- PrepTime
+	- CookTime
+	- Ingredients (separate table)
+
+#### Ingredient
+
+##### 2 tables for ingredients
+
+- Ingredient: lists ingredients, global list
+- IngredientQueantity: connects ingredients with recipes, has unit and quantity attributes. Even if there are 2 recipes that call for 2 apples each, these are treated as separate entities.
+
+
+##### Quantity data type
+
+[Decimal](https://docs.python.org/3/library/decimal.html#module-decimal) instead of float used for quantity.
+
+##### IngredientQuantity not compulsory
+
+Recipes can be saved without any ingredients (at least for a draft).
+
+Maybe add check to see if a recipe has at least 1 ingredient before publishing?
+
+#### Comment
+
+Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
+
 ## Features
 
 ## Technoogies used
