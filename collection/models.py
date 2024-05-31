@@ -33,6 +33,12 @@ class Ingredient(models.Model):
     preparation = models.CharField(max_length=200, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        """
+        order from most to least recently updated
+        """
+        ordering = ["ingr_name"]
+
     def __str__(self):
         string = f"{self.ingr_name}"
         if self.preparation:
