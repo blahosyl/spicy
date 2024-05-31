@@ -92,7 +92,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [making a model for ingredients](https://groups.google.com/g/django-users/c/DtkxblwqWbE/m/zJfqURzgxkUJ)
 - [connector types in Entity Relationship Diagrams](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
 - [float vs. decimal in Python](https://docs.python.org/3/library/decimal.html#module-decimal)
-
+- [1:N relationship where N must be at least one entry](https://stackoverflow.com/questions/7310121/1n-relationship-where-n-must-be-at-least-one-entry)
+- [database design one to many where many is at least one](https://stackoverflow.com/questions/655074/database-design-one-to-many-where-many-is-at-least-one)
 
 ### Code credits
 
