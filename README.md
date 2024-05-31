@@ -55,6 +55,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Show labels and Milestones in GitHub Projects Kanban board](https://github.com/orgs/community/discussions/10788)
 - [Creating and editing milestones for issues and pull requests](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/creating-and-editing-milestones-for-issues-and-pull-requests)
 - [making a model for ingredients](https://groups.google.com/g/django-users/c/DtkxblwqWbE/m/zJfqURzgxkUJ)
+- [connector types in Entity Relationship Diagrams](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
+
 
 ### Code credits
 
