@@ -30,7 +30,7 @@ class Recipe(models.Model):
     
 class Ingredient(models.Model):
     ingr_name = models.CharField(max_length=50, unique=True)
-    preparation = models.CharField(max_length=200)
+    preparation = models.CharField(max_length=200, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
