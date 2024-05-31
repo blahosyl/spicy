@@ -26,3 +26,11 @@ class Recipe(models.Model):
     
     def __str__(self):
         return f"{self.title} | {self.author}"
+
+    
+class Ingredient(models.Model):
+    ingr_name = models.CharField(max_length=50, unique=True)
+    preparation = models.CharField(max_length=200)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+
