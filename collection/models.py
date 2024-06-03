@@ -88,6 +88,13 @@ class IngredientQuantity(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        """
+        How the name of the model is shown in the admin panel
+        """
+        verbose_name = "Ingredient quantity"
+        verbose_name_plural = "Ingredient quantities"
+
     def __str__(self):
         if self.quantity:
             quantity_string = f"{self.quantity} {self.unit} of "
