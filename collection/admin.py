@@ -2,20 +2,23 @@ from django.contrib import admin
 from .models import Recipe, Ingredient, IngredientQuantity
 from django_summernote.admin import SummernoteModelAdmin
 
-# Register your models here
+class IngredientQuantityInline(admin.TabularInline):
+    model = IngredientQuantity
 
 @admin.register(Recipe)
-class RecipeAdmin(SummernoteModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', )
+    list_display = ('title', 'slug')
     search_fields = ['title']
-    list_filter = ('author',)
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('instructions', )
+    summernote_fields = ('instructions',)
+    inlines = [IngredientQuantityInline]
 
+
+# Register your models here.
+admin.site.register(IngredientQuantity)
 
 admin.site.register(Ingredient)
-admin.site.register(IngredientQuantity)
 
 
 
