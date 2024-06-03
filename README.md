@@ -95,6 +95,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [1:N relationship where N must be at least one entry](https://stackoverflow.com/questions/7310121/1n-relationship-where-n-must-be-at-least-one-entry)
 - [database design one to many where many is at least one](https://stackoverflow.com/questions/655074/database-design-one-to-many-where-many-is-at-least-one)
 - [Django model reference](https://docs.djangoproject.com/en/4.2/ref/models/)
+- [`verbose_name`: change model display name in admin panel](https://forum.djangoproject.com/t/django-admin-page-edit-app-names/14720)
 
 ### General advice
 
