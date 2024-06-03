@@ -46,3 +46,45 @@ class Ingredient(models.Model):
         return string
 
 
+class IngredientQuantity(models.Model):
+    quantity = models.DecimalField(
+        max_digits=7, 
+        decimal_places=2, 
+        blank= True,
+        null= True,
+    )
+    GR ='g'
+    KG = 'kg'
+    ML = 'ml'
+    LI = 'l'
+    PC = 'pc'
+    TEASP = 'tsp'
+    TBSP = 'Tbsp'
+    CUP = 'cups'
+    CL = 'cloves'
+    UNIT_CHOICES = [
+        (GR, 'grams'),
+        (KG, 'kilograms'),
+        (ML, 'milliliters'),
+        (LI, 'liters'),
+        (PC, 'pieces'),
+        (TEASP, 'teaspoons'),
+        (TBSP, 'tablespoons'),
+        (CUP, 'cups'),
+        (CL, 'cloves'),
+    ]
+    unit = models.CharField(
+        choices=UNIT_CHOICES,
+        blank=True,
+    )
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, 
+        related_name="ingredients",
+    )
+    ingredient = models.ForeignKey(
+        Ingredient, 
+        on_delete=models.CASCADE, 
+        related_name="quantity",
+    )
+    created_on = models.DateTimeField(auto_now_add=True)
+
