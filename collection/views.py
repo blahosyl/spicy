@@ -4,4 +4,5 @@ from .models import Recipe
 
 # Create your views here.
 class RecipeList(generic.ListView):
-    model = Recipe
+    queryset = Recipe.objects.filter(published=True)
+    template_name = "recipe_list.html"
