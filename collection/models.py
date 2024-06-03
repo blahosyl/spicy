@@ -88,3 +88,12 @@ class IngredientQuantity(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        if self.quantity:
+            quantity_string = f"{self.quantity} {self.unit} of "
+        else:
+            quantity_string = "To taste: "
+        string = quantity_string + f"{self.ingredient} | {self.recipe}"
+        return string
+
+
