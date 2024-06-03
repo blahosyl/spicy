@@ -12,8 +12,8 @@ class Recipe(models.Model):
         User, on_delete=models.CASCADE, related_name="recipes"
     )
     instructions = models.TextField()
-    prep_time = models.DurationField()
-    cook_time = models.DurationField()
+    prep_time = models.PositiveIntegerField()
+    cook_time = models.PositiveIntegerField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     published = models.BooleanField(default=False)
