@@ -83,7 +83,7 @@ class IngredientQuantity(models.Model):
     )
     ingredient = models.ForeignKey(
         Ingredient, 
-        on_delete=models.CASCADE, 
+        on_delete=models.PROTECT, 
         related_name="quantity",
     )
     created_on = models.DateTimeField(auto_now_add=True)
