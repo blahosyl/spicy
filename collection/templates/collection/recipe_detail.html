@@ -29,17 +29,19 @@
                 <br>
                 Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
              </p>
-            <div class="card-body">
-                <h4 style="background-color: orange;">
-                    Ingredients
-                    ({{ ingredient_count | safe }})
-                </h4>
-                    <ul>
-                        {% for recipe_ingredient in recipe_ingredients %}
-                            <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of {{ recipe_ingredient.ingredient }}</li>
-                        {% endfor %}
-                    </ul>
-            </div>
+             {% if ingredient_count %} 
+                <div class="card-body">
+                    <h4 style="background-color: orange;">
+                        Ingredients
+                        ({{ ingredient_count | safe }})
+                    </h4>
+                        <ul>
+                            {% for recipe_ingredient in recipe_ingredients %}
+                                <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of {{ recipe_ingredient.ingredient }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+            {% endif %} 
             <div class="card-body" style="background-color: orangered;">
                 <p class="card-text">
                     {{ recipe.instructions | safe }}
