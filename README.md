@@ -62,6 +62,17 @@ Recipes can be saved without any ingredients (at least for a draft).
 
 Maybe add check to see if a recipe has at least 1 ingredient before publishing?
 
+##### Instances of Ingredient cannot be duplicated
+
+Instances of ingredient where `ingr_name` & `preparation` is the same cannot be duplicated. 
+
+- "cheese, sliced" and "cheese, grated" are both possible
+- 2 instances of "cheese, grated" are not allowed
+
+This is true when added new ingredients as well as when editing exisitng one would result in a duplicated.
+
+##### IngredientQuantities **can** be duplicated
+
 #### Comment
 
 Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
