@@ -14,11 +14,13 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('instructions',)
     inlines = [IngredientQuantityInline]
 
+@admin.register(Ingredient)
+class IngredientAdmin(admin.ModelAdmin):
+    inlines = [IngredientQuantityInline]
+
 
 # Register your models here.
 admin.site.register(IngredientQuantity)
-
-admin.site.register(Ingredient)
 
 
 
