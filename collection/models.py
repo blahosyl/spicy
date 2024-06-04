@@ -27,6 +27,8 @@ class Recipe(models.Model):
     def __str__(self):
         return f"{self.title} | {self.author}"
 
+    def total_time(self):
+        return self.prep_time + self.cook_time
     
 class Ingredient(models.Model):
     ingr_name = models.CharField(max_length=50)

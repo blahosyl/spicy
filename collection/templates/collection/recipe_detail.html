@@ -23,8 +23,9 @@
             <!-- The recipe content goes inside the card-text. -->
             <!-- Use the | safe filter inside the template tags -->
             <p class="card-text">
+                Total time: {{ recipe.total_time }} minute{{ recipe.total_time | pluralize }}
+                <br>
                 Prep time: {{ recipe.prep_time | safe }} minute{{ recipe.prep_time | pluralize }}
-
                 <br>
                 Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
              </p>
