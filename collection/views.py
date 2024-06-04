@@ -25,9 +25,13 @@ def recipe_detail(request, slug):
 
     queryset = Recipe.objects.filter(published=True)
     recipe = get_object_or_404(queryset, slug=slug)
+    recipe_ingredients = recipe.ingredients.all()
+    ingredient_count = recipe_ingredients.count()
 
     return render(
         request,
         "collection/recipe_detail.html",
-        {"recipe": recipe},
+        {"recipe": recipe,
+        "recipe_ingredients": recipe_ingredients,
+        "ingredient_count": ingredient_count,},
     )

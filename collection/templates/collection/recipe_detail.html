@@ -20,14 +20,25 @@
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
+            <!-- The recipe content goes inside the card-text. -->
+            <!-- Use the | safe filter inside the template tags -->
             <p class="card-text">
                 Prep time: {{ recipe.prep_time | safe }} minutes
                 <br>
                 Cook time: {{ recipe.cook_time | safe }} minutes
              </p>
             <div class="card-body">
-                <!-- The recipe content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
+                <h4 style="background-color: orange;">
+                    Ingredients
+                    ({{ ingredient_count | safe }})
+                </h4>
+                    <ul>
+                        {% for recipe_ingredient in recipe_ingredients %}
+                            <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of {{ recipe_ingredient.ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+            </div>
+            <div class="card-body" style="background-color: orangered;">
                 <p class="card-text">
                     {{ recipe.instructions | safe }}
                 </p>
