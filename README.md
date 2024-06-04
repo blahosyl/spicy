@@ -98,6 +98,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [`verbose_name`: change model display name in admin panel](https://forum.djangoproject.com/t/django-admin-page-edit-app-names/14720)
 - [inline model in admin panel | Django documentation](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.TabularInline)
 - [inline model in admin panel | Stackoverflow](https://stackoverflow.com/questions/33748059/add-inline-model-to-django-admin-site)
+- [exclude duplicates of the same two fields together](https://stackoverflow.com/a/20243795)
+
 
 ### General advice
 

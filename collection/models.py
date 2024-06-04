@@ -34,10 +34,11 @@ class Ingredient(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        """
-        order from most to least recently updated
-        """
+        # order from most to least recently updated
         ordering = ["ingr_name", "preparation"]
+        # exclude duplicates of the same ingr_name and preparation
+        unique_together = [("ingr_name", "preparation")]
+
 
     def __str__(self):
         string = f"{self.ingr_name}"
