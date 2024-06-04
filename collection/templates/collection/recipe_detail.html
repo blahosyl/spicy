@@ -23,9 +23,10 @@
             <!-- The recipe content goes inside the card-text. -->
             <!-- Use the | safe filter inside the template tags -->
             <p class="card-text">
-                Prep time: {{ recipe.prep_time | safe }} minutes
+                Prep time: {{ recipe.prep_time | safe }} minute{{ recipe.prep_time | pluralize }}
+
                 <br>
-                Cook time: {{ recipe.cook_time | safe }} minutes
+                Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
              </p>
             <div class="card-body">
                 <h4 style="background-color: orange;">
