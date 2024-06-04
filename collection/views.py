@@ -25,6 +25,7 @@ def recipe_detail(request, slug):
 
     queryset = Recipe.objects.filter(published=True)
     recipe = get_object_or_404(queryset, slug=slug)
+    # `ingredients` is the `related_name` for the Recipe model in the IngredientQuantity model
     recipe_ingredients = recipe.ingredients.all()
     ingredient_count = recipe_ingredients.count()
 
