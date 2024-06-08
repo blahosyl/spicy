@@ -111,6 +111,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [inline model in admin panel | Stackoverflow](https://stackoverflow.com/questions/33748059/add-inline-model-to-django-admin-site)
 - [exclude duplicates of the same two fields together](https://stackoverflow.com/a/20243795)
 - [pluralize words depending on database value](https://testdriven.io/tips/db65f09a-06a4-4a8f-843f-a83a49b2f0c7/)
+- [Bootstrap spacing](https://getbootstrap.com/docs/4.0/utilities/spacing/)
+- [Bootstrap position](https://getbootstrap.com/docs/5.0/utilities/position/)
+- [Bootstrap grid system](https://getbootstrap.com/docs/5.0/layout/grid/)
 
 
 ### General advice
