@@ -114,7 +114,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap spacing](https://getbootstrap.com/docs/4.0/utilities/spacing/)
 - [Bootstrap position](https://getbootstrap.com/docs/5.0/utilities/position/)
 - [Bootstrap grid system](https://getbootstrap.com/docs/5.0/layout/grid/)
-
+- [change CSS color variables with JS](https://www.toptal.com/front-end/dynamic-css-with-custom-properties)
 
 ### General advice
 
