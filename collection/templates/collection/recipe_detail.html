@@ -6,9 +6,9 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Recipe title goes in these h1 tags -->
-                <h1 class="post-title">{{ recipe.title }}</h1>
+                <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
-                <p class="post-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+                <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.jpeg' %}" class="scale" alt="placeholder">
