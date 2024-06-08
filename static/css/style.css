@@ -39,6 +39,10 @@ body {
     background-color: var(--background-color-neutral);
 }
 
+#theme-selector-div {
+    margin-left: 2em;
+}
+
 .card {
     border: none;
     background-color: transparent;
