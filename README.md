@@ -118,6 +118,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap nav bar](https://getbootstrap.com/docs/5.0/components/navbar/)
 - [Keep form elements on one line with Bootstrap](https://stackoverflow.com/a/69603236)
 - [Bootstrap forms | select](https://getbootstrap.com/docs/5.0/forms/select/)
+- [HTML symbols](https://www.w3schools.com/html/html_symbols.asp)
 
 ### General advice
 
