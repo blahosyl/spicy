@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -14,6 +15,13 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in recipe.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpeg' %}"
+                                  alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}"
+                                  alt="{{ recipe.title }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ recipe.author }}</p>
                                 </div>
