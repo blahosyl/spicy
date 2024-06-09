@@ -107,6 +107,7 @@ body {
 }
 
 .recipe-link:hover,
+.footer-link:hover,
 .page-link {
     color: var(--red-orange) ;
 }

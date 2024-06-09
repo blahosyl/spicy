@@ -37,7 +37,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="#">Home</a>
+                            href="{% url 'home' %}">Home</a>
                     </li>
 
                 </ul>
@@ -77,8 +77,8 @@
     <footer class="footer mt-auto py-3 dark-bg text-white">
         <p class="m-0 text-center">&copy; Sylvia Blaho</p>
         <p class="m-0 text-center mt-2">
-            <i class="fa-brands fa-square-github fs-3 mx-1"></i>
-            <i class="fa-brands fa-linkedin fs-3 mx-1"></i>
+            <a class="text-reset" href="https://github.com/blahosyl/" target="_blank" rel="noopener" aria-label="Visit my GitHub profile"><i class="fa-brands fa-square-github fs-3 mx-1 footer-link"></i></a>
+            <a class="text-reset" href="https://www.linkedin.com/in/blahosylvia/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn profile"><i class="fa-brands fa-linkedin fs-3 mx-1 footer-link"></i></a>
         </p>
     </footer>
 
