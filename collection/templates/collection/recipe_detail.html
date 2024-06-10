@@ -4,13 +4,13 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
-            <div class="col-md-6 masthead-text">
+            <div class="col-md-6 col-lg-4 masthead-text">
                 <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
+            <div class="d-none d-md-block col-md-6 col-lg-8 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale"
                   alt="placeholder image">
@@ -28,16 +28,18 @@
         <div class="col-12 col-md-6 col-lg-4 card mb-4  mt-3 left  top">
             <!-- The recipe content goes inside the card-text. -->
             <!-- Use the | safe filter inside the template tags -->
-            <p class="card-text">
-                Total time: {{ recipe.total_time }} minute{{ recipe.total_time | pluralize }}
-                <br>
-                Prep time: {{ recipe.prep_time | safe }} minute{{ recipe.prep_time | pluralize }}
-                <br>
-                Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
-             </p>
+            <div class="card-body">
+                <p class="card-text text-center">
+                    Total time: {{ recipe.total_time }} minute{{ recipe.total_time | pluralize }}
+                    <br>
+                    Prep time: {{ recipe.prep_time | safe }} minute{{ recipe.prep_time | pluralize }}
+                    <br>
+                    Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
+                </p>
+            </div>
              {% if ingredient_count %} 
                 <div class="card-body">
-                    <h4 style="background-color: orange;">
+                    <h4 class="card-header">
                         Ingredients
                         ({{ ingredient_count | safe }})
                     </h4>
@@ -49,8 +51,8 @@
                 </div>
             {% endif %}
         </div>
-        <div class="col-12 col-md-6 col-lg-8 card mb-4  mt-3 left  top">
-            <div class="card-body" style="background-color: orangered;">
+        <div class="col-12 col-md-6 col-lg-8 card mb-4 mt-3 left top">
+            <div id="instructions" class="card-body">
                 <div class="card-text">
                     {{ recipe.instructions | safe }}
                 </div>

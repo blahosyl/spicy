@@ -1,26 +1,23 @@
 :root {
-    --background-color-neutral: #F9FAFC;
+    --light-neutral: #F9FAFC;
     --white: #FFFFFF;
-    --red-orange: #E84610;
-    --gray: #445261;
-    --dark-gray: #4A4A4F;
+    --highlight: #FD7E14;
+    --dark-highlight: #D7410F;
+    --light-highlight: #f7ddcf;
+    --dark-neutral: #313845;
     --teal: #188181;
     --light-teal: #23BBBB;
   }
 
 body {
-    background-color: var(--background-color-neutral);
+    background-color: var(--light-neutral);
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--dark-gray);
-}
-
-.red-o {
-    color: var(--red-orange);
+    color: var(--dark-highlight);
 }
 
 .thin {
@@ -32,11 +29,11 @@ body {
 }
 
 .dark-bg {
-    background-color: var(--gray) ;
+    background-color: var(--dark-neutral) ;
 }
 
 .main-bg {
-    background-color: var(--background-color-neutral);
+    background-color: var(--light-neutral);
 }
 
 .card {
@@ -53,7 +50,8 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: var(--teal);
+    background-color: var(--dark-highlight);
+    border-radius: 5px;
 }
 
 .scale {
@@ -77,7 +75,7 @@ body {
 }
 
 .masthead-text {
-    background-color: var(--gray) ;
+    background-color: var(--dark-highlight);
     color: var(--white);
     position: relative;
 }
@@ -91,25 +89,25 @@ body {
     content: "";
     position: absolute;
     top: 0;
-    right: 90%;
+    right: 80%;
     height: 100%;
     width: 150%;
-    background: var(--gray) ;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    background: var(--dark-highlight) ;
+    -webkit-transform: skew(25deg);
+    -moz-transform: skew(25deg);
+    transform: skew(25deg);
     z-index: 100;
 }
 
 .recipe-link {
     text-decoration: none;
-    color: var(--gray) ;
+    color: var(--dark-neutral) ;
 }
 
 .recipe-link:hover,
 .footer-link:hover,
 .page-link {
-    color: var(--red-orange) ;
+    color: var(--highlight) ;
 }
 
 .recipe-title {
@@ -119,7 +117,15 @@ body {
 
 .recipe-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: var(--white);
+}
+
+.card-header {
+    background-color: var(--highlight);
+}
+
+#instructions {
+    background-color: var(--light-highlight);
 }
 
 .btn-signup,
@@ -141,24 +147,24 @@ body {
 
 .link:hover,
 .link:active {
-    color: var(--gray) ;
+    color: var(--dark-neutral) ;
     text-decoration: underline;
 }
 
 .btn-like {
-    color: var(--red-orange) ;
+    color: var(--highlight) ;
     border: none;
     background: transparent;
 }
 
 .btn-delete {
     color: var(--white);
-    background: var(--red-orange) ;
+    background: var(--highlight) ;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: var(--red-orange) ;
+    color: var(--highlight) ;
     background: transparent;
     border: none;
 }
