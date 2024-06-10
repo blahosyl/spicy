@@ -1,6 +1,9 @@
 {% load static %}
 
 {% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -39,6 +42,21 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
 
                 </ul>
 
@@ -46,8 +64,9 @@
                     recipes for neurospicy people
                 </span>
                 <!-- color theme selector form -->
-                <form id="theme-selector-div" class="me-lg-3" action="/action_page.php" aria-label="Color theme selector">
-                <!-- `l` left and `r` right for Bootstrap spacing is replaced by `s` start and `e` end -->
+                <form id="theme-selector-div" class="me-lg-3" action="/action_page.php"
+                    aria-label="Color theme selector">
+                    <!-- `l` left and `r` right for Bootstrap spacing is replaced by `s` start and `e` end -->
                     <select id="theme-selector" class="form-select" name="theme-selector">
                         <option value="default" selected="selected">default</option>
                         <option value="green">green</option>
@@ -77,8 +96,11 @@
     <footer class="footer mt-auto py-3 dark-bg text-white">
         <p class="m-0 text-center">&copy; Sylvia Blaho</p>
         <p class="m-0 text-center mt-2">
-            <a class="text-reset" href="https://github.com/blahosyl/" target="_blank" rel="noopener" aria-label="Visit my GitHub profile"><i class="fa-brands fa-square-github fs-3 mx-1 footer-link"></i></a>
-            <a class="text-reset" href="https://www.linkedin.com/in/blahosylvia/" target="_blank" rel="noopener" aria-label="Visit my LinkedIn profile"><i class="fa-brands fa-linkedin fs-3 mx-1 footer-link"></i></a>
+            <a class="text-reset" href="https://github.com/blahosyl/" target="_blank" rel="noopener"
+                aria-label="Visit my GitHub profile"><i
+                    class="fa-brands fa-square-github fs-3 mx-1 footer-link"></i></a>
+            <a class="text-reset" href="https://www.linkedin.com/in/blahosylvia/" target="_blank" rel="noopener"
+                aria-label="Visit my LinkedIn profile"><i class="fa-brands fa-linkedin fs-3 mx-1 footer-link"></i></a>
         </p>
     </footer>
 
