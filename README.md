@@ -121,6 +121,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [HTML symbols](https://www.w3schools.com/html/html_symbols.asp)
 - [trailing slashes in URIs](https://cdivilly.wordpress.com/2014/03/11/why-trailing-slashes-on-uris-are-important/)
 - [Bootstrap: make whole card clickable](https://getbootstrap.com/docs/5.0/helpers/stretched-link/)
+- [Allauth documentation](https://docs.allauth.org/)
+- [Allauth guide](https://dev.to/gajesh/the-complete-django-allauth-guide-la3)
+- [Email verification: email must be required](https://stackoverflow.com/a/78066852)
 
 ### General advice
 

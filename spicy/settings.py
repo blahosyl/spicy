@@ -28,7 +28,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net', #dev
                 'spicy-recipes-django-5d174ffc7c94.herokuapp.com' #prod
@@ -132,7 +132,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400 # 1 day in seconds
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = '4ccorb0u@students.codeinstitute.net'
+EMAIL_HOST_PASSWORD = "GOOGLE_APP_PASSWORD"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
