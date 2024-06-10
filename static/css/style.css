@@ -29,7 +29,7 @@ body {
 }
 
 .dark-bg {
-    background-color: var(--dark-neutral) ;
+    background-color: var(--dark-highlight);
 }
 
 .main-bg {
@@ -105,10 +105,14 @@ body {
 }
 
 .recipe-link:hover,
-.footer-link:hover,
 .page-link {
     color: var(--highlight) ;
 }
+
+.footer-link:hover {
+    color: var(--light-highlight);
+}
+
 
 .recipe-title {
     margin-top: 10%;
