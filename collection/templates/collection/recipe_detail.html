@@ -19,9 +19,20 @@
                   alt="{{ recipe.title }}">
                 {% endif %}
             </div>
+            <div class="d-md-none">
+                {% if "placeholder" in recipe.featured_image.url %}
+                <img src="{% static 'images/default.jpg' %}" class="scale"
+                  alt="placeholder image">
+                {% else %}
+                <img src="{{ recipe.featured_image.url }}" class="scale"
+                  alt="{{ recipe.title }}">
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
+
+
 
 <div class="container">
     <div class="row">
