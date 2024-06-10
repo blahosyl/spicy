@@ -16,7 +16,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in recipe.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpeg' %}"
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                   alt="placeholder image">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ recipe.featured_image.url }}"
