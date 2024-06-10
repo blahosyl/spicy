@@ -120,6 +120,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap forms | select](https://getbootstrap.com/docs/5.0/forms/select/)
 - [HTML symbols](https://www.w3schools.com/html/html_symbols.asp)
 - [trailing slashes in URIs](https://cdivilly.wordpress.com/2014/03/11/why-trailing-slashes-on-uris-are-important/)
+- [Bootstrap: make whole card clickable](https://getbootstrap.com/docs/5.0/helpers/stretched-link/)
 
 ### General advice
 
