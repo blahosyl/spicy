@@ -121,11 +121,6 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [HTML symbols](https://www.w3schools.com/html/html_symbols.asp)
 - [trailing slashes in URIs](https://cdivilly.wordpress.com/2014/03/11/why-trailing-slashes-on-uris-are-important/)
 - [Bootstrap: make whole card clickable](https://getbootstrap.com/docs/5.0/helpers/stretched-link/)
-- [Allauth documentation](https://docs.allauth.org/)
-- [Allauth guide](https://dev.to/gajesh/the-complete-django-allauth-guide-la3)
-- [email verification: email must be required](https://stackoverflow.com/a/78066852)
-- [email verification in the Dev environment](https://code-institute-room.slack.com/archives/C026PTF46F5/p1706728353289989?thread_ts=1684774840.781519&cid=C026PTF46F5)
-- [email verification example](https://github.com/tlalexandre/HugoMarquisCoaching/blob/main/HugoMarquisCoaching/settings.py)
 
 ### General advice
 
