@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "base.html" %}
 
 {% load i18n %}
 
@@ -6,17 +6,27 @@
 
 {% block content %}
 
-<h1>{% trans "Confirm Access" %}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h3>{% trans "Confirm Access" %}</h3>
+      <br>
+      <p>{% blocktranslate %}To safeguard the security of your account, please enter your
+        password:{% endblocktranslate %}</p>
 
-<p>{% blocktranslate %}To safeguard the security of your account, please enter your password:{% endblocktranslate %}</p>
+      <form class="reauthenticate" method="POST" action="{% url 'account_reauthenticate' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button type="submit">{% trans "Confirm" %}</button>
+      </form>
+    </div>
+  </div>
+</div>
 
-<form class="reauthenticate" method="POST" action="{% url 'account_reauthenticate' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Confirm" %}</button>
-</form>
+
+
 
 {% endblock content %}
