@@ -111,7 +111,7 @@ DATABASES = {
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/", #dev
     "https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/" #prod
-    "https://mailjet.com"
+    "https://google.com"
 ]
 
 
