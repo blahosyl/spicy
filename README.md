@@ -123,6 +123,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap: make whole card clickable](https://getbootstrap.com/docs/5.0/helpers/stretched-link/)
 - [Git merge vs rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 - [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
+- [Allauth Google SSO setup documentation](https://docs.allauth.org/en/latest/socialaccount/providers/google.html)
+- [fix Allauth Google setup error](https://stackoverflow.com/a/69711745)
 
 ### General advice
 
