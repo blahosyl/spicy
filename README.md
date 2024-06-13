@@ -125,6 +125,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
 - [Allauth Google SSO setup documentation](https://docs.allauth.org/en/latest/socialaccount/providers/google.html)
 - [fix Allauth Google setup error](https://stackoverflow.com/a/69711745)
+- [Google SSO tutorial](https://medium.com/powered-by-django/add-social-authentication-django-allauth-google-oauth-example-d8d69a603356)
 
 ### General advice
 
