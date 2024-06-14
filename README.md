@@ -128,6 +128,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [email verification example](https://github.com/tlalexandre/HugoMarquisCoaching/blob/main/HugoMarquisCoaching/settings.py)
 - [managing static files in Django](https://docs.djangoproject.com/en/5.0/howto/static-files/)
 - [change app name (used by Allauth emails)](https://stackoverflow.com/a/30017741)
+- [Git merge vs rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+- [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
 
 ### General advice
 

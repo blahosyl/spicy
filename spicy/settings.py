@@ -151,6 +151,7 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_APP_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_APP_PASSWORD')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
