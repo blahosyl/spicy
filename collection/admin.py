@@ -25,6 +25,8 @@ class IngredientAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(IngredientQuantity)
+admin.site.register(Comment)
+
 
 
 
