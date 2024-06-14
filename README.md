@@ -130,6 +130,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [change app name (used by Allauth emails)](https://stackoverflow.com/a/30017741)
 - [Git merge vs rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 - [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
+- [direct link to Google app passwords](https://support.google.com/mail/thread/267471964?hl=en&msgid=268430543)
 
 ### General advice
 
