@@ -44,9 +44,9 @@ function setColorTheme() {
     // set the CSS color variables depending on the selected theme
 
     if (currentTheme == 'orange') {
-        bodyStyles.setProperty('--dark-highlight', '#D7410F');
-        bodyStyles.setProperty('--highlight', '#FD7E14');
-        bodyStyles.setProperty('--light-highlight', '#f7ddcf');
+        bodyStyles.setProperty('--dark-highlight', 'var(--dark-orange)');
+        bodyStyles.setProperty('--highlight', 'var(--med-orange)');
+        bodyStyles.setProperty('--light-highlight', 'var(--light-orange)');
     }
 
     else if (currentTheme == 'green') {
@@ -62,9 +62,9 @@ function setColorTheme() {
     }
     // default is also orange
     else {
-        bodyStyles.setProperty('--dark-highlight', '#D7410F');
-        bodyStyles.setProperty('--highlight', '#FD7E14');
-        bodyStyles.setProperty('--light-highlight', '#f7ddcf');
+        bodyStyles.setProperty('--dark-highlight', 'var(--dark-orange)');
+        bodyStyles.setProperty('--highlight', 'var(--med-orange)');
+        bodyStyles.setProperty('--light-highlight', 'var(--light-orange)');
     }
 }
 
