@@ -132,6 +132,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
 - [direct link to Google app passwords](https://support.google.com/mail/thread/267471964?hl=en&msgid=268430543)
 - [Attribute error (missing) caused by indentation error in `views.py`](https://stackoverflow.com/a/64709139)
+- [Mozilla JS `sessionStorage` docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
+- [Mozilla Web Storage API docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
+- [JS local storage intro](https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/)
 
 ### General advice
 
