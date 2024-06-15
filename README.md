@@ -131,6 +131,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Git merge vs rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 - [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
 - [direct link to Google app passwords](https://support.google.com/mail/thread/267471964?hl=en&msgid=268430543)
+- [Attribute error (missing) caused by indentation error in `views.py`](https://stackoverflow.com/a/64709139)
 
 ### General advice
 
