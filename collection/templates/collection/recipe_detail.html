@@ -12,20 +12,16 @@
             </div>
             <div class="d-none d-md-block col-md-6 col-lg-8 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="{% static 'images/default.jpg' %}" class="scale"
-                  alt="placeholder image">
+                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
-                <img src="{{ recipe.featured_image.url }}" class="scale"
-                  alt="{{ recipe.title }}">
+                <img src="{{ recipe.featured_image.url }}" class="scale" alt="{{ recipe.title }}">
                 {% endif %}
             </div>
             <div class="d-md-none">
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="{% static 'images/default.jpg' %}" class="scale"
-                  alt="placeholder image">
+                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
-                <img src="{{ recipe.featured_image.url }}" class="scale"
-                  alt="{{ recipe.title }}">
+                <img src="{{ recipe.featured_image.url }}" class="scale" alt="{{ recipe.title }}">
                 {% endif %}
             </div>
         </div>
@@ -48,18 +44,19 @@
                     Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
                 </p>
             </div>
-             {% if ingredient_count %} 
-                <div class="card-body">
-                    <h4 class="card-header">
-                        Ingredients
-                        ({{ ingredient_count | safe }})
-                    </h4>
-                        <ul>
-                            {% for recipe_ingredient in recipe_ingredients %}
-                                <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of {{ recipe_ingredient.ingredient }}</li>
-                            {% endfor %}
-                        </ul>
-                </div>
+            {% if ingredient_count %}
+            <div class="card-body">
+                <h4 class="card-header">
+                    Ingredients
+                    ({{ ingredient_count | safe }})
+                </h4>
+                <ul>
+                    {% for recipe_ingredient in recipe_ingredients %}
+                    <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of
+                        {{ recipe_ingredient.ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
             {% endif %}
         </div>
         <div class="col-12 col-md-6 col-lg-8 card mb-4 mt-3 left top">
@@ -70,6 +67,53 @@
             </div>
         </div>
     </div>
+    <!-- Displaying count of comments -->
+    <div class="row">
+        <div class="col-12">
+            <strong class="text-secondary">
+                <i class="far fa-comments"></i> {{ comment_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+    <!-- Displaying Comments -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <h3>Comments:</h3>
+            <div class="card-body">
+                <!-- We want a for loop inside the empty control tags
+          to iterate through each comment in comments -->
+                {% for comment in comments %}
+                <hr>
+                <div class="p-2 comments
+                {% if not comment.approved and comment.author == user %}
+                faded{% elif not comment.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        <span class="font-weight-bold fs-5">
+                            {{ comment.author }}
+                        </span>
+                        wrote on
+                        <span class="font-weight-normal">
+                            {{ comment.created_on }}
+                        </span>
+                    </p>
+                    <div id="comment{{ comment.id }}">
+                        {{ comment.body | linebreaks }}
+                    </div>
+                    {% if not comment.approved and comment.author == user %}
+                    <p class="approval">
+                        This comment is awaiting approval
+                    </p>
+                    {% endif %}
+                </div>
+                <!-- Our for loop ends here -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
+
 
 {% endblock content %}
