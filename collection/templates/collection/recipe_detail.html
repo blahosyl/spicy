@@ -109,6 +109,9 @@
                     </p>
                     {% endif %}
                 </div>
+                {% if user.is_authenticated and comment.author == user %}
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                {% endif %}
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
