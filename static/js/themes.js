@@ -43,25 +43,16 @@ function setColorTheme() {
 
     // set the CSS color variables depending on the selected theme
 
-    if (currentTheme == 'orange') {
-        bodyStyles.setProperty('--dark-highlight', 'var(--dark-orange)');
-        bodyStyles.setProperty('--highlight', 'var(--med-orange)');
-        bodyStyles.setProperty('--light-highlight', 'var(--light-orange)');
-    }
+    if (currentTheme) {
+        bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-' + currentTheme + ')');
+        bodyStyles.setProperty('--dark-highlight', 'var(--dark-' + currentTheme + ')');
+        bodyStyles.setProperty('--highlight', 'var(--med-' + currentTheme + ')');
+        bodyStyles.setProperty('--light-highlight', 'var(--light-' + currentTheme + ')');
+        }
 
-    else if (currentTheme == 'green') {
-        bodyStyles.setProperty('--dark-highlight', '#1b871d');
-        bodyStyles.setProperty('--highlight', '#7ef075');
-        bodyStyles.setProperty('--light-highlight', '#ceedcc');
-    }
-    else if (currentTheme == 'blue') {
-        bodyStyles.setProperty('--dark-highlight', 'darkblue');
-        bodyStyles.setProperty('--highlight', 'blue');
-        bodyStyles.setProperty('--light-highlight', 'lightblue');
-
-    }
-    // default is also orange
+    // default is orange
     else {
+        bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-orange)');
         bodyStyles.setProperty('--dark-highlight', 'var(--dark-orange)');
         bodyStyles.setProperty('--highlight', 'var(--med-orange)');
         bodyStyles.setProperty('--light-highlight', 'var(--light-orange)');
