@@ -135,6 +135,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Mozilla JS `sessionStorage` docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
 - [Mozilla Web Storage API docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
 - [JS local storage intro](https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/)
+- [Mozilla JS `querySelector` documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 
 ### General advice
 
