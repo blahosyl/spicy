@@ -35,6 +35,7 @@ body {
 }
 
 nav .brand {
+    color: var(--very-dark-highlight);
     font-size: 1.4rem;
 
 }
@@ -44,13 +45,20 @@ nav .brand {
     color: var(--very-dark-highlight);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+nav .brand:hover {
     color: var(--dark-highlight);
 }
 
-.active {
+.active{
     font-weight: bold;
 }
+
+.navbar-text {
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+}
+
 
 .thin {
     font-weight: 300;
@@ -171,7 +179,8 @@ nav .brand {
 }
 
 
-.btn-delete {
+.btn-delete,
+.btn-search {
     color: var(--white);
     background: var(--dark-highlight) ;
 }
