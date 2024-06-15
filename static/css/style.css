@@ -131,20 +131,6 @@ nav .brand:hover {
     overflow: hidden;
 }
 
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 80%;
-    height: 100%;
-    width: 150%;
-    background: var(--dark-highlight) ;
-    -webkit-transform: skew(25deg);
-    -moz-transform: skew(25deg);
-    transform: skew(25deg);
-    z-index: 100;
-}
-
 .recipe-link {
     text-decoration: none;
     color: var(--very-dark-highlight) ;
