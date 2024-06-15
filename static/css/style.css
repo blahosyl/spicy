@@ -1,12 +1,22 @@
 :root {
+    --very-dark-orange: #531D04;
     --dark-orange: #D7410F;
     --med-orange: #FD7E14;
     --light-orange: #f7ddcf;
+    --very-dark-blue: #08374F;
+    --dark-blue: #0F6895;
+    --med-blue: #20A6E9;
+    --light-blue: #BFE6F7   ;
+    --very-dark-green: #084f37;
+    --dark-green: #1b871d;
+    --med-green: #7ef075;
+    --light-green: #ceedcc;
     --teal: #188181;
     --light-teal: #23BBBB;
     --light-neutral: #F9FAFC;
     --dark-neutral: #313845;
     --white: #FFFFFF;
+    --very-dark-highlight: var(--very-dark-orange);
     --dark-highlight: var(--dark-orange);
     --highlight: var(--med-orange);
     --light-highlight: var(--light-orange);
@@ -14,7 +24,8 @@
   }
 
 body {
-    background-color: var(--light-neutral);
+    background-color: var(--white);
+    color: var(--very-dark-highlight);
 }
 
 .brand {
@@ -28,12 +39,25 @@ nav .brand {
 
 }
 
+.nav-link,
+.navbar-text {
+    color: var(--very-dark-highlight);
+}
+
+.nav-link:hover {
+    color: var(--dark-highlight);
+}
+
+.active {
+    font-weight: bold;
+}
+
 .thin {
     font-weight: 300;
 }
 
 .light-bg {
-    background-color: var(--background-color-light);
+    background-color: var(--light-highlight);
 }
 
 .dark-bg {
@@ -109,7 +133,7 @@ nav .brand {
 
 .recipe-link {
     text-decoration: none;
-    color: var(--dark-neutral) ;
+    color: var(--very-dark-highlight) ;
 }
 
 .recipe-link:hover,
