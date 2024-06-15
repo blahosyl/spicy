@@ -50,7 +50,7 @@ nav .brand:hover {
     color: var(--dark-highlight);
 }
 
-.active{
+.nav-item .active{
     font-weight: bold;
 }
 
@@ -58,6 +58,12 @@ nav .brand:hover {
     font-family: Lato, sans-serif;
     font-weight: bold;
 }
+
+.navbar-toggler-icon {
+    color: var(--very-dark-highlight);
+    padding-top: 6px;
+}
+
 
 
 .thin {
