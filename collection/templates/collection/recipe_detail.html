@@ -3,13 +3,18 @@
 {% load crispy_forms_tags %}
 
 <div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 col-lg-4 masthead-text">
+    <div class="container masthead-container">
+        <div class="row g-0 masthead-row">
+            <div class="col-md-6 col-lg-4 masthead-text d-flex flex-column">
                 <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+                <p class="recipe-attributes mb-4">      
+                    {% for recipe_attribute in recipe_attributes %}
+                    #{{ recipe_attribute.attribute.attr_value }}
+                    {% endfor %}
+                </p>
             </div>
             <div class="d-none d-md-block col-md-6 col-lg-8 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
@@ -29,7 +34,16 @@
     </div>
 </div>
 
+<!-- <div class="container">
+    <div class="row">
+        <div class="recipe-attributes col-12 text-center py-4">
+                    {% for recipe_attribute in recipe_attributes %}
+                    #{{ recipe_attribute.attribute.attr_value }}
+                    {% endfor %}
+        </div>
+    </div>
 
+</div> -->
 
 <div class="container">
     <div class="row">
@@ -45,6 +59,7 @@
                     Prep time: {{ recipe.cook_time | safe }} minute{{ recipe.cook_time | pluralize }}
                 </p>
             </div>
+            <!-- Show ingredients (if any) -->
             {% if ingredient_count %}
             <div class="card-body">
                 <h4 class="card-header">

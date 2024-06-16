@@ -32,6 +32,7 @@ def recipe_detail(request, slug):
     # `ingredients` is the `related_name` for the Recipe model in the IngredientQuantity model
     recipe_ingredients = recipe.ingredients.all()
     ingredient_count = recipe_ingredients.count()
+    recipe_attributes = recipe.attributes.all()
     comments = recipe.comments.all()
     comment_count = recipe.comments.filter(approved=True).count()
     if request.method == "POST":
@@ -53,6 +54,7 @@ def recipe_detail(request, slug):
         {"recipe": recipe,
         "recipe_ingredients": recipe_ingredients,
         "ingredient_count": ingredient_count,
+        "recipe_attributes": recipe_attributes,
         "comments": comments,
         "comment_count": comment_count,
         "comment_form": comment_form,

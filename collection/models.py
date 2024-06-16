@@ -38,7 +38,7 @@ class Ingredient(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        # order from most to least recently updated
+        # order alphabetically by ingr_name, then preparation
         ordering = ["ingr_name", "preparation"]
         # exclude duplicates of the same ingr_name and preparation
         unique_together = [("ingr_name", "preparation")]
@@ -93,6 +93,7 @@ class IngredientQuantity(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
 
+
     class Meta:
         """
         How the name of the model is shown in the admin panel
@@ -136,7 +137,7 @@ class Attribute(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        # order from most to least recently updated
+        # order alphabetically by category, then attr_value
         ordering = ["category", "attr_value"]
         # exclude duplicates of the same category and attr_value
         unique_together = [("category", "attr_value")]
@@ -164,6 +165,8 @@ class RecipeAttribute(models.Model):
         """
         verbose_name = "Recipe attribute"
         unique_together = [("recipe", "attribute")]
+        # order alphabetically by attribute, then recipe
+        ordering = ["attribute", "recipe"]
 
 
     def __str__(self):

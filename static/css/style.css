@@ -120,6 +120,12 @@ nav .brand:hover {
     width: 100%;
 }
 
+.masthead-container,
+.masthead-row,
+.masthead-text {
+    height: 100%;
+}
+
 .masthead-text {
     background-color: var(--dark-highlight);
     color: var(--white);
@@ -154,6 +160,11 @@ nav .brand:hover {
 .recipe-subtitle {
     margin-left: 5%;
     color: var(--white);
+}
+
+.recipe-attributes {
+    margin-left: 5%;
+    margin-top: auto;
 }
 
 .card-header {
