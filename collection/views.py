@@ -100,3 +100,8 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+class SearchResultsView(generic.ListView):
+        model = Recipe
+        template_name = 'collection/search_results.html'
