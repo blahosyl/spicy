@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 from .models import Recipe, Comment
 from .forms import CommentForm
 
@@ -105,3 +106,16 @@ def comment_delete(request, slug, comment_id):
 class SearchResultsView(generic.ListView):
         model = Recipe
         template_name = 'collection/search_results.html'
+
+        def get_queryset(self): 
+            query = self.request.GET.get("q")
+            object_list = Recipe.objects.filter(
+                Q(title__icontains=query)  | Q(excerpt__icontains=query)
+                | Q(instructions__icontains=query)            )
+            return object_list
+
+        # add query to context, so it can be displayed on the search page
+        def get_context_data(self, **kwargs):
+            context = super(SearchResultsView, self).get_context_data(**kwargs)
+            context['query'] = self.request.GET.get('q')
+            return context

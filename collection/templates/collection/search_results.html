@@ -3,7 +3,19 @@
 
 {% block content %}
 
-<h1>Search Results</h1>
+<h1>Search Results for "{{ query }}"</h1>
+
+{% if object_list%}
+<ul>
+    {% for recipe in object_list %}
+      <li>
+        {{ recipe.title }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+<p>There were no matches for your search.</p>
+{% endif %}
 
 
 {% endblock %}
