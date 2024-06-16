@@ -139,6 +139,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [JS local storage intro](https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/)
 - [Mozilla JS `querySelector` documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 - [Javascript docstrings](https://jsdoc.app/about-getting-started)
+- [Many-to-many relationships in Django](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django)
+- [Intermediary table vs. ManyToManyField](https://www.reddit.com/r/django/comments/awgt3q/is_it_better_to_use_multiple_foreignkey_in_an/)
 
 ### General advice
 

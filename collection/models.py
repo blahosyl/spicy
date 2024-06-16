@@ -127,3 +127,45 @@ class Comment(models.Model):
     # show recipes by title in admin panel
     def __str__(self):
         return f"Comment {self.body} by {self.author} | Approved: {self.approved}"
+
+
+
+class Attribute(models.Model):
+    category = models.CharField(max_length=50)
+    attr_value = models.CharField(max_length=200)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        # order from most to least recently updated
+        ordering = ["category", "attr_value"]
+        # exclude duplicates of the same category and attr_value
+        unique_together = [("category", "attr_value")]
+
+
+    def __str__(self):
+        return f"{self.category}: {self.attr_value}"
+
+
+class RecipeAttribute(models.Model):
+    recipe = models.ForeignKey(
+        Recipe, on_delete=models.CASCADE, 
+        related_name="attributes",
+    )
+    attribute = models.ForeignKey(
+        Attribute, 
+        on_delete=models.PROTECT, 
+        related_name="recipes",
+    )
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        """
+        How the name of the model is shown in the admin panel
+        """
+        verbose_name = "Recipe attribute"
+        unique_together = [("recipe", "attribute")]
+
+
+    def __str__(self):
+        string = f"{self.attribute} | {self.recipe}"
+        return string
