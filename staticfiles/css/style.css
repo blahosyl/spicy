@@ -1,16 +1,31 @@
 :root {
-    --light-neutral: #F9FAFC;
-    --white: #FFFFFF;
-    --highlight: #FD7E14;
-    --dark-highlight: #D7410F;
-    --light-highlight: #f7ddcf;
-    --dark-neutral: #313845;
+    --very-dark-orange: #531D04;
+    --dark-orange: #D7410F;
+    --med-orange: #FD7E14;
+    --light-orange: #f7ddcf;
+    --very-dark-blue: #08374F;
+    --dark-blue: #0F6895;
+    --med-blue: #20A6E9;
+    --light-blue: #BFE6F7   ;
+    --very-dark-green: #084f37;
+    --dark-green: #1b871d;
+    --med-green: #7ef075;
+    --light-green: #ceedcc;
     --teal: #188181;
     --light-teal: #23BBBB;
+    --light-neutral: #F9FAFC;
+    --dark-neutral: #313845;
+    --white: #FFFFFF;
+    --very-dark-highlight: var(--very-dark-orange);
+    --dark-highlight: var(--dark-orange);
+    --highlight: var(--med-orange);
+    --light-highlight: var(--light-orange);
+
   }
 
 body {
-    background-color: var(--light-neutral);
+    background-color: var(--white);
+    color: var(--very-dark-highlight);
 }
 
 .brand {
@@ -20,16 +35,43 @@ body {
 }
 
 nav .brand {
+    color: var(--very-dark-highlight);
     font-size: 1.4rem;
 
 }
+
+.nav-link,
+.navbar-text {
+    color: var(--very-dark-highlight);
+}
+
+.nav-link:hover,
+nav .brand:hover {
+    color: var(--dark-highlight);
+}
+
+.nav-item .active{
+    font-weight: bold;
+}
+
+.navbar-text {
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    color: var(--very-dark-highlight);
+    padding-top: 6px;
+}
+
+
 
 .thin {
     font-weight: 300;
 }
 
 .light-bg {
-    background-color: var(--background-color-light);
+    background-color: var(--light-highlight);
 }
 
 .dark-bg {
@@ -78,6 +120,12 @@ nav .brand {
     width: 100%;
 }
 
+.masthead-container,
+.masthead-row,
+.masthead-text {
+    height: 100%;
+}
+
 .masthead-text {
     background-color: var(--dark-highlight);
     color: var(--white);
@@ -89,23 +137,9 @@ nav .brand {
     overflow: hidden;
 }
 
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 80%;
-    height: 100%;
-    width: 150%;
-    background: var(--dark-highlight) ;
-    -webkit-transform: skew(25deg);
-    -moz-transform: skew(25deg);
-    transform: skew(25deg);
-    z-index: 100;
-}
-
 .recipe-link {
     text-decoration: none;
-    color: var(--dark-neutral) ;
+    color: var(--very-dark-highlight) ;
 }
 
 .recipe-link:hover,
@@ -128,6 +162,11 @@ nav .brand {
     color: var(--white);
 }
 
+.recipe-attributes {
+    margin-left: 5%;
+    margin-top: auto;
+}
+
 .card-header {
     background-color: var(--highlight);
 }
@@ -138,24 +177,35 @@ nav .brand {
 
 .btn-signup,
 .btn-edit {
-    background-color: var(--teal);
+    background-color: var(--highlight);
     color: var(--white);
 }
 
+
+.btn-delete,
+.btn-search {
+    color: var(--white);
+    background: var(--dark-highlight) ;
+}
+
 .btn-signup:hover,
-.btn-signup:active {
-    background-color: var(--white);
-    color: var(--light-teal);
+.btn-signup:active,
+.btn-edit:hover,
+.btn-edit:active,
+.btn-delete:hover,
+.btn-delete:active {
+    background-color: var(--light-highlight);
+    color: var(--dark-highlight);
 }
 
 .link {
-    color: var(--light-teal);
+    color: var(--highlight);
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: var(--dark-neutral) ;
+    color: var(--dark-highlight) ;
     text-decoration: underline;
 }
 
@@ -163,11 +213,6 @@ nav .brand {
     color: var(--highlight) ;
     border: none;
     background: transparent;
-}
-
-.btn-delete {
-    color: var(--white);
-    background: var(--highlight) ;
 }
 
 .btn-like:hover,
