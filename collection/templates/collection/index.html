@@ -31,7 +31,13 @@
                             </a>
 
                             <hr />
-                            <p class="card-text h6">{{ recipe.created_on}}
+                            <!-- recipe attributes -->
+                            <p class="card-text h6">
+                                <!-- iterate over all attributes of this recipe. 
+                                 Get the set of attributes with the related name defined in th ForeignKey of the RecipeAttribute model-->
+                                {% for recipe_attribute in recipe.attributes.all %}
+                                    #{{ recipe_attribute.attribute.attr_value }}
+                                {% endfor %}
                             </p>
                         </div>
                     </div>

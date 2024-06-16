@@ -141,7 +141,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Javascript docstrings](https://jsdoc.app/about-getting-started)
 - [Many-to-many relationships in Django](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django)
 - [Intermediary table vs. ManyToManyField](https://www.reddit.com/r/django/comments/awgt3q/is_it_better_to_use_multiple_foreignkey_in_an/)
-- [Django documentation on many-to-many relationships](https://docs.djangoproject.com/en/5.0/topics/db/examples/many_to_many/)
+- [Django documentation on many-to-many relationships](https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_many/)
+- [Accessing foreign key valies in ListView](https://stackoverflow.com/questions/52649906/accessing-foreign-key-values-in-django-listview-of-gcbv)
+- [Querying backwards related objects](https://docs.djangoproject.com/en/4.2/topics/db/queries/#backwards-related-objects)
 
 ### General advice
 
