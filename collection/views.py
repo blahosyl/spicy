@@ -133,6 +133,7 @@ class SearchResultsView(generic.ListView):
 class TemperatureResultsView(generic.ListView):
     model = Recipe
     template_name = 'collection/search_results.html'
+    paginate_by = 6
 
     def get_queryset(self): 
         query = self.request.GET.get("temp")

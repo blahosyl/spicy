@@ -160,6 +160,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [fix pagination for search results](https://stackoverflow.com/q/64353780)
 - [dropdown form in Django](https://stackoverflow.com/a/54584865)
 - [dropdown form without a button](https://stackoverflow.com/a/59007468)
+- [conditional: string in URL](https://stackoverflow.com/a/12877568)
+- [`elif` vs `else` error: "Exception Value: Unexpected end of expression in if tag"](https://stackoverflow.com/questions/65132837/django-exception-value-unexpected-end-of-expression-in-if-tag)
 
 ### General advice
 
