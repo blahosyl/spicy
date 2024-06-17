@@ -72,7 +72,6 @@
                 <!-- temperature selector form -->
                 <form id="temperature-selector-div" class="me-lg-3" action="{% url 'temperature_results' %}" method="get"
                     aria-label="Temperature selector">
-                    <!-- `l` left and `r` right for Bootstrap spacing is replaced by `s` start and `e` end -->
                     <select id="temperature-selector" class="form-select" name="temp" onchange="this.form.submit()" aria-label="color-theme-selector">
                         <option value="" selected="selected">any temperature</option>
                         <option value="hot">hot</option>
@@ -81,9 +80,9 @@
                     </select>
                 </form>
                 <!-- color theme selector form -->
+                <!-- `l` left and `r` right for Bootstrap spacing is replaced by `s` start and `e` end -->
                 <form id="theme-selector-div" class="me-lg-3" action="/action_page.php"
                     aria-label="Color theme selector">
-                    <!-- `l` left and `r` right for Bootstrap spacing is replaced by `s` start and `e` end -->
                     <select id="theme-selector" class="form-select" name="theme-selector" aria-label="color-theme-selector">
                         <option value="orange" selected="selected">orange</option>
                         <option value="blue">blue</option>
