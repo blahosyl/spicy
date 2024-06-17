@@ -99,7 +99,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 - [I Think Therefore I Blog walkthrough project by Code Institute](https://github.com/Code-Institute-Solutions/blog)
 - [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
-- querying of related models implemented with the help of [Roman Rakic](https://code-institute-room.slack.com/archives/C026PTF46F5/p1718633149758449?thread_ts=1718600949.810239&cid=C026PTF46F5)
+- [querying of related models](https://github.com/blahosyl/spicy/issues/115) implemented with the help of [Roman Rakic](https://code-institute-room.slack.com/archives/C026PTF46F5/p1718633149758449?thread_ts=1718600949.810239&cid=C026PTF46F5)
 
 
 ### Study/lookup sources
@@ -158,6 +158,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Django `include` documentation](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#include)
 - [relative paths for templates](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#std-templatetag-extends)
 - [fix pagination for search results](https://stackoverflow.com/q/64353780)
+- [dropdown form in Django](https://stackoverflow.com/a/54584865)
+- [dropdown form without a button](https://stackoverflow.com/a/59007468)
 
 ### General advice
 

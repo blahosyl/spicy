@@ -128,3 +128,15 @@ class SearchResultsView(generic.ListView):
             context = super(SearchResultsView, self).get_context_data(**kwargs)
             context['query'] = self.request.GET.get('q')
             return context
+
+
+class TemperatureResultsView(generic.ListView):
+    model = Recipe
+    template_name = 'collection/temperature_results.html'
+
+    def get_queryset(self): 
+        query = self.request.GET.get("temp")
+        object_list = Recipe.objects.filter(
+            Q(attributes__attribute__attr_value__icontains=query)
+        ).distinct()
+        return object_list
