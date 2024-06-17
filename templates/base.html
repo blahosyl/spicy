@@ -20,7 +20,6 @@
      <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -93,7 +92,7 @@
                 <form class="my-2 my-lg-0" action="{% url 'search_results' %}" method="get">
                     <div class="input-group">
                         <input class="form-control" name="q" type="text" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-search" type="submit">Search</button>
+                        <button id="search-button" class="btn btn-search" type="submit">Search</button>
                     </div>
                 </form>
             </div>
