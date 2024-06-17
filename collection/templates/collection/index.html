@@ -3,7 +3,6 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
 
@@ -11,41 +10,7 @@
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for recipe in recipe_list %}
-                <div class="col-md-4">
-                    <div class="card text-center mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in recipe.featured_image.url %}
-                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
-                                  alt="placeholder image">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ recipe.featured_image.url }}"
-                                  alt="{{ recipe.title }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ recipe.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link stretched-link">
-                                <h2 class="card-title">{{ recipe.title }}</h2>
-                            </a>
-
-                            <hr />
-                            <!-- recipe attributes -->
-                            <p class="card-text h6">
-                                <!-- iterate over all attributes of this recipe. 
-                                 Get the set of attributes with the related name defined in th ForeignKey of the RecipeAttribute model-->
-                                {% for recipe_attribute in recipe.attributes.all %}
-                                    #{{ recipe_attribute.attribute.attr_value }}
-                                {% endfor %}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
+                    {% include "./snippets/recipe_list.html" %}
                 {% endfor %}
 
             </div>
