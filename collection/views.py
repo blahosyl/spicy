@@ -114,7 +114,8 @@ class SearchResultsView(generic.ListView):
             query = self.request.GET.get("q")
             object_list = Recipe.objects.filter(
                 Q(title__icontains=query)  | Q(excerpt__icontains=query)
-                | Q(instructions__icontains=query)            )
+                | Q(instructions__icontains=query)
+            )
             return object_list
 
         # add query to context, so it can be displayed on the search page
