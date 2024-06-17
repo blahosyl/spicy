@@ -45,6 +45,11 @@ nav .brand {
     color: var(--very-dark-highlight);
 }
 
+#logo {
+    height: 1.5rem;
+    margin-right: 0.5rem;
+}
+
 .nav-link:hover,
 nav .brand:hover {
     color: var(--dark-highlight);
@@ -63,8 +68,6 @@ nav .brand:hover {
     color: var(--very-dark-highlight);
     padding-top: 6px;
 }
-
-
 
 .thin {
     font-weight: 300;

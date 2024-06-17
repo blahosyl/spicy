@@ -171,6 +171,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 #### Images
 
+[Logo/favicon](https://pixabay.com/illustrations/autism-infinity-symbol-1192408/) by [janeb13](https://pixabay.com/users/janeb13-725943/) on [Pixabay](https://pixabay.com/), converted to `ico` format with [`Favicon.io`](https://favicon.io/favicon-converter/).
+
 ### Readme
 
 ### Readme
