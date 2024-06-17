@@ -7,7 +7,7 @@
 
 {% if object_list%}
 <ul>
-    {% for recipe in object_list %}
+    {% for recipe in object_list %} <!-- based on https://learndjango.com/tutorials/django-search-tutorial -->
       <li>
         {{ recipe.title }}
       </li>

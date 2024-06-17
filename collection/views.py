@@ -103,6 +103,7 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
+# based on https://learndjango.com/tutorials/django-search-tutorial
 class SearchResultsView(generic.ListView):
         model = Recipe
         template_name = 'collection/search_results.html'

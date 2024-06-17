@@ -95,6 +95,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ## Credits
 
+- [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
+
+
 ### Study/lookup cources
 
 
@@ -133,18 +136,20 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Git merge vs rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
 - [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
 - [direct link to Google app passwords](https://support.google.com/mail/thread/267471964?hl=en&msgid=268430543)
-- [Attribute error (missing) caused by indentation error in `views.py`](https://stackoverflow.com/a/64709139)
+- [`Attribute error (missing)` caused by indentation error in `views.py`](https://stackoverflow.com/a/64709139)
 - [Mozilla JS `sessionStorage` docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
 - [Mozilla Web Storage API docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API)
 - [JS local storage intro](https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/)
 - [Mozilla JS `querySelector` documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 - [Javascript docstrings](https://jsdoc.app/about-getting-started)
-- [Many-to-many relationships in Django](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django)
-- [Intermediary table vs. ManyToManyField](https://www.reddit.com/r/django/comments/awgt3q/is_it_better_to_use_multiple_foreignkey_in_an/)
+- [many-to-many relationships in Django](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django)
+- [intermediary table vs. ManyToManyField](https://www.reddit.com/r/django/comments/awgt3q/is_it_better_to_use_multiple_foreignkey_in_an/)
 - [Django documentation on many-to-many relationships](https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_many/)
-- [Accessing foreign key valies in ListView](https://stackoverflow.com/questions/52649906/accessing-foreign-key-values-in-django-listview-of-gcbv)
-- [Querying backwards related objects](https://docs.djangoproject.com/en/4.2/topics/db/queries/#backwards-related-objects)
+- [accessing foreign key valies in ListView](https://stackoverflow.com/questions/52649906/accessing-foreign-key-values-in-django-listview-of-gcbv)
+- [querying backwards related objects](https://docs.djangoproject.com/en/4.2/topics/db/queries/#backwards-related-objects)
 - ["`ReverseManyToOneDescriptor` object has no attribute" error](https://stackoverflow.com/questions/40250430/reversemanytoonedescriptor-object-has-no-attribute-latest)
+- [Django search documentation](https://docs.djangoproject.com/en/5.0/ref/contrib/postgres/search/)
+- [display search term on search result page](https://stackoverflow.com/a/70825490)
 
 ### General advice
 
