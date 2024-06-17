@@ -3,32 +3,13 @@
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
+{% include "./snippets/before_recipe_list.html" %}
 
-        <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for recipe in recipe_list %}
-                    {% include "./snippets/recipe_list.html" %}
-                {% endfor %}
+    {% for recipe in recipe_list %}
+        {% include "./snippets/recipe_list.html" %}
+    {% endfor %}
 
-            </div>
-        </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV</a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+{% include "./snippets/after_recipe_list.html" %}
 
-<!-- index.html content ends here -->
+
 {% endblock %}
