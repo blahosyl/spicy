@@ -95,6 +95,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ## Credits
 
+- [I Think Therefore I Blog walkthrough project by Code Institute](https://github.com/Code-Institute-Solutions/blog)
 - [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
 
 
