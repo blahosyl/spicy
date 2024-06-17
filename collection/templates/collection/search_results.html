@@ -6,7 +6,7 @@
 <div class="container-fluid">
 
 
-    <h1>Search Results for "{{ query }}"</h1>
+    <h1>Results for "{{ query }}"</h1>
 
     {% if query == '' %}
         <p>You did not enter anything into the search field.</p>
@@ -22,7 +22,7 @@
         {% include "./snippets/after_recipe_list.html" %}
 
     {% else %}
-        <p>There were no matches for your search.</p>
+        <p>There were no matches :(</p>
     {% endif %}
 
     <!-- Pagination of search results. NB: `query` has to be added to the URL -->

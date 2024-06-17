@@ -123,7 +123,7 @@ class SearchResultsView(generic.ListView):
             ).distinct()
             return object_list
 
-        # add query to context, so it can be displayed on the search page
+        # add query to context, so it can be displayed on the results page
         def get_context_data(self, **kwargs):
             context = super(SearchResultsView, self).get_context_data(**kwargs)
             context['query'] = self.request.GET.get('q')
@@ -132,7 +132,7 @@ class SearchResultsView(generic.ListView):
 
 class TemperatureResultsView(generic.ListView):
     model = Recipe
-    template_name = 'collection/temperature_results.html'
+    template_name = 'collection/search_results.html'
 
     def get_queryset(self): 
         query = self.request.GET.get("temp")
@@ -140,3 +140,9 @@ class TemperatureResultsView(generic.ListView):
             Q(attributes__attribute__attr_value__icontains=query)
         ).distinct()
         return object_list
+
+    # add query to context, so it can be displayed on the results page
+    def get_context_data(self, **kwargs):
+        context = super(TemperatureResultsView, self).get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('temp')
+        return context
