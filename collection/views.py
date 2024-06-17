@@ -113,8 +113,13 @@ class SearchResultsView(generic.ListView):
         def get_queryset(self): 
             query = self.request.GET.get("q")
             object_list = Recipe.objects.filter(
-                Q(title__icontains=query)  | Q(excerpt__icontains=query)
+                Q(title__icontains=query) 
+                | Q(excerpt__icontains=query)
                 | Q(instructions__icontains=query)
+                | Q(comments__body__icontains=query) # with the help of Roman Rakic
+                # | Q(attributes__attribute__attr_value__icontains=query)
+                # | Q(ingredients__ingredient__ingr_name__icontains=query)
+
             )
             return object_list
 
