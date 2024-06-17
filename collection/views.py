@@ -107,6 +107,8 @@ def comment_delete(request, slug, comment_id):
 class SearchResultsView(generic.ListView):
         model = Recipe
         template_name = 'collection/search_results.html'
+        paginate_by = 6
+
 
         def get_queryset(self): 
             query = self.request.GET.get("q")

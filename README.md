@@ -154,6 +154,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [how to reuse the same bit of code in Django](https://stackoverflow.com/a/43457105)
 - [Django `include` documentation](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#include)
 - [relative paths for templates](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#std-templatetag-extends)
+- [fix paginationfor search results](https://stackoverflow.com/q/64353780)
 
 ### General advice
 

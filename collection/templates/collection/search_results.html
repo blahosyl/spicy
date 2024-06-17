@@ -3,23 +3,43 @@
 
 {% block content %}
 
-<h1>Search Results for "{{ query }}"</h1>
+<div class="container-fluid">
 
-{% if object_list%}
 
-    {% include "./snippets/before_recipe_list.html" %}
+    <h1>Search Results for "{{ query }}"</h1>
+
+    {% if query == '' %}
+        <p>You did not enter anything into the search field.</p>
+    {% elif object_list%}
+
+        {% include "./snippets/before_recipe_list.html" %}
 
         {% for recipe in object_list %}
         <!-- for loop based on https://learndjango.com/tutorials/django-search-tutorial -->
             {% include "./snippets/recipe_list.html" %}
         {% endfor %}
 
-    {% include "./snippets/after_recipe_list.html" %}
+        {% include "./snippets/after_recipe_list.html" %}
 
+    {% else %}
+        <p>There were no matches for your search.</p>
+    {% endif %}
 
-{% else %}
-    <p>There were no matches for your search.</p>
-{% endif %}
+    <!-- Pagination of search results. NB: `query` has to be added to the URL -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li><a href="?page={{ page_obj.previous_page_number }}&q={{ query }}" class="page-link"> &laquo; PREV</a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}&q={{ query }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 
 
 {% endblock %}
