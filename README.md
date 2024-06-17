@@ -95,11 +95,14 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ## Credits
 
+### Code credits
+
 - [I Think Therefore I Blog walkthrough project by Code Institute](https://github.com/Code-Institute-Solutions/blog)
 - [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
+- querying of related models implemented with the help of [Roman Rakic](https://code-institute-room.slack.com/archives/C026PTF46F5/p1718633149758449?thread_ts=1718600949.810239&cid=C026PTF46F5)
 
 
-### Study/lookup cources
+### Study/lookup sources
 
 
 - [Show labels and Milestones in GitHub Projects Kanban board](https://github.com/orgs/community/discussions/10788)
@@ -160,10 +163,6 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 - Daisy McGirr: allauth social option
 - Leon Potgieter: Neon DB, help with [testing on local DB issue](https://code-institute-room.slack.com/archives/C02B3MJQABA/p1716915411743489?thread_ts=1716855535.547499&cid=C02B3MJQABA)
-
-
-
-### Code credits
 
 ### Content
 
