@@ -151,6 +151,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - ["`ReverseManyToOneDescriptor` object has no attribute" error](https://stackoverflow.com/questions/40250430/reversemanytoonedescriptor-object-has-no-attribute-latest)
 - [Django search documentation](https://docs.djangoproject.com/en/5.0/ref/contrib/postgres/search/)
 - [display search term on search result page](https://stackoverflow.com/a/70825490)
+- [how to reuse the same bit of code in Django](https://stackoverflow.com/a/43457105)
+- [Django `include` documentation](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#include)
+- [relative paths for templates](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#std-templatetag-extends)
 
 ### General advice
 
