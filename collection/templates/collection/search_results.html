@@ -25,28 +25,4 @@
         <p>There were no matches :(</p>
     {% endif %}
 
-    <!-- Pagination of search results. NB: `query` has to be added to the URL for Search, `temp` for Filtering -->
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-                {% if 'search' in request.path %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}&q={{ query }}" class="page-link"> &laquo; PREV</a></li>
-                {% else %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}&temp={{ query }}" class="page-link"> &laquo; PREV</a></li>
-                {% endif %}
-            {% endif %}
-            {% if page_obj.has_next %}
-                {% if "search" in request.path %}
-                    <li><a href="?page={{ page_obj.next_page_number }}&q={{ query }}" class="page-link"> NEXT &raquo;</a></li>
-                {% else %}
-                    <li><a href="?page={{ page_obj.next_page_number }}&temp={{ query }}" class="page-link"> NEXT &raquo;</a></li>
-                {% endif %}
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
-
-
 {% endblock %}
