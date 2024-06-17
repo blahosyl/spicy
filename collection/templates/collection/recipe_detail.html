@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -12,7 +12,7 @@
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
-                <p class="recipe-attributes mb-4">      
+                <p class="recipe-attributes mb-4">
                     {% for recipe_attribute in recipe_attributes %}
                     #{{ recipe_attribute.attribute.attr_value }}
                     {% endfor %}
@@ -127,8 +127,8 @@
                     {% endif %}
                 </div>
                 {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
                 {% endif %}
                 <!-- Our for loop ends here -->
                 {% endfor %}
@@ -162,33 +162,29 @@
 </div>
 
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete comment?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete your comment?
-        This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 
 {% endblock content %}
 
 {% block extras %}
-    <script src="{% static 'js/comments.js' %}"></script>
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}
