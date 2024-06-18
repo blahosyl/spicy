@@ -132,16 +132,20 @@ class SearchResultsView(generic.ListView):
 
 class TemperatureResultsView(generic.ListView):
     model = Recipe
-    template_name = 'collection/search_results.html'
+    template_name = 'collection/index.html'
     paginate_by = 6
 
     def get_queryset(self): 
-        query = self.request.GET.get("temp")
-        if query == "any temperature":
-            object_list = Recipe.objects.all()
-        else:
-            object_list = Recipe.objects.filter(
-                Q(attributes__attribute__attr_value__icontains=query)
+        temp = self.request.GET.get("temp")
+        diet = self.request.GET.get("diet")
+        object_list = Recipe.objects.all()
+        if temp and temp is not "any temperature":
+            object_list = object_list.filter(
+                Q(attributes__attribute__attr_value__icontains=temp)
+            ).distinct()
+        if diet and diet is not "any diet":
+            object_list = object_list.filter(
+                Q(attributes__attribute__attr_value__icontains=diet)
             ).distinct()
         return object_list
 

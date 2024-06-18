@@ -1,11 +1,28 @@
-<!-- temperature selector form -->
-<form id="temperature-selector-div" class="me-lg-3" action="{% url 'temperature_results' %}" method="get"
-    aria-label="Temperature selector">
-    <select id="temperature-selector" class="form-select" name="temp" onchange="this.form.submit()"
-        aria-label="color-theme-selector">
-        <option value="any temperature" selected="selected">any temperature</option>
-        <option value="hot">hot</option>
-        <option value="cold">cold</option>
-        <option value="lukewarm">lukewarm</option>
-    </select>
-</form>
+<div d-flex class="row">
+    <div class="col">
+        <!-- temperature selector form -->
+        <form id="temperature-selector-div" class="mx-3" action="{% url 'temperature_results' %}" method="get"
+            aria-label="Temperature selector">
+            <select id="temperature-selector" class="form-select" name="temp" onchange="this.form.submit()"
+                aria-label="color-theme-selector">
+                <option value="any temperature" selected="selected">any temperature</option>
+                <option value="hot">hot</option>
+                <option value="cold">cold</option>
+                <option value="lukewarm">lukewarm</option>
+            </select>
+        </form>
+    </div>
+    <div class="col">
+        <!-- diet selector form -->
+        <form id="diet-selector-div" class="mx-3" action="{% url 'temperature_results' %}" method="get"
+            aria-label="Diet selector">
+            <select id="diet-selector" class="form-select" name="diet" onchange="this.form.submit()"
+                aria-label="color-theme-selector">
+                <option value="any diet" selected="selected">any diet</option>
+                <option value="vegetarian">vegetarian</option>
+                <option value="vegan">vegan</option>
+                <option value="gluten free">gluten free</option>
+            </select>
+        </form>
+    </div>
+</div>
