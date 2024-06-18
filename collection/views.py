@@ -137,9 +137,12 @@ class TemperatureResultsView(generic.ListView):
 
     def get_queryset(self): 
         query = self.request.GET.get("temp")
-        object_list = Recipe.objects.filter(
-            Q(attributes__attribute__attr_value__icontains=query)
-        ).distinct()
+        if query == "any temperature":
+            object_list = Recipe.objects.all()
+        else:
+            object_list = Recipe.objects.filter(
+                Q(attributes__attribute__attr_value__icontains=query)
+            ).distinct()
         return object_list
 
     # add query to context, so it can be displayed on the results page
