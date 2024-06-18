@@ -5,23 +5,37 @@
 
 {% include "./snippets/filters.html" %}
 
-<div class="container-fluid">
-{% if 'filter' in request.path and temp != None %}
-    <h1>{{ object_count }}  results for "{{ temp }}"</h1>
-{% endif %}
+{% if 'filter' in request.path %}
 
-{% if 'filter' in request.path and diet != None %}
-    <h1>{{ object_count }}  results for "{{ diet }}"</h1>
-{% endif %}
-</div>
+<div class="container-fluid mt-4">
+    <div class="row mx-2">
+        <div class="col-10 col-md-8 d-flex">
+            {% if temp != None and temp != "any temperature" %}
+            <h2>{{ object_count }} results for "{{ temp }}"</h1>
+                {% endif %}
 
+                {% if diet != None and temp != "any diet" %}
+                <h2>{{ object_count }} results for "{{ diet }}"</h1>
+                    {% endif %}
+        </div>
+
+        {% if temp != "any temperature" and diet != "any diet" %}
+        <div class="col-2 col-md-4  d-flex justify-content-end">
+            <a class="link" href="{% url 'home' %}" aria-label="Reset filters">Reset filters</a>
+        </div>
+        {% endif %}
+    </div>
+{% endif %}
 
 {% include "./snippets/before_recipe_list.html" %}
 
-    {% for recipe in recipe_list %}
-        {% include "./snippets/recipe_list.html" %}
-    {% endfor %}
+{% for recipe in recipe_list %}
+{% include "./snippets/recipe_list.html" %}
+{% endfor %}
 
 {% include "./snippets/after_recipe_list.html" %}
+
+</div><!-- end of container-fluid -->
+
 
 {% endblock %}
