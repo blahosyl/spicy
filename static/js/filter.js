@@ -1,12 +1,12 @@
 // Persist the selected value of the temperature selector filter.
 // Code based on `themes.js` in this repository.
 
-// get the tenperature selector dropdown form
+// get the tenperature & diet selector dropdown form
 let temperatureSelector = document.getElementById('temperature-selector');
 let dietSelector = document.getElementById('diet-selector');
 
 
-/** populate storage with the value form the color theme selector form */
+/** populate storage with the value form the selector form */
 function storeFilters() {
     localStorage.setItem("temperatureFilter", temperatureSelector.value);
     localStorage.setItem("dietFilter", dietSelector.value);
@@ -14,13 +14,13 @@ function storeFilters() {
     applyFilters();
 }
 
-/** set the site's color theme based on the value in storage */
+/** filter recipes based on the value in storage */
 function applyFilters() {
-    // get the theme value from storage
+    // get the filter value from storage
     let currentTemparatureFilter = localStorage.getItem("temperatureFilter");
     let currentDietFilter = localStorage.getItem("dietFilter");
 
-    // set the theme selector value to the one retrieved from storage
+    // set the filter selector value to the one retrieved from storage
     temperatureSelector.value = currentTemparatureFilter;
     dietSelector.value = currentDietFilter;
 }
