@@ -141,12 +141,14 @@ class TemperatureResultsView(generic.ListView):
         diet = self.request.GET.get("diet")
         object_list = Recipe.objects.all()
         if temp and temp is not "any temperature":
-            object_list =  Recipe.objects.filter(
-                Q(attributes__attribute__attr_value__icontains=temp)
-            ).distinct()
+            query = temp
         elif diet and diet is not "any diet":
-            object_list =  Recipe.objects.filter(
-                Q(attributes__attribute__attr_value__icontains=diet)
+            query = diet
+        if query == "any temperature" or query == "any diet":
+            object_list = Recipe.objects.all()
+        else:
+            object_list = Recipe.objects.filter(
+                Q(attributes__attribute__attr_value__icontains=query)
             ).distinct()
         return object_list
 
