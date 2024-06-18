@@ -6,23 +6,22 @@ let temperatureSelector = document.getElementById('temperature-selector');
 
 // let searchButton = document.getElementsByClassName('btn-search')
 
-window.addEventListener("DOMContentLoaded", (event) => {
 
-    let button = document.getElementById('search-button"')
-    if (button) {
-        button.addEventListener("mousedown", resetTemperatureFilter);
-        document.addEventListener("DOMContentLoaded", searchButtonColor);
-    } else {
-        console.log("no button!")
-    }
-});
 
 /** check if storage is already populated */
 function checkStorage() {
-    if(!localStorage.getItem('temperature-selector')) {
+    if(!localStorage.getItem('temperatureFilter')) {
         storeTemperatureFilter();
     } else {
         applyTemperatureFilter();
+    }
+}
+
+function checkURL() {
+    if (!window.location.href.includes('temp')) {
+        resetTemperatureFilter();
+    } else {
+        console.log("INCLUDES 'temp'")
     }
 }
 
@@ -35,39 +34,38 @@ function storeTemperatureFilter() {
 
 /** reset the value of the temperature filter in storage */
 function resetTemperatureFilter() {
-    localStorage.setItem("temperatureFilter", "");
-    
+        localStorage.setItem("temperatureFilter", "pineapple");
+        console.log("DOESN'T INCLUDE 'temp'")
+    }
     applyTemperatureFilter();
-}
 
 /** set the site's filtering based on the value in storage */
 function applyTemperatureFilter() {
-    if(!localStorage.getItem('temperature-selector')) {
 
         // get the temperature value from storage
         let currentTemparatureFilter = localStorage.getItem("temperatureFilter");
 
         // set the temperature selector value to the one retrieved from storage
         temperatureSelector.value = currentTemparatureFilter;
-    } else {
-        temperatureSelector.value = "";
-    }
 }
 
-/** remove the  temperature filter value from storage */
-function removeTemperatureFilter() {
-    localStorage.removeItem('temperature-selector');
-    alert('temperature value removed');
-    console.log('temperature value removed');
+// /** remove the  temperature filter value from storage */
+// function removeTemperatureFilter() {
+//     if (!window.location.href.includes('temp')) {
+//         localStorage.removeItem('temperature-selector');
+//         console.log('temperature value removed');
+//     }
     
-    applyTemperatureFilter();
-}
+//     // applyTemperatureFilter();
+// }
 
-function searchButtonColor() {
-    button.setAttribute("style", "border-color:purple;");
-    console.log("button border color")
-}
 
+window.addEventListener("DOMContentLoaded", (event) => {
+});
+
+// document.addEventListener("DOMContentLoaded", checkURL);
 temperatureSelector.addEventListener("change", checkStorage);
 document.addEventListener("DOMContentLoaded", applyTemperatureFilter);
+
+
 
