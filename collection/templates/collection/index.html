@@ -6,11 +6,11 @@
 {% include "./snippets/filters.html" %}
 
 <div class="container-fluid">
-{% if 'temperature' in request.path and temp != None %}
+{% if 'filter' in request.path and temp != None %}
     <h1>{{ object_count }}  results for "{{ temp }}"</h1>
 {% endif %}
 
-{% if 'temperature' in request.path and diet != None %}
+{% if 'filter' in request.path and diet != None %}
     <h1>{{ object_count }}  results for "{{ diet }}"</h1>
 {% endif %}
 </div>

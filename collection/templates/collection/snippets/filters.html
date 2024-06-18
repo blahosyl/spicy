@@ -1,7 +1,7 @@
 <div d-flex class="row">
     <div class="col">
         <!-- temperature selector form -->
-        <form id="temperature-selector-div" class="mx-3" action="{% url 'temperature_results' %}" method="get"
+        <form id="temperature-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
             aria-label="Temperature selector">
             <select id="temperature-selector" class="form-select" name="temp" onchange="this.form.submit()"
                 aria-label="color-theme-selector">
@@ -14,7 +14,7 @@
     </div>
     <div class="col">
         <!-- diet selector form -->
-        <form id="diet-selector-div" class="mx-3" action="{% url 'temperature_results' %}" method="get"
+        <form id="diet-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
             aria-label="Diet selector">
             <select id="diet-selector" class="form-select" name="diet" onchange="this.form.submit()"
                 aria-label="color-theme-selector">

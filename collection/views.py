@@ -131,7 +131,7 @@ class SearchResultsView(generic.ListView):
             return context
 
 
-class TemperatureResultsView(generic.ListView):
+class FilterResultsView(generic.ListView):
     model = Recipe
     template_name = 'collection/index.html'
     paginate_by = 6
@@ -154,7 +154,7 @@ class TemperatureResultsView(generic.ListView):
 
     # add query to context, so it can be displayed on the results page
     def get_context_data(self, **kwargs):
-        context = super(TemperatureResultsView, self).get_context_data(**kwargs)
+        context = super(FilterResultsView, self).get_context_data(**kwargs)
         context['object_count'] = self.object_list.count()
         context['temp'] = self.request.GET.get('temp')
         context['diet'] = self.request.GET.get('diet')
