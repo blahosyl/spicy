@@ -127,6 +127,7 @@ class SearchResultsView(generic.ListView):
         def get_context_data(self, **kwargs):
             context = super(SearchResultsView, self).get_context_data(**kwargs)
             context['query'] = self.request.GET.get('q')
+            context['object_count'] = self.object_list.count()
             return context
 
 
@@ -140,11 +141,11 @@ class TemperatureResultsView(generic.ListView):
         diet = self.request.GET.get("diet")
         object_list = Recipe.objects.all()
         if temp and temp is not "any temperature":
-            object_list = object_list.filter(
+            object_list =  Recipe.objects.filter(
                 Q(attributes__attribute__attr_value__icontains=temp)
             ).distinct()
-        if diet and diet is not "any diet":
-            object_list = object_list.filter(
+        elif diet and diet is not "any diet":
+            object_list =  Recipe.objects.filter(
                 Q(attributes__attribute__attr_value__icontains=diet)
             ).distinct()
         return object_list
@@ -152,5 +153,7 @@ class TemperatureResultsView(generic.ListView):
     # add query to context, so it can be displayed on the results page
     def get_context_data(self, **kwargs):
         context = super(TemperatureResultsView, self).get_context_data(**kwargs)
-        context['query'] = self.request.GET.get('temp')
+        context['object_count'] = self.object_list.count()
+        context['temp'] = self.request.GET.get('temp')
+        context['diet'] = self.request.GET.get('diet')
         return context
