@@ -59,5 +59,5 @@ function setColorTheme() {
     }
 }
 
-themeSelector.addEventListener("change", storeColorTheme);
+themeSelector.addEventListener("change", checkStorage);
 document.addEventListener("DOMContentLoaded", setColorTheme)
