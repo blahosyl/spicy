@@ -162,6 +162,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [dropdown form without a button](https://stackoverflow.com/a/59007468)
 - [conditional: string in URL](https://stackoverflow.com/a/12877568)
 - [`elif` vs `else` error: "Exception Value: Unexpected end of expression in if tag"](https://stackoverflow.com/questions/65132837/django-exception-value-unexpected-end-of-expression-in-if-tag)
+- [set Cloudinary to use https](https://stackoverflow.com/a/62096398)
+- [`import cloudinary` in `settings.py`](https://cloudinary.com/blog/managing-media-files-in-django)
 
 ### General advice
 
