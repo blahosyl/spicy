@@ -1,10 +1,10 @@
 <div d-flex class="row">
     <div class="col">
-        <!-- temperature selector form -->
+        <!-- temperature filter form -->
         <form id="temperature-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
-            aria-label="Temperature selector">
+            aria-label="Temperature filter">
             <select id="temperature-selector" class="form-select" name="temp" onchange="this.form.submit()"
-                aria-label="color-theme-selector">
+                aria-label="Temperature selector">
                 <option value="any temperature" selected="selected">any temperature</option>
                 <option value="hot">hot</option>
                 <option value="cold">cold</option>
@@ -13,15 +13,30 @@
         </form>
     </div>
     <div class="col">
-        <!-- diet selector form -->
+        <!-- diet filter form -->
         <form id="diet-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
-            aria-label="Diet selector">
+            aria-label="Diet filter">
             <select id="diet-selector" class="form-select" name="diet" onchange="this.form.submit()"
-                aria-label="color-theme-selector">
+                aria-label="Diet selector">
                 <option value="any diet" selected="selected">any diet</option>
                 <option value="vegetarian">vegetarian</option>
                 <option value="vegan">vegan</option>
                 <option value="gluten free">gluten free</option>
+            </select>
+        </form>
+    </div>
+    <div class="col">
+        <!-- taste filter form -->
+        <form id="taste-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
+            aria-label="Taste filter">
+            <select id="taste-selector" class="form-select" name="taste" onchange="this.form.submit()"
+                aria-label="Taste selector">
+                <option value="any taste" selected="selected">any taste</option>
+                <option value="salty">salty</option>
+                <option value="sweet">sweet</option>
+                <option value="bitter">bitter</option>
+                <option value="sour">sour</option>
+                <option value="spicy">spicy</option>
             </select>
         </form>
     </div>

@@ -11,12 +11,16 @@
     <div class="row mx-2">
         <div class="col-10 col-md-8 d-flex">
             {% if temp != None and temp != "any temperature" %}
-            <h2>{{ object_count }} results for "{{ temp }}"</h1>
-                {% endif %}
+                <h2>{{ object_count }} results for "{{ temp }}"</h1>
+            {% endif %}
 
-                {% if diet != None and diet != "any diet" %}
+            {% if diet != None and diet != "any diet" %}
                 <h2>{{ object_count }} results for "{{ diet }}"</h1>
-                    {% endif %}
+            {% endif %}
+
+            {% if taste != None and taste != "any taste" %}
+                <h2>{{ object_count }} results for "{{ taste }}"</h1>
+            {% endif %}
         </div>
 
         {% if temp != "any temperature" and diet != "any diet" %}

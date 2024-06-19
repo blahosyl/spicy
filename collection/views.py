@@ -139,12 +139,15 @@ class FilterResultsView(generic.ListView):
     def get_queryset(self): 
         temp = self.request.GET.get("temp")
         diet = self.request.GET.get("diet")
+        taste = self.request.GET.get("taste")
         object_list = Recipe.objects.all()
-        if temp and temp is not "any temperature":
+        if temp:
             query = temp
-        elif diet and diet is not "any diet":
+        if diet:
             query = diet
-        if query == "any temperature" or query == "any diet":
+        if taste:
+            query = taste
+        if query == "any temperature" or query == "any diet" or query == "any taste":
             object_list = Recipe.objects.all()
         else:
             object_list = Recipe.objects.filter(
@@ -158,4 +161,5 @@ class FilterResultsView(generic.ListView):
         context['object_count'] = self.object_list.count()
         context['temp'] = self.request.GET.get('temp')
         context['diet'] = self.request.GET.get('diet')
+        context['taste'] = self.request.GET.get('taste')
         return context

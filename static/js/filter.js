@@ -4,13 +4,14 @@
 // get the temperature & diet selector dropdown forms
 let temperatureSelector = document.getElementById('temperature-selector');
 let dietSelector = document.getElementById('diet-selector');
-
+let tasteSelector = document.getElementById('taste-selector');
 
 /** populate storage with the value form the selector form */
 function storeFilters() {
 
     localStorage.setItem("temperatureFilter", temperatureSelector.value);
     localStorage.setItem("dietFilter", dietSelector.value);
+    localStorage.setItem("tasteFilter", tasteSelector.value);
     
     applyFilters();
 }
@@ -21,22 +22,30 @@ function applyFilters() {
     // get the filter value from storage
     let currentTemparatureFilter = localStorage.getItem("temperatureFilter");
     let currentDietFilter = localStorage.getItem("dietFilter");
+    let currentTasteFilter = localStorage.getItem("tasteFilter");
 
     // set the filter selector value to the one retrieved from storage
     temperatureSelector.value = currentTemparatureFilter;
     dietSelector.value = currentDietFilter;
+    tasteSelector.value = currentTasteFilter;
 }
 
+/** reset the temperature filter form and storage value*/
 function resetTemperature() {
     temperatureSelector.value = "any temperature";
     localStorage.setItem("temperatureFilter", "any temperature");
-
 }
 
 /** reset the diet filter form and storage value*/
 function resetDiet() {
     dietSelector.value = "any diet";
     localStorage.setItem("dietFilter", "any diet");
+}
+
+/** reset the taste filter form and storage value*/
+function resetTaste() {
+    tasteSelector.value = "any taste";
+    localStorage.setItem("tasteFilter", "any taste");
 }
 
 /** if the URL doesn't include the string 'filter', reset all filters */
@@ -49,13 +58,23 @@ function resetAllFilters() {
 
         localStorage.setItem("dietFilter", "any diet");
         dietSelector.value = "any diet";
+
+        localStorage.setItem("tasteFilter", "any taste");
+        tasteSelector.value = "any taste";
     }
 }
 
 temperatureSelector.addEventListener("change", storeFilters);
-dietSelector.addEventListener("change", storeFilters);
 temperatureSelector.addEventListener("change", resetDiet);
-dietSelector.addEventListener("change", resetTemperature);
-document.addEventListener("DOMContentLoaded", applyFilters)
+temperatureSelector.addEventListener("change", resetTaste);
 
+dietSelector.addEventListener("change", storeFilters);
+dietSelector.addEventListener("change", resetTemperature);
+dietSelector.addEventListener("change", resetTaste);
+
+tasteSelector.addEventListener("change", storeFilters);
+tasteSelector.addEventListener("change", resetTemperature);
+tasteSelector.addEventListener("change", resetDiet);
+
+document.addEventListener("DOMContentLoaded", applyFilters)
 document.addEventListener("DOMContentLoaded", resetAllFilters);
