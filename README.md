@@ -164,6 +164,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [`elif` vs `else` error: "Exception Value: Unexpected end of expression in if tag"](https://stackoverflow.com/questions/65132837/django-exception-value-unexpected-end-of-expression-in-if-tag)
 - [set Cloudinary to use https](https://stackoverflow.com/a/62096398)
 - [`import cloudinary` in `settings.py`](https://cloudinary.com/blog/managing-media-files-in-django)
+- [get the URL with Javascript](https://www.w3schools.com/howto/howto_js_get_url.asp)
 
 ### General advice
 
