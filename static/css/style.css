@@ -36,8 +36,6 @@ body {
 
 nav .brand {
     color: var(--very-dark-highlight);
-    font-size: 1.4rem;
-
 }
 
 .nav-link,
@@ -47,7 +45,8 @@ nav .brand {
 
 #logo {
     height: 1.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 
 .nav-link:hover,
