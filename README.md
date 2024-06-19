@@ -168,6 +168,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap gutters](https://getbootstrap.com/docs/5.0/layout/gutters/#horizontal-gutters)
 - [Bootstrap text utilities](https://getbootstrap.com/docs/5.0/utilities/text/)
 - [restrict objects available to staff users in the admin panel](https://stackoverflow.com/a/71318569)
+- [Django documentation: `ModelAdmin.get_queryset(request)`](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.get_queryset)
 
 ### General advice
 
