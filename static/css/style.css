@@ -81,6 +81,12 @@ nav .brand:hover {
     background-color: var(--dark-highlight);
 }
 
+.pagination a:hover {
+    color: var(--dark-highlight)
+}
+
+/* Recipe detail view */
+
 .main-bg {
     background-color: var(--light-neutral);
 }
@@ -150,9 +156,12 @@ nav .brand:hover {
     color: var(--highlight) ;
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-link:active,
+.btn-search:hover,
+.btn-search:active {
     color: var(--light-highlight);
-}
+} 
 
 
 .recipe-title {
