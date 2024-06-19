@@ -166,6 +166,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [`import cloudinary` in `settings.py`](https://cloudinary.com/blog/managing-media-files-in-django)
 - [get the URL with Javascript](https://www.w3schools.com/howto/howto_js_get_url.asp)
 - [Bootstrap gutters](https://getbootstrap.com/docs/5.0/layout/gutters/#horizontal-gutters)
+- [Bootstrap text utilities](https://getbootstrap.com/docs/5.0/utilities/text/)
 
 ### General advice
 
