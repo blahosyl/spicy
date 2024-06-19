@@ -12,7 +12,19 @@
                   alt="{{ recipe.title }}">
                 {% endif %}
                 <div class="image-flash">
-                    <p class="author">{{ recipe.author }}</p>
+                    <p class="author">
+                    <!-- diplay first name if available -->
+                    {% if recipe.author.first_name %}
+                     {{ recipe.author.first_name }}
+                        <!-- if first name and last name are both available, show both -->
+                        {% if recipe.author.last_name %}
+                            {{ recipe.author.last_name }}
+                        {% endif %}
+                    <!-- otherwise, display the username -->
+                    {% else %}
+                        {{ recipe.author }}
+                    {% endif %}
+                    </p>
                 </div>
             </div>
             <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link stretched-link">
