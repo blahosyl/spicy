@@ -26,6 +26,7 @@
 body {
     background-color: var(--white);
     color: var(--very-dark-highlight);
+    font-family: "Rubik", sans-serif;
 }
 
 .brand {
@@ -34,34 +35,34 @@ body {
     color: var(--dark-highlight);
 }
 
-nav .brand {
+.nav-link {
     color: var(--very-dark-highlight);
-    font-size: 1.4rem;
-
 }
 
-.nav-link,
 .navbar-text {
-    color: var(--very-dark-highlight);
-}
-
-#logo {
-    height: 1.5rem;
-    margin-right: 0.5rem;
-}
-
-.nav-link:hover,
-nav .brand:hover {
     color: var(--dark-highlight);
+}
+
+.nav-link:hover{
+    color: var(--dark-highlight);
+}
+
+nav .brand {
+    font-weight: 400;
+}
+
+nav .brand:hover {
+    color: var(--very-dark-highlight);
 }
 
 .nav-item .active{
     font-weight: bold;
 }
 
-.navbar-text {
-    font-family: Lato, sans-serif;
-    font-weight: bold;
+#logo {
+    height: 1.5rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 
 .navbar-toggler-icon {
@@ -80,6 +81,17 @@ nav .brand:hover {
 .dark-bg {
     background-color: var(--dark-highlight);
 }
+
+.pagination a:hover {
+    color: var(--dark-highlight)
+}
+
+.form-select {
+    color: var(--very-dark-highlight);
+    border-color: var(--light-highlight);
+}
+
+/* Recipe detail view */
 
 .main-bg {
     background-color: var(--light-neutral);
@@ -150,9 +162,12 @@ nav .brand:hover {
     color: var(--highlight) ;
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-link:active,
+.btn-search:hover,
+.btn-search:active {
     color: var(--light-highlight);
-}
+} 
 
 
 .recipe-title {
