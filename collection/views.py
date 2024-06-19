@@ -89,7 +89,7 @@ def comment_edit(request, slug, comment_id):
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
-     """
+    """
     queryset = Recipe.objects.filter(published=True)
     recipe = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -132,6 +132,13 @@ class SearchResultsView(generic.ListView):
 
 
 class FilterResultsView(generic.ListView):
+    """
+    view for getting filtered recipes using the following dropdown forms:
+    temp
+    diet
+    taste
+    texture
+    """
     model = Recipe
     template_name = 'collection/index.html'
     paginate_by = 6
@@ -158,7 +165,7 @@ class FilterResultsView(generic.ListView):
             ).distinct()
         return object_list
 
-    # add query to context, so it can be displayed on the results page
+    # add query and object count to context, so they can be displayed on the results page
     def get_context_data(self, **kwargs):
         context = super(FilterResultsView, self).get_context_data(**kwargs)
         context['object_count'] = self.object_list.count()
