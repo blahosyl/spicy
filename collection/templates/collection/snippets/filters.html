@@ -1,7 +1,7 @@
-<div d-flex class="row">
-    <div class="col">
+<div class="row mx-2">
+    <div class="col-6 col-md-3 gx-2">
         <!-- temperature filter form -->
-        <form id="temperature-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
+        <form id="temperature-selector-div" class="mx-1" action="{% url 'filter_results' %}" method="get"
             aria-label="Temperature filter">
             <select id="temperature-selector" class="form-select" name="temp" onchange="this.form.submit()"
                 aria-label="Temperature selector">
@@ -12,9 +12,9 @@
             </select>
         </form>
     </div>
-    <div class="col">
+    <div class="col-6 col-md-3 gx-2">
         <!-- diet filter form -->
-        <form id="diet-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
+        <form id="diet-selector-div" class="mx-1" action="{% url 'filter_results' %}" method="get"
             aria-label="Diet filter">
             <select id="diet-selector" class="form-select" name="diet" onchange="this.form.submit()"
                 aria-label="Diet selector">
@@ -25,9 +25,9 @@
             </select>
         </form>
     </div>
-    <div class="col">
+    <div class="col-6 col-md-3 gx-2">
         <!-- taste filter form -->
-        <form id="taste-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
+        <form id="taste-selector-div" class="mx-1" action="{% url 'filter_results' %}" method="get"
             aria-label="Taste filter">
             <select id="taste-selector" class="form-select" name="taste" onchange="this.form.submit()"
                 aria-label="Taste selector">
@@ -40,9 +40,9 @@
             </select>
         </form>
     </div>
-    <div class="col">
+    <div class="col-6 col-md-3 gx-2">
         <!-- texture filter form -->
-        <form id="texture-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
+        <form id="texture-selector-div" class="mx-1" action="{% url 'filter_results' %}" method="get"
             aria-label="Texture filter">
             <select id="texture-selector" class="form-select" name="texture" onchange="this.form.submit()"
                 aria-label="Texture selector">
