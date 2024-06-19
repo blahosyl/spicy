@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net', #dev
                 'spicy-recipes-django-5d174ffc7c94.herokuapp.com' #prod
@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'collection',
+    'community',
 ]
 
 SITE_ID = 1
