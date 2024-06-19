@@ -33,7 +33,7 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('instructions',)
     inlines = [IngredientQuantityInline, RecipeAttributeInline, CommentInline]
 
-    # staff users (who are not superadmins) should only manage their own recipes
+    # staff users (who are not superadmins) should only view, change & delete their own recipes
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
@@ -48,9 +48,21 @@ class IngredientAdmin(admin.ModelAdmin):
 class IngredientAdmin(admin.ModelAdmin):
   inlines = [RecipeAttributeInline]
 
+# staff users (who are not superadmins) should only view, change & delete their own objects
+class StaffAdmin(admin.ModelAdmin):
+
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(recipe__author=request.user)
+
+
 # also register these models as stand-alone in the admin panel
-admin.site.register(IngredientQuantity)
-admin.site.register(RecipeAttribute)
+#staff users only view, change & delete their own ingredient quantities
+admin.site.register(IngredientQuantity, StaffAdmin)
+#staff users only view, change & delete their own recipe attributes
+admin.site.register(RecipeAttribute, StaffAdmin)
 admin.site.register(Comment)
 
 

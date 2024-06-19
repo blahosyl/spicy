@@ -167,6 +167,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [get the URL with Javascript](https://www.w3schools.com/howto/howto_js_get_url.asp)
 - [Bootstrap gutters](https://getbootstrap.com/docs/5.0/layout/gutters/#horizontal-gutters)
 - [Bootstrap text utilities](https://getbootstrap.com/docs/5.0/utilities/text/)
+- [restrict objects available to staff users in the admin panel](https://stackoverflow.com/a/71318569)
 
 ### General advice
 
