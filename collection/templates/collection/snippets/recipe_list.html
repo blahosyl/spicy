@@ -12,7 +12,7 @@
                   alt="{{ recipe.title }}">
                 {% endif %}
                 <div class="image-flash">
-                    <p class="author">Author: {{ recipe.author }}</p>
+                    <p class="author">{{ recipe.author }}</p>
                 </div>
             </div>
             <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link stretched-link">

@@ -123,7 +123,6 @@ nav .brand:hover {
 .author {
     color: var(--white);
     margin: 4px;
-    text-transform: uppercase;
 }
 
 .masthead {
