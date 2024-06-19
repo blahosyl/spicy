@@ -33,6 +33,13 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('instructions',)
     inlines = [IngredientQuantityInline, RecipeAttributeInline, CommentInline]
 
+    # staff users (who are not superadmins) should only manage their own recipes
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(author=request.user)
+
 @admin.register(Ingredient)
 class IngredientAdmin(admin.ModelAdmin):
     inlines = [IngredientQuantityInline]
