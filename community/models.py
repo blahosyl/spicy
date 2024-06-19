@@ -19,4 +19,4 @@ class Profile(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.user.username + " | " + self.firstname
+        return "username: " + self.user.username + " | first name: " + self.firstname
