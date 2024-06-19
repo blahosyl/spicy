@@ -26,6 +26,7 @@
 body {
     background-color: var(--white);
     color: var(--very-dark-highlight);
+    font-family: "Rubik", sans-serif;
 }
 
 .brand {
