@@ -21,9 +21,12 @@
             {% if taste != None and taste != "any taste" %}
                 <h2>{{ object_count }} results for "{{ taste }}"</h1>
             {% endif %}
+            {% if texture != None and texture != "any texture" %}
+                <h2>{{ object_count }} results for "{{ texture }}"</h1>
+            {% endif %}
         </div>
 
-        {% if temp != "any temperature" and diet != "any diet" %}
+        {% if temp != "any temperature" and diet != "any diet" and taste != "any taste" and texture != "any texture" %}
         <div class="col-2 col-md-4  d-flex justify-content-end">
             <a class="link" href="{% url 'home' %}" aria-label="Reset filters">Reset filters</a>
         </div>

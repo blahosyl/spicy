@@ -13,6 +13,10 @@
                     <li><a href="?page={{ page_obj.previous_page_number }}&temp={{ temp }}" class="page-link"> &laquo; PREV</a></li>
                 {% elif diet %}
                     <li><a href="?page={{ page_obj.previous_page_number }}&diet={{ diet }}" class="page-link"> &laquo; PREV</a></li>
+                {% elif taste %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}&taste={{ taste }}" class="page-link"> &laquo; PREV</a></li>
+                {% elif texture %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}&texture={{ texture }}" class="page-link"> &laquo; PREV</a></li>
                 {% else %}
                     <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> &laquo; PREV</a></li>
                 {% endif %}
@@ -24,6 +28,10 @@
                     <li><a href="?page={{ page_obj.next_page_number }}&temp={{ temp }}" class="page-link"> NEXT &raquo;</a></li>
                 {% elif diet %}
                     <li><a href="?page={{ page_obj.next_page_number }}&diet={{ diet }}" class="page-link"> NEXT &raquo;</a></li>
+                {% elif taste %}
+                    <li><a href="?page={{ page_obj.next_page_number }}&taste={{ taste }}" class="page-link"> NEXT &raquo;</a></li>
+                {% elif texture %}
+                    <li><a href="?page={{ page_obj.next_page_number }}&texture={{ texture }}" class="page-link"> NEXT &raquo;</a></li>
                 {% else %}
                     <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
                 {% endif %}

@@ -40,4 +40,17 @@
             </select>
         </form>
     </div>
+    <div class="col">
+        <!-- texture filter form -->
+        <form id="texture-selector-div" class="mx-3" action="{% url 'filter_results' %}" method="get"
+            aria-label="Texture filter">
+            <select id="texture-selector" class="form-select" name="texture" onchange="this.form.submit()"
+                aria-label="Texture selector">
+                <option value="any texture" selected="selected">any texture</option>
+                <option value="chunky">chunky</option>
+                <option value="crunchy">crunchy</option>
+                <option value="smooth">smooth</option>
+            </select>
+        </form>
+    </div>
 </div>

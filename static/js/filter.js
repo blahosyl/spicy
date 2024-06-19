@@ -5,6 +5,7 @@
 let temperatureSelector = document.getElementById('temperature-selector');
 let dietSelector = document.getElementById('diet-selector');
 let tasteSelector = document.getElementById('taste-selector');
+let textureSelector = document.getElementById('texture-selector');
 
 /** populate storage with the value form the selector form */
 function storeFilters() {
@@ -12,6 +13,7 @@ function storeFilters() {
     localStorage.setItem("temperatureFilter", temperatureSelector.value);
     localStorage.setItem("dietFilter", dietSelector.value);
     localStorage.setItem("tasteFilter", tasteSelector.value);
+    localStorage.setItem("textureFilter", textureSelector.value);
     
     applyFilters();
 }
@@ -23,11 +25,13 @@ function applyFilters() {
     let currentTemparatureFilter = localStorage.getItem("temperatureFilter");
     let currentDietFilter = localStorage.getItem("dietFilter");
     let currentTasteFilter = localStorage.getItem("tasteFilter");
+    let currentTextureFilter = localStorage.getItem("textureFilter");
 
     // set the filter selector value to the one retrieved from storage
     temperatureSelector.value = currentTemparatureFilter;
     dietSelector.value = currentDietFilter;
     tasteSelector.value = currentTasteFilter;
+    textureSelector.value = currentTextureFilter;
 }
 
 /** reset the temperature filter form and storage value*/
@@ -48,6 +52,12 @@ function resetTaste() {
     localStorage.setItem("tasteFilter", "any taste");
 }
 
+/** reset the texture filter form and storage value*/
+function resetTexture() {
+    textureSelector.value = "any texture";
+    localStorage.setItem("textureFilter", "any texture");
+}
+
 /** if the URL doesn't include the string 'filter', reset all filters */
 function resetAllFilters() {
     if (!window.location.href.includes('filter')) {
@@ -61,20 +71,33 @@ function resetAllFilters() {
 
         localStorage.setItem("tasteFilter", "any taste");
         tasteSelector.value = "any taste";
+        
+        localStorage.setItem("textureFilter", "any texture");
+        textureSelector.value = "any texture";
     }
 }
 
 temperatureSelector.addEventListener("change", storeFilters);
 temperatureSelector.addEventListener("change", resetDiet);
 temperatureSelector.addEventListener("change", resetTaste);
+temperatureSelector.addEventListener("change", resetTexture);
 
 dietSelector.addEventListener("change", storeFilters);
 dietSelector.addEventListener("change", resetTemperature);
 dietSelector.addEventListener("change", resetTaste);
+dietSelector.addEventListener("change", resetTexture);
+
 
 tasteSelector.addEventListener("change", storeFilters);
 tasteSelector.addEventListener("change", resetTemperature);
 tasteSelector.addEventListener("change", resetDiet);
+tasteSelector.addEventListener("change", resetTexture);
+
+textureSelector.addEventListener("change", storeFilters);
+textureSelector.addEventListener("change", resetTemperature);
+textureSelector.addEventListener("change", resetDiet);
+textureSelector.addEventListener("change", resetTaste);
+
 
 document.addEventListener("DOMContentLoaded", applyFilters)
 document.addEventListener("DOMContentLoaded", resetAllFilters);

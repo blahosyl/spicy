@@ -140,6 +140,7 @@ class FilterResultsView(generic.ListView):
         temp = self.request.GET.get("temp")
         diet = self.request.GET.get("diet")
         taste = self.request.GET.get("taste")
+        texture = self.request.GET.get("texture")
         object_list = Recipe.objects.all()
         if temp:
             query = temp
@@ -147,7 +148,9 @@ class FilterResultsView(generic.ListView):
             query = diet
         if taste:
             query = taste
-        if query == "any temperature" or query == "any diet" or query == "any taste":
+        if texture:
+            query = texture
+        if query == "any temperature" or query == "any diet" or query == "any taste" or query == "any texture":
             object_list = Recipe.objects.all()
         else:
             object_list = Recipe.objects.filter(
@@ -162,4 +165,5 @@ class FilterResultsView(generic.ListView):
         context['temp'] = self.request.GET.get('temp')
         context['diet'] = self.request.GET.get('diet')
         context['taste'] = self.request.GET.get('taste')
+        context['texture'] = self.request.GET.get('texture')
         return context
