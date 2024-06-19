@@ -59,6 +59,10 @@ nav .brand:hover {
     font-weight: bold;
 }
 
+.active-link {
+    font-weight: bold;
+}
+
 .navbar-text {
     font-family: Lato, sans-serif;
     font-weight: bold;

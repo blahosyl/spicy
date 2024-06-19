@@ -50,22 +50,6 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-
                 </ul>
 
                 <span class="navbar-text mx-auto">
@@ -101,12 +85,24 @@
 
 
     <main class="flex-shrink-0 main-bg">
+                
         <!-- message showing if user is logged in or not -->
         {% if user.is_authenticated %}
-        <p class="text-end m-3">Welcome, {{ user }}!</p>
+        <p class="text-end m-3">
+            Welcome, {{ user }} 
+            <a class="ms-4 link {% if request.path == logout_url %}active-link{% endif %}" aria-current="page"
+            href="{% url 'account_logout' %}">Logout</a>
+        </p>
         {% else %}
-        <p class="text-end m-3">You are not logged in</p>
+        <p class="text-end m-3">
+            You are not logged in 
+            <a class="ms-4 link {% if request.path == signup_url %}active-link{% endif %}" aria-current="page"
+                    href="{% url 'account_signup' %}">Register</a>
+            <a class="ms-2 link {% if request.path == login_url %}active-link{% endif %}" aria-current="page"
+                href="{% url 'account_login' %}">Login</a>
+        </p>
         {% endif %}
+
 
         {% block content %}
         <!-- Content Goes here -->
