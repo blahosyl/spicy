@@ -84,6 +84,11 @@ nav .brand:hover {
     color: var(--dark-highlight)
 }
 
+.form-select {
+    color: var(--very-dark-highlight);
+    border-color: var(--light-highlight);
+}
+
 /* Recipe detail view */
 
 .main-bg {
