@@ -35,37 +35,34 @@ body {
     color: var(--dark-highlight);
 }
 
-nav .brand {
+.nav-link {
     color: var(--very-dark-highlight);
 }
 
-.nav-link,
 .navbar-text {
-    color: var(--very-dark-highlight);
-}
-
-#logo {
-    height: 1.5rem;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-}
-
-.nav-link:hover,
-nav .brand:hover {
     color: var(--dark-highlight);
+}
+
+.nav-link:hover{
+    color: var(--dark-highlight);
+}
+
+nav .brand {
+    font-weight: 400;
+}
+
+nav .brand:hover {
+    color: var(--very-dark-highlight);
 }
 
 .nav-item .active{
     font-weight: bold;
 }
 
-.active-link {
-    font-weight: bold;
-}
-
-.navbar-text {
-    font-family: Lato, sans-serif;
-    font-weight: bold;
+#logo {
+    height: 1.5rem;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 
 .navbar-toggler-icon {

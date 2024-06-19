@@ -55,7 +55,9 @@
                 <span class="navbar-text mx-auto">
                     <a class="navbar-brand" href="{% url 'home' %}">
                         <span class="brand">
-                            spicy
+                            <span class="fw-bold">
+                                spicy
+                            </span>
                             <img id="logo" src="{% static 'images/autism-infinity-symbol.png' %}" alt="Autism infinity symbol">
                             recipes for neurospicy people
                         </span>
@@ -90,15 +92,15 @@
         {% if user.is_authenticated %}
         <p class="text-end m-3">
             Welcome, {{ user }} 
-            <a class="ms-4 link {% if request.path == logout_url %}active-link{% endif %}" aria-current="page"
+            <a class="ms-4 link {% if request.path == logout_url %}fw-bold{% endif %}" aria-current="page"
             href="{% url 'account_logout' %}">Logout</a>
         </p>
         {% else %}
         <p class="text-end m-3">
             You are not logged in 
-            <a class="ms-4 link {% if request.path == signup_url %}active-link{% endif %}" aria-current="page"
+            <a class="ms-4 link {% if request.path == signup_url %}fw-bold{% endif %}" aria-current="page"
                     href="{% url 'account_signup' %}">Register</a>
-            <a class="ms-2 link {% if request.path == login_url %}active-link{% endif %}" aria-current="page"
+            <a class="ms-2 link {% if request.path == login_url %}fw-bold{% endif %}" aria-current="page"
                 href="{% url 'account_login' %}">Login</a>
         </p>
         {% endif %}
