@@ -267,3 +267,18 @@ nav .brand:hover {
 .profile-field-name {
     color: var(--dark-highlight)
 }
+
+/* Profile detail page */
+
+.profile-detail-name {
+    color: var(--dark-highlight);
+}
+
+
+.staff-label {
+    font-size: larger;
+    font-weight: bold;
+    background-color: var(--highlight);
+    border: solid 4px var(--dark-highlight);
+    border-radius: 10px;
+}
