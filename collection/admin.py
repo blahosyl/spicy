@@ -9,6 +9,8 @@ class IngredientQuantityInline(admin.TabularInline):
     """
     model = IngredientQuantity
 
+    # for Staff users, only their recipes are visible/available in the recipe field,
+    # so they can only create new objects linked to their own recipes    
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "recipe":
             kwargs["queryset"] = Recipe.objects.filter(author=request.user)
@@ -46,6 +48,8 @@ class PostAdmin(SummernoteModelAdmin):
             return qs
         return qs.filter(author=request.user)
 
+    # for Staff users, only their username is visible/available in the author field,
+    # so they can only create new recipes linked to their own username    
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "author":
             kwargs["queryset"] = User.objects.filter(username=request.user)
@@ -59,15 +63,17 @@ class IngredientAdmin(admin.ModelAdmin):
 class IngredientAdmin(admin.ModelAdmin):
   inlines = [RecipeAttributeInline]
 
-# staff users (who are not superadmins) should only view, change & delete their own objects
 class StaffAdmin(admin.ModelAdmin):
 
+    # staff users (who are not superadmins) can only view, change & delete their own objects
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         if request.user.is_superuser:
             return qs
         return qs.filter(recipe__author=request.user)
 
+    # for Staff users, only their recipes are visible/available in the recipe field,
+    # so they can only create new objects linked to their own recipes
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == "recipe":
             kwargs["queryset"] = Recipe.objects.filter(author=request.user)
@@ -75,9 +81,11 @@ class StaffAdmin(admin.ModelAdmin):
 
 
 # also register these models as stand-alone in the admin panel
-#staff users only view, change & delete their own ingredient quantities
+#staff users only create, view, change & delete ingredient quantities
+# related to their own recipes
 admin.site.register(IngredientQuantity, StaffAdmin)
-#staff users only view, change & delete their own recipe attributes
+#staff users only create view, change & delete recipe attributes
+# related to their own recipes
 admin.site.register(RecipeAttribute, StaffAdmin)
 admin.site.register(Comment)
 

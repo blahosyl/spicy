@@ -173,6 +173,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap: make all cards the same height](https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-cards-the-same-height-in-card-columns)
 - [Bootstrap borders](https://getbootstrap.com/docs/5.0/utilities/borders/)
 - [Bootstrap columns](https://getbootstrap.com/docs/5.0/layout/columns/)
+- [restrict ForeignKey Field dropdown options in Django admin](https://stackoverflow.com/a/73586108)
+- [Django `formfield_for_foreignkey` documentation](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.formfield_for_foreignkey)
 
 ### General advice
 
