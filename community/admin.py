@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.models import User
 from .models import Profile
 
 # Register your models here.
@@ -14,4 +15,9 @@ class ProfileAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return qs
         return qs.filter(user=request.user)
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "user":
+            kwargs["queryset"] = User.objects.filter(username=request.user)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
