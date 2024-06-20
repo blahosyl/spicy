@@ -8,3 +8,4 @@ from django_summernote.admin import SummernoteModelAdmin
 class ProfileAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('about',)
+    prepopulated_fields = {"slug": ("user",)}

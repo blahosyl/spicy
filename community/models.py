@@ -11,6 +11,7 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="profile"
     )
+    slug = models.SlugField(max_length=200, unique=True)
     firstname = models.CharField(max_length=200, blank=True)
     lastname = models.CharField(max_length=200, blank=True)
     pronouns = models.CharField(max_length=200, blank=True)
