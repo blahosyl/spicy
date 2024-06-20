@@ -169,6 +169,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Bootstrap text utilities](https://getbootstrap.com/docs/5.0/utilities/text/)
 - [restrict objects available to staff users in the admin panel](https://stackoverflow.com/a/71318569)
 - [Django documentation: `ModelAdmin.get_queryset(request)`](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.get_queryset)
+- [Bootstrap: make all cards the same height](https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-cards-the-same-height-in-card-columns)
 
 ### General advice
 

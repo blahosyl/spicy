@@ -246,3 +246,23 @@ nav .brand:hover {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/* Profile list */
+
+.profile-card {
+    background-color: var(--light-highlight);
+    border-radius: 5px;
+}
+
+.profile-name {
+    background-color: var(--dark-highlight);
+    border-radius: 5px;
+}
+
+.profile-fields-card {
+    font-size: smaller;
+}
+
+.profile-field-name {
+    color: var(--dark-highlight)
+}
