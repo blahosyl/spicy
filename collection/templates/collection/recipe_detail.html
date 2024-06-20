@@ -18,14 +18,7 @@
                     {% endfor %}
                 </p>
             </div>
-            <div class="d-none d-md-block col-md-6 col-lg-8 masthead-image">
-                {% if "placeholder" in recipe.featured_image.url %}
-                <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
-                {% else %}
-                <img src="{{ recipe.featured_image.url }}" class="scale" alt="{{ recipe.title }}">
-                {% endif %}
-            </div>
-            <div class="d-md-none">
+            <div class="d-block col-md-6 col-lg-8 masthead-image h-100">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
@@ -35,17 +28,6 @@
         </div>
     </div>
 </div>
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="recipe-attributes col-12 text-center py-4">
-                    {% for recipe_attribute in recipe_attributes %}
-                    #{{ recipe_attribute.attribute.attr_value }}
-                    {% endfor %}
-        </div>
-    </div>
-
-</div> -->
 
 <div class="container">
     <div class="row">

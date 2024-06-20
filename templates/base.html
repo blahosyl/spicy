@@ -58,7 +58,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'home' %}">Home</a>
+                            href="{% url 'home' %}">Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == community_url %}active{% endif %}" aria-current="page"
@@ -150,7 +150,7 @@
     <!-- color theme selector script -->
     <script src="{% static 'js/themes.js' %}"></script>
 
-    <!-- temperature filter selector script -->
+    <!-- filter script -->
     <script src="{% static 'js/filter.js' %}"></script>
 
     {% block extras %}

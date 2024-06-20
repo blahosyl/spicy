@@ -130,20 +130,24 @@ nav .brand:hover {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
     width: 100%;
 }
 
-.masthead-container,
+.masthead-container {
+    height: 50%;
+}
+
 .masthead-row,
 .masthead-text {
     height: 100%;
 }
 
+
 .masthead-text {
     background-color: var(--dark-highlight);
     color: var(--white);
     position: relative;
+    height: auto;
 }
 
 .masthead-image {
@@ -281,4 +285,16 @@ nav .brand:hover {
     background-color: var(--highlight);
     border: solid 4px var(--dark-highlight);
     border-radius: 10px;
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 1024px) {
+
+    .masthead {
+        height: 30%;
+    }
+
+    .masthead-container {
+        height: 100%;
+    }
 }
