@@ -31,7 +31,7 @@
                                             {{ profile.user.username }}
                                         {% endif %}
                                     </div>
-                            <a href="#" class="recipe-link stretched-link">
+                            <a href="{% url 'profile_detail' profile.slug %}" class="recipe-link stretched-link">
                             </a>
                             {% if profile.user.is_staff%}
                                 staff
