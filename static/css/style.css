@@ -257,6 +257,7 @@ nav .brand:hover {
 .profile-name {
     background-color: var(--dark-highlight);
     border-radius: 5px;
+    min-height: 4rem;
 }
 
 .profile-fields-card {
