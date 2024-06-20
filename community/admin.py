@@ -5,7 +5,6 @@ from django_summernote.admin import SummernoteModelAdmin
 # Register your models here.
 
 @admin.register(Profile)
-class ProfileAdmin(SummernoteModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
 
-    summernote_fields = ('about',)
     prepopulated_fields = {"slug": ("user",)}
