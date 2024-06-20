@@ -122,6 +122,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [pluralize words depending on database value](https://testdriven.io/tips/db65f09a-06a4-4a8f-843f-a83a49b2f0c7/)
 - [Bootstrap spacing](https://getbootstrap.com/docs/5.0/utilities/spacing/)
 - [Bootstrap position](https://getbootstrap.com/docs/5.0/utilities/position/)
+- [Bootstrap cards](https://getbootstrap.com/docs/5.0/components/card/)
 - [Bootstrap grid system](https://getbootstrap.com/docs/5.0/layout/grid/)
 - [change CSS color variables with JS](https://www.toptal.com/front-end/dynamic-css-with-custom-properties)
 - [Bootstrap nav bar](https://getbootstrap.com/docs/5.0/components/navbar/)
@@ -170,6 +171,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [restrict objects available to staff users in the admin panel](https://stackoverflow.com/a/71318569)
 - [Django documentation: `ModelAdmin.get_queryset(request)`](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.get_queryset)
 - [Bootstrap: make all cards the same height](https://stackoverflow.com/questions/35868756/how-to-make-bootstrap-cards-the-same-height-in-card-columns)
+- [Bootstrap borders](https://getbootstrap.com/docs/5.0/utilities/borders/)
+- [Bootstrap columns](https://getbootstrap.com/docs/5.0/layout/columns/)
 
 ### General advice
 
