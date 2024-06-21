@@ -12,7 +12,7 @@ class IngredientQuantityInline(admin.TabularInline):
     # for Staff users, only their recipes are visible/available in the recipe field,
     # so they can only create new objects linked to their own recipes    
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        if db_field.name == "recipe":
+        if db_field.name == "recipe" and not request.user.is_superuser:
             kwargs["queryset"] = Recipe.objects.filter(author=request.user)
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
@@ -51,7 +51,7 @@ class PostAdmin(SummernoteModelAdmin):
     # for Staff users, only their username is visible/available in the author field,
     # so they can only create new recipes linked to their own username    
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        if db_field.name == "author":
+        if db_field.name == "author" and not request.user.is_superuser:
             kwargs["queryset"] = User.objects.filter(username=request.user)
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
@@ -75,7 +75,7 @@ class StaffAdmin(admin.ModelAdmin):
     # for Staff users, only their recipes are visible/available in the recipe field,
     # so they can only create new objects linked to their own recipes
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
-        if db_field.name == "recipe":
+        if db_field.name == "recipe" and not request.user.is_superuser:
             kwargs["queryset"] = Recipe.objects.filter(author=request.user)
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
