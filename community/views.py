@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from .models import Profile
 
+
 def all_profiles(request):
     """
     Renders the Profiles page, showing all profiles
@@ -12,6 +13,7 @@ def all_profiles(request):
         "community/profiles.html",
         {"profiles": profiles},
     )
+
 
 def profile_detail(request, slug):
     """
@@ -34,5 +36,5 @@ def profile_detail(request, slug):
         request,
         "community/profile_detail.html",
         {"profile": profile,
-        },
+         },
     )
