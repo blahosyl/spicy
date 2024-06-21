@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url #converts database URL to format understood by Django
+import dj_database_url  # converts database URL to format understood by Django
 if os.path.isfile('env.py'):
     import env
 import cloudinary
@@ -31,9 +31,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net', #dev
-                'spicy-recipes-django-5d174ffc7c94.herokuapp.com' #prod
-]
+ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net',
+                 # dev
+                 'spicy-recipes-django-5d174ffc7c94.herokuapp.com'  # prod
+                 ]
 
 
 # Application definition
@@ -116,8 +117,8 @@ DATABASES = {
 # }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://*.codeinstitute-ide.net/", #dev
-    "https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/" #prod
+    "https://*.codeinstitute-ide.net/",  # dev
+    "https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/"  # prod
     "https://*.google.com"
 ]
 
@@ -143,11 +144,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
-ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400 # 1 day in seconds
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400  # 1 day in seconds
 
 
 # if block from Stacey Robson on CI Slack
-if DEBUG == True:
+if DEBUG is True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -184,4 +185,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # force https for Cloudinary
-cloudinary.config(secure = True)
+cloudinary.config(secure=True)
