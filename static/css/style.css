@@ -190,6 +190,10 @@ nav .brand:hover {
     margin-top: 5rem;
 }
 
+.recipe-card {
+    height: 95%;
+}
+
 .card-header {
     background-color: var(--highlight);
 }
@@ -300,7 +304,7 @@ nav .brand:hover {
         height: 100%;
     }
 
-    img {
+    .detail-img {
         height: 100%;
         object-fit: contain;
         object-position: center;
