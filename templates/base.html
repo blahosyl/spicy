@@ -18,14 +18,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
 
-     <!-- favicon -->
+    <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -50,10 +51,10 @@
                     <span class="fw-bold">
                         spicy
                     </span>
-                    <img id="logo" src="{% static 'images/autism-infinity-symbol.png' %}" alt="Autism infinity symbol">
+                    <img class="logo" src="{% static 'images/autism-infinity-symbol.png' %}"
+                        alt="Autism infinity symbol">
                 </span>
             </a>
-        </span>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -72,17 +73,19 @@
                             <span class="fw-bold">
                                 spicy
                             </span>
-                            <img id="logo" src="{% static 'images/autism-infinity-symbol.png' %}" alt="Autism infinity symbol">
+                            <img class="logo" src="{% static 'images/autism-infinity-symbol.png' %}"
+                                alt="Autism infinity symbol">
                             <span class="d-none d-lg-inline">recipes for neurospicy people</span>
                         </span>
                     </a>
                 </span>
-            
+
                 <!-- color theme selector form -->
                 <!-- `l` left and `r` right for Bootstrap spacing is replaced by `s` start and `e` end -->
                 <form id="theme-selector-div" class="me-lg-3" action="/action_page.php"
                     aria-label="Color theme selector">
-                    <select id="theme-selector" class="form-select" name="theme-selector" aria-label="Color theme selector">
+                    <select id="theme-selector" class="form-select" name="theme-selector"
+                        aria-label="Color theme selector">
                         <option value="orange" selected="selected">orange</option>
                         <option value="blue">blue</option>
                         <option value="green">green</option>
@@ -101,19 +104,19 @@
 
 
     <main class="flex-shrink-0 main-bg">
-                
+
         <!-- message showing if user is logged in or not -->
         {% if user.is_authenticated %}
         <p class="text-end m-3">
-            Welcome, {{ user }} 
+            Welcome, {{ user }}
             <a class="ms-4 link {% if request.path == logout_url %}fw-bold{% endif %}" aria-current="page"
-            href="{% url 'account_logout' %}">Logout</a>
+                href="{% url 'account_logout' %}">Logout</a>
         </p>
         {% else %}
         <p class="text-end m-3">
-            You are not logged in 
+            You are not logged in
             <a class="ms-4 link {% if request.path == signup_url %}fw-bold{% endif %}" aria-current="page"
-                    href="{% url 'account_signup' %}">Register</a>
+                href="{% url 'account_signup' %}">Register</a>
             <a class="ms-2 link {% if request.path == login_url %}fw-bold{% endif %}" aria-current="page"
                 href="{% url 'account_login' %}">Login</a>
         </p>
