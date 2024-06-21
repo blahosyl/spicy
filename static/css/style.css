@@ -134,12 +134,13 @@ nav .brand:hover {
 }
 
 .masthead-container {
-    height: 50%;
+    height: 50vh;
 }
 
 .masthead-row,
 .masthead-text {
-    height: 100%;
+    max-height: 100%;
+    background-color: var(--dark-highlight);
 }
 
 
@@ -153,6 +154,7 @@ nav .brand:hover {
 .masthead-image {
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .recipe-link {
@@ -185,7 +187,7 @@ nav .brand:hover {
 
 .recipe-attributes {
     margin-left: 5%;
-    margin-top: auto;
+    margin-top: 5rem;
 }
 
 .card-header {
@@ -288,13 +290,36 @@ nav .brand:hover {
 }
 
 /* laptops and desktops */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
 
     .masthead {
-        height: 30%;
+        height: 40vh;
     }
 
     .masthead-container {
         height: 100%;
+    }
+
+    img {
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        float: inline-end;
+    }
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 1024px) {
+
+    .masthead {
+        height: 50vh;
+    }
+
+    .masthead-container {
+        height: 100%;
+    }
+
+    .recipe-attributes {
+        margin-top: 10rem;
     }
 }

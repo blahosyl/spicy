@@ -7,7 +7,7 @@
 <div class="masthead">
     <div class="container masthead-container">
         <div class="row g-0 masthead-row">
-            <div class="col-md-6 col-lg-4 masthead-text d-flex flex-column">
+            <div class="col-md-5 col-lg-4 masthead-text d-flex flex-column">
                 <!-- Recipe title goes in these h1 tags -->
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
@@ -18,7 +18,7 @@
                     {% endfor %}
                 </p>
             </div>
-            <div class="d-block col-md-6 col-lg-8 masthead-image h-100">
+            <div class="d-block col-md-7 col-lg-8 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder image">
                 {% else %}
