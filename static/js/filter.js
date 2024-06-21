@@ -61,7 +61,7 @@ function resetTexture() {
 /** if the URL doesn't include the string 'filter', reset all filters */
 function resetAllFilters() {
     if (!window.location.href.includes('filter')) {
-        console.log("reset all filters")
+        console.log("reset all filters");
 
         localStorage.setItem("temperatureFilter", "any temperature");
         temperatureSelector.value = "any temperature";
@@ -99,5 +99,5 @@ textureSelector.addEventListener("change", resetDiet);
 textureSelector.addEventListener("change", resetTaste);
 
 
-document.addEventListener("DOMContentLoaded", applyFilters)
+document.addEventListener("DOMContentLoaded", applyFilters);
 document.addEventListener("DOMContentLoaded", resetAllFilters);

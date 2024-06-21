@@ -60,4 +60,4 @@ function setColorTheme() {
 }
 
 themeSelector.addEventListener("change", checkStorage);
-document.addEventListener("DOMContentLoaded", setColorTheme)
+document.addEventListener("DOMContentLoaded", setColorTheme);
