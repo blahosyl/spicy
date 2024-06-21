@@ -30,7 +30,8 @@ def recipe_detail(request, slug):
 
     queryset = Recipe.objects.filter(published=True)
     recipe = get_object_or_404(queryset, slug=slug)
-    # `ingredients` is the `related_name` for the Recipe model in the IngredientQuantity model
+    # `ingredients` is the `related_name` for the Recipe model
+    # in the IngredientQuantity model
     recipe_ingredients = recipe.ingredients.all()
     ingredient_count = recipe_ingredients.count()
     recipe_attributes = recipe.attributes.all()
@@ -53,13 +54,13 @@ def recipe_detail(request, slug):
         request,
         "collection/recipe_detail.html",
         {"recipe": recipe,
-        "recipe_ingredients": recipe_ingredients,
-        "ingredient_count": ingredient_count,
-        "recipe_attributes": recipe_attributes,
-        "comments": comments,
-        "comment_count": comment_count,
-        "comment_form": comment_form,
-        },
+            "recipe_ingredients": recipe_ingredients,
+            "ingredient_count": ingredient_count,
+            "recipe_attributes": recipe_attributes,
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form,
+         },
     )
 
 
@@ -81,7 +82,8 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
@@ -98,37 +100,37 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 # based on https://learndjango.com/tutorials/django-search-tutorial
 class SearchResultsView(generic.ListView):
-        model = Recipe
-        template_name = 'collection/search_results.html'
-        paginate_by = 6
+    model = Recipe
+    template_name = 'collection/search_results.html'
+    paginate_by = 6
 
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        object_list = Recipe.objects.filter(
+            Q(title__icontains=query)
+            | Q(excerpt__icontains=query)
+            | Q(instructions__icontains=query)
+            | Q(comments__body__icontains=query)
+            # querying of related models implemented with help from Roman Rakic
+            | Q(attributes__attribute__attr_value__icontains=query)
+            | Q(ingredients__ingredient__ingr_name__icontains=query)
+        ).distinct()
+        return object_list
 
-        def get_queryset(self): 
-            query = self.request.GET.get("q")
-            object_list = Recipe.objects.filter(
-                Q(title__icontains=query) 
-                | Q(excerpt__icontains=query)
-                | Q(instructions__icontains=query)
-                | Q(comments__body__icontains=query) 
-                # querying of related models implemented with the help of Roman Rakic
-                | Q(attributes__attribute__attr_value__icontains=query)
-                | Q(ingredients__ingredient__ingr_name__icontains=query)
-            ).distinct()
-            return object_list
-
-        # add query to context, so it can be displayed on the results page
-        def get_context_data(self, **kwargs):
-            context = super(SearchResultsView, self).get_context_data(**kwargs)
-            context['query'] = self.request.GET.get('q')
-            context['object_count'] = self.object_list.count()
-            return context
+    # add query to context, so it can be displayed on the results page
+    def get_context_data(self, **kwargs):
+        context = super(SearchResultsView, self).get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('q')
+        context['object_count'] = self.object_list.count()
+        return context
 
 
 class FilterResultsView(generic.ListView):
@@ -143,7 +145,7 @@ class FilterResultsView(generic.ListView):
     template_name = 'collection/index.html'
     paginate_by = 6
 
-    def get_queryset(self): 
+    def get_queryset(self):
         temp = self.request.GET.get("temp")
         diet = self.request.GET.get("diet")
         taste = self.request.GET.get("taste")
@@ -165,7 +167,8 @@ class FilterResultsView(generic.ListView):
             ).distinct()
         return object_list
 
-    # add query and object count to context, so they can be displayed on the results page
+    # add query and object count to context,
+    # so they can be displayed on the results page
     def get_context_data(self, **kwargs):
         context = super(FilterResultsView, self).get_context_data(**kwargs)
         context['object_count'] = self.object_list.count()

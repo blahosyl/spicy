@@ -25,13 +25,14 @@ class Recipe(models.Model):
         order from most to least recently updated
         """
         ordering = ["-updated_on"]
-    
+
     def __str__(self):
         return f"{self.title} | {self.author}"
 
     def total_time(self):
         return self.prep_time + self.cook_time
-    
+
+
 class Ingredient(models.Model):
     ingr_name = models.CharField(max_length=50)
     preparation = models.CharField(max_length=200, blank=True)
@@ -43,7 +44,6 @@ class Ingredient(models.Model):
         # exclude duplicates of the same ingr_name and preparation
         unique_together = [("ingr_name", "preparation")]
 
-
     def __str__(self):
         string = f"{self.ingr_name}"
         if self.preparation:
@@ -53,12 +53,12 @@ class Ingredient(models.Model):
 
 class IngredientQuantity(models.Model):
     quantity = models.DecimalField(
-        max_digits=7, 
-        decimal_places=2, 
-        blank= True,
-        null= True,
+        max_digits=7,
+        decimal_places=2,
+        blank=True,
+        null=True,
     )
-    GR ='g'
+    GR = 'g'
     KG = 'kg'
     ML = 'ml'
     LI = 'l'
@@ -83,16 +83,15 @@ class IngredientQuantity(models.Model):
         blank=True,
     )
     recipe = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, 
+        Recipe, on_delete=models.CASCADE,
         related_name="ingredients",
     )
     ingredient = models.ForeignKey(
-        Ingredient, 
-        on_delete=models.PROTECT, 
+        Ingredient,
+        on_delete=models.PROTECT,
         related_name="quantity",
     )
     created_on = models.DateTimeField(auto_now_add=True)
-
 
     class Meta:
         """
@@ -122,13 +121,14 @@ class Comment(models.Model):
         default=False
     )
     created_on = models.DateTimeField(auto_now_add=True)
-    
-    class Meta:
-        ordering = ["created_on"] #no prefix: ascending order, - descending, ? random
-    # show recipes by title in admin panel
-    def __str__(self):
-        return f"Comment {self.body} by {self.author} | Approved: {self.approved}"
 
+    class Meta:
+        # no prefix: ascending order, - descending, ? random
+        ordering = ["created_on"]
+    # show recipes by title in admin panel
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.author} Appr: {self.approved}"
 
 
 class Attribute(models.Model):
@@ -142,19 +142,18 @@ class Attribute(models.Model):
         # exclude duplicates of the same category and attr_value
         unique_together = [("category", "attr_value")]
 
-
     def __str__(self):
         return f"{self.category}: {self.attr_value}"
 
 
 class RecipeAttribute(models.Model):
     recipe = models.ForeignKey(
-        Recipe, on_delete=models.CASCADE, 
+        Recipe, on_delete=models.CASCADE,
         related_name="attributes",
     )
     attribute = models.ForeignKey(
-        Attribute, 
-        on_delete=models.PROTECT, 
+        Attribute,
+        on_delete=models.PROTECT,
         related_name="recipes",
     )
     created_on = models.DateTimeField(auto_now_add=True)
@@ -167,7 +166,6 @@ class RecipeAttribute(models.Model):
         unique_together = [("recipe", "attribute")]
         # order alphabetically by attribute, then recipe
         ordering = ["attribute", "recipe"]
-
 
     def __str__(self):
         string = f"{self.attribute} | {self.recipe}"
