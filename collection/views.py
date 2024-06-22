@@ -159,7 +159,8 @@ class FilterResultsView(generic.ListView):
             query = taste
         if texture:
             query = texture
-        if query == "any temperature" or query == "any diet" or query == "any taste" or query == "any texture":
+        if query == "any temperature" or query == "any diet" \
+                or query == "any taste" or query == "any texture":
             object_list = Recipe.objects.all()
         else:
             object_list = Recipe.objects.filter(

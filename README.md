@@ -176,6 +176,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [restrict ForeignKey Field dropdown options in Django admin](https://stackoverflow.com/a/73586108)
 - [Django `formfield_for_foreignkey` documentation](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.formfield_for_foreignkey)
 - [Bootstrap sizing](https://getbootstrap.com/docs/5.0/utilities/sizing/)
+- [preferred way of breaking lines in Python](https://stackoverflow.com/a/53180)
 
 ### General advice
 
