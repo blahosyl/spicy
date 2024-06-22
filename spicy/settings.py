@@ -32,8 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net',
-                 # dev
-                 'spicy-recipes-django-5d174ffc7c94.herokuapp.com'  # prod
+                 'spicy-recipes-django-5d174ffc7c94.herokuapp.com'
                  ]
 
 
