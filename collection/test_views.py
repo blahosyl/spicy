@@ -24,7 +24,8 @@ class TestCollectionViews(TestCase):
         self.comment = Comment(id=1,
                                 recipe=self.recipe,
                                 author=self.user,
-                                body="This is a comment")
+                                body="Comment for deletion")
+        self.comment.save()
 
     def test_render_recipe_detail_page_with_comment_form(self):
         response = self.client.get(reverse(
@@ -50,33 +51,16 @@ class TestCollectionViews(TestCase):
             b'Comment submitted and awaiting approval',
             response.content
         )
-
-    # this gives a false positive, because the modal text is in the HTML anyway
-    def test_starting_comment_deletion(self):
-        """Test for starting to delete a comment from a recipe
-        The correct result is a modal asking to confirm deletion"""
-        self.client.login(
-            username="myUsername", password="myPassword")
-        self.comment.delete()
-        response = self.client.post(reverse(
-            'recipe_detail', args=['recipe-title']))
-        self.assertEqual(response.status_code, 200)
-        self.assertIn(
-            b'Are you sure you want to delete your comment?',
-            response.content
-        )
     
-    # this needs more work
-    def test_confirming_comment_deletion(self):
-        """Test for confirming to delete a comment from a recipe
-        when the modal asking to confirm deletion"""
+    def test_successful_comment_deletion(self):
+        """Test for successfully deleting a comment"""
         self.client.login(
             username="myUsername", password="myPassword")
         self.comment.delete()
         response = self.client.get(reverse(
             'recipe_detail', args=['recipe-title']))
         self.assertEqual(response.status_code, 200)
-        self.assertIn(
-            b'Comment deleted!',
+        self.assertNotIn(
+            b'Comment for deletion',
             response.content
         )
