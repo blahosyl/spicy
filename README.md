@@ -1,3 +1,8 @@
+<!--Shield.io badges-->
+
+![GitHub last commit](https://img.shields.io/github/last-commit/blahosyl/spicy?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/blahosyl/spicy?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/blahosyl/spicy?color=black)
 
 ## Gitpod Reminders
 
@@ -194,8 +199,6 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ### Readme
 
-### Readme
-
 - [Creating your first README with Kera Cudmore](https://www.youtube.com/watch?v=XbYJ4VlhSnY) by Code Institute
 - [Creating your first README](https://github.com/kera-cudmore/readme-examples) by Kera Cudmore
 - [Bully Book Club](https://github.com/kera-cudmore/Bully-Book-Club) by Kera Cudmore
@@ -208,6 +211,10 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [The README of my first Code Institute project](https://github.com/blahosyl/academic-publishing)
 - [The README of my second Code Institute project](https://github.com/blahosyl/operator-game)
 - [The README of my third Code Institute project](https://github.com/blahosyl/dinner-party)
+
+### Unsolicited pull request by an unknown person
+
+A person unknown to me has forked the project repository and submitted a [pull request](https://github.com/blahosyl/spicy/pull/137) with some code comments added. I have not communicated with this person or asked for their contribution to the repository. The pull request was closed without merging.
 
 
 
