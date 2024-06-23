@@ -94,7 +94,63 @@ Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
 
 ## Depoyment
 
+The following instrcutions describe the deployment process with the tools used for this project. 
+Of course, you can choose other tools/providers for the individual functions described below, e. g., a different Postgres database instead of Neon or a different development environment instead of GitPod. 
+Naturally, detailed instructions are only provided for the tools used in this project.
 
+### Prerequisites
+
+- [GitPod](https://www.gitpod.io/) (or another IDE)
+- [Python 3](https://www.python.org/downloads/release/python-385/)
+- [pip](https://github.com/pypa/pip)
+- [git](https://git-scm.com/)
+- [Neon](https://neon.tech/) (or other Postgres database)
+- [Cloudinary](https://cloudinary.com/) (or another media hosting provider)
+- [Google Mail](https://google.com) with an [app password](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237) (or another email server)
+
+### Fork the repository
+
+You can fork the repository by following these steps:
+
+1. Log in to [GitHub](https://github.com/) (if you don't have a GitHub account yet, you can [create one](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) for free).
+2. Navigate to the project website [https://github.com/blahosyl/spicy](https://github.com/blahosyl/spicy).
+3. Click on **Fork** in the upper right part of the screen.
+4. On the next page you have the possibility to change the repository name. To do this, simply write your desired name in the text field in the center part of the screen. You can also leave the name as it is.
+5. Click **Fork** in the bottom right part of the screen.
+
+>[!TIP]
+>If you do rename the repository, make sure to keep the [GitHub naming conventions](https://github.com/bcgov/BC-Policy-Framework-For-GitHub/blob/master/BC-Gov-Org-HowTo/Naming-Repos.md) in mind.
+
+### Local deployment
+
+
+
+### Deploy to Heroku
+
+#### Pre-deployment steps
+
+Make sure to complete the following pre-deployment steps on your local setup:
+
+1. Create a list of requirements by going to the terminal and typing `pip3 freeze > requirements.txt`. This popuplates your `requirements.txt` file with the list of required files.
+2. Push your changes to GitHub.
+
+#### Steps on Heroku
+
+1. Log in to your [Heroku](https://www.heroku.com/) account (or create a new one if you have not done so yet).
+2. [Create a new Heroku app](https://dashboard.heroku.com/new-app) by selecting your region and app name.
+3. Under **Settings > Config Vars** in Heroku, add the following variables:
+	- `CLOUDINARY_URL` -you can find this in your [Cloudinary](https://cloudinary.com/) console under **API Keys**
+	- `DATABASE_URL`
+	- `DEFAULT_FROM_EMAIL`: this can be the same as `EMAIL_APP_USER`
+	- `EMAIL_APP_PASSWORD`: [instructions for obtaining one](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237)
+	- `EMAIL_APP_USER`: the email used with your email server
+4. Under **Deploy > Deployment method** in Heroku, select **GitHub** and connect Heroku to your GitHub account.<br>
+Type in your repository name, then click **Search**. When your repository appears, click **Connect** next to it.
+5. Under **Deploy > Manual deploy** in Heroku, select **Deploy branch** to deploy manually.<br>
+Once the process is finished, the following message will appear:<br>
+_Your app was successfully deployed_<br>
+Click **View** under the message, and a new tab will appear with your deployed app.
+6. (optional) Under **Deploy > Automatic deploy** in Heroku, select **Enable Automatic Deploys** if you want your app to be rebuilt each time you push to the `main` branch of your GitHub repository (but make sure your `settings.py` file always has `DEBUG=False` when you do). 
 
 ## Testing
 
