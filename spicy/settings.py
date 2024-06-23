@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url  # converts database URL to format understood by Django
 if os.path.isfile('env.py'):
     import env
@@ -114,6 +115,17 @@ DATABASES = {
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+# this was suggested by Leon Potgieter. Need to run `set_pg` before, then it works
+if 'test' in sys.argv:
+    DATABASES = {'default': {
+                    'ENGINE': 'django.db.backends.postgresql',
+                    'NAME': 'test_db',
+                    'OPTIONS': {
+                        'options': '-c search_path=public',
+                    },
+                }
+    }
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
