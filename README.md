@@ -94,6 +94,8 @@ Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
 
 ## Depoyment
 
+
+
 ## Testing
 
 See the document [`TESTING.md`](TESTING.md) for details.
@@ -197,7 +199,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 [Logo/favicon](https://pixabay.com/illustrations/autism-infinity-symbol-1192408/) by [janeb13](https://pixabay.com/users/janeb13-725943/) on [Pixabay](https://pixabay.com/), converted to `ico` format with [`Favicon.io`](https://favicon.io/favicon-converter/).
 
-### Readme
+### Readmes
 
 - [Creating your first README with Kera Cudmore](https://www.youtube.com/watch?v=XbYJ4VlhSnY) by Code Institute
 - [Creating your first README](https://github.com/kera-cudmore/readme-examples) by Kera Cudmore
@@ -208,6 +210,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Horizon Photo](https://github.com/Ri-Dearg/horizon-photo/blob/master/README.md#mobile-testing) by Rory Patrick Sheridan
 - [BackeStock](https://github.com/amylour/BakeStock/) by [Amy Richardson](https://github.com/amylour)
 - [American Pizza Order System](https://github.com/useriasminnaamerican_pizza_order_system/) by [Iasmina Pal](https://github.com/useriasminna)
+- [Neverlost](https://github.com/Ri-Dearg/neverlost-thrift) by [Rory Patrick Sheridan](https://github.com/Ri-Dearg)
 - [The README of my first Code Institute project](https://github.com/blahosyl/academic-publishing)
 - [The README of my second Code Institute project](https://github.com/blahosyl/operator-game)
 - [The README of my third Code Institute project](https://github.com/blahosyl/dinner-party)
