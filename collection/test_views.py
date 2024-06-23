@@ -25,9 +25,24 @@ class TestCollectionViews(TestCase):
     def test_render_recipe_detail_page_with_comment_form(self):
         response = self.client.get(reverse(
             'recipe_detail', args=['recipe-title']))
-        print(response.context)
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Recipe title", response.content)
         self.assertIn(b"Recipe instructions", response.content)
         self.assertIsInstance(
             response.context['comment_form'], CommentForm)
+
+    def test_successful_comment_submission(self):
+        """Test for posting a comment on a recipe"""
+        self.client.login(
+            username="myUsername", password="myPassword")
+        recipe_data = {
+            'body': 'This is a test comment.'
+        }
+        response = self.client.post(reverse(
+            'recipe_detail', args=['recipe-title']), post_data)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(
+            b'Comment submitted and awaiting approval',
+            response.content
+        )
+
