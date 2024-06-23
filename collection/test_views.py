@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.test import TestCase
 from .forms import CommentForm
-from .models import Recipe
+from .models import Recipe, Comment
 
 class TestCollectionViews(TestCase):
 
@@ -21,6 +21,10 @@ class TestCollectionViews(TestCase):
                          cook_time="10",
                          published=True)
         self.recipe.save()
+        self.comment = Comment(id=1,
+                                recipe=self.recipe,
+                                author=self.user,
+                                body="This is a comment")
 
     def test_render_recipe_detail_page_with_comment_form(self):
         response = self.client.get(reverse(
@@ -39,10 +43,40 @@ class TestCollectionViews(TestCase):
             'body': 'This is a test comment.'
         }
         response = self.client.post(reverse(
-            'recipe_detail', args=['recipe-title']), post_data)
+            'recipe_detail', args=['recipe-title']), recipe_data)
+        print(response.content)
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Comment submitted and awaiting approval',
             response.content
         )
 
+    # this gives a false positive, because the modal text is in the HTML anyway
+    def test_starting_comment_deletion(self):
+        """Test for starting to delete a comment from a recipe
+        The correct result is a modal asking to confirm deletion"""
+        self.client.login(
+            username="myUsername", password="myPassword")
+        self.comment.delete()
+        response = self.client.post(reverse(
+            'recipe_detail', args=['recipe-title']))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(
+            b'Are you sure you want to delete your comment?',
+            response.content
+        )
+    
+    # this needs more work
+    def test_confirming_comment_deletion(self):
+        """Test for confirming to delete a comment from a recipe
+        when the modal asking to confirm deletion"""
+        self.client.login(
+            username="myUsername", password="myPassword")
+        self.comment.delete()
+        response = self.client.get(reverse(
+            'recipe_detail', args=['recipe-title']))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(
+            b'Comment deleted!',
+            response.content
+        )
