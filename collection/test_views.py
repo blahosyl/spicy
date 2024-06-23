@@ -84,12 +84,12 @@ class TestCollectionViews(TestCase):
             response.content
         )
     
+    # this needs more work
     def test_successful_comment_deletion(self):
         """Test for successfully deleting a comment"""
         self.client.login(
             username="user1Name", password="user1Password")
-        if self.comment.author == self.user1:
-            self.comment.comment_delete()
+        self.client.post('recipe-title/delete_comment/1')
         response = self.client.post(reverse(
             'recipe_detail', args=['recipe-title']))
         self.assertEqual(response.status_code, 200)
