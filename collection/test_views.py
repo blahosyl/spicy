@@ -55,10 +55,32 @@ class TestCollectionViews(TestCase):
         }
         response = self.client.post(reverse(
             'recipe_detail', args=['recipe-title']), recipe_data)
-        print(response.content)
+        # print(response.content)
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Comment submitted and awaiting approval',
+            response.content
+        )
+
+    # this needs more work
+    def test_successful_comment_editing(self):
+        """Test for successfully editing a comment"""
+        self.client.login(
+            username="user1Name", password="user1Password")
+        recipe_data = {
+            'body': 'Edited comment.'
+        }
+        # if self.comment.author == self.user1:
+        #     comment_edit()
+        response = self.client.post(reverse(
+            'recipe_detail', args=['recipe-title']))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn(
+            b'Comment for deletion',
+            response.content
+        )
+        self.assertIn(
+            b'Edited comment.',
             response.content
         )
     
@@ -67,8 +89,8 @@ class TestCollectionViews(TestCase):
         self.client.login(
             username="user1Name", password="user1Password")
         if self.comment.author == self.user1:
-            self.comment.delete()
-        response = self.client.get(reverse(
+            self.comment.comment_delete()
+        response = self.client.post(reverse(
             'recipe_detail', args=['recipe-title']))
         self.assertEqual(response.status_code, 200)
         self.assertNotIn(
@@ -76,15 +98,17 @@ class TestCollectionViews(TestCase):
             response.content
         )
 
+    # this needs more work
     def test_unsuccessful_comment_deletion(self):
         """Test for failing to delete a comment belonging to another user"""
         self.client.login(
-            username="user2Name", password="user2password")
-        if self.comment.author == self.user1:
+            username="user2Name", password="user2Password")
+        print(self.comment.author.username)
+        if self.comment.author.username == "user2Name":
             self.comment.delete()
-        response = self.client.get(reverse(
+        response = self.client.post(reverse(
             'recipe_detail', args=['recipe-title']))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 403)
         self.assertIn(
             b'Comment for deletion',
             response.content
