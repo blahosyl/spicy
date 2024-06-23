@@ -1,8 +1,8 @@
 <!--Shield.io badges-->
 
-![GitHub last commit](https://img.shields.io/github/last-commit/blahosyl/dinner-party?color=red)
-![GitHub contributors](https://img.shields.io/github/contributors/blahosyl/dinner-party?color=orange)
-![GitHub language count](https://img.shields.io/github/languages/count/blahosyl/dinner-party?color=black)
+![GitHub last commit](https://img.shields.io/github/last-commit/blahosyl/spicy?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/blahosyl/spicy?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/blahosyl/spicy?color=black)
 
 ## Gitpod Reminders
 
