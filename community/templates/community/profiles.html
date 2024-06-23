@@ -32,12 +32,12 @@
                                         {% endif %}
                                     </div>
                             <a href="{% url 'profile_detail' profile.slug %}" class="recipe-link stretched-link">
-                            </a>
                             {% if profile.user.is_staff%}
                                 staff
                             {% else %}
                                community member
                             {% endif %}
+                            </a>
                             <hr>
                             {% if profile.pronouns%}
                             <p class="profile-fields-card">
