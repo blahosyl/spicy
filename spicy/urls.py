@@ -14,13 +14,25 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 
+
+# Define the URL patterns for the project
 urlpatterns = [
+    # Include the URLs for the allauth app, which handles user's authentication operations
     path("accounts/", include("allauth.urls")),
+    
+    # URL pattern for the Django admin interface
     path('admin/', admin.site.urls),
+    
+    # Include the URLs for the community app
     path("community/", include("community.urls"), name="community-urls"),
+    
+    # Include the URLs for the django-summernote app, which is a text editor for Django
     path('summernote/', include('django_summernote.urls')),
+    
+    # Include the URLs for the collection app
     path("", include("collection.urls"), name="collection-urls"),
 ]

@@ -10,17 +10,22 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+
 from pathlib import Path
 import os
 import sys
-import dj_database_url  # converts database URL to format understood by Django
+import dj_database_url  # Converts database URL to format understood by Django
 if os.path.isfile('env.py'):
-    import env
+    import env # Import environment variables if env.py file exists
 import cloudinary
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,6 +37,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net',
                  'spicy-recipes-django-5d174ffc7c94.herokuapp.com'
                  ]
@@ -40,12 +46,15 @@ ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net',
 # Application definition
 
 INSTALLED_APPS = [
+    # Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Third-party apps
     'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
@@ -55,16 +64,26 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_summernote',
     'cloudinary',
+    
+    # Local apps
     'collection',
     'community',
 ]
+
+
+# Site ID & Allauth settings
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+
+# Crispy forms settings
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,8 +97,12 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
+
+# URL configuration
 ROOT_URLCONF = 'spicy.urls'
 
+
+# Templates configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -99,12 +122,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'spicy.wsgi.application'
 
 
-# Database
+# Database configuration
 
 # Neon database
+# Using dj_database_url to parse the database URL from environment variables
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+
 
 # local sqlite3 database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -116,7 +142,9 @@ DATABASES = {
 #     }
 # }
 
+
 # this was suggested by Leon Potgieter. Need to run `set_pg` before, then it works
+# Fallback database for testing
 if 'test' in sys.argv:
     DATABASES = {'default': {
                     'ENGINE': 'django.db.backends.postgresql',
@@ -127,6 +155,9 @@ if 'test' in sys.argv:
                 }
     }
 
+
+
+# CSRF trusted origins
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/",
@@ -156,12 +187,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+# Allauth settings for email verification and login attempts
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400  # 1 day in seconds
 
 
+
+# Email backend configuration
 # if block from Stacey Robson on CI Slack
 if DEBUG is True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -190,9 +226,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+
+# Static files (CSS, JavaScript, Images) configuration
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
