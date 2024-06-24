@@ -192,6 +192,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
 - [querying of related models](https://github.com/blahosyl/spicy/issues/115) implemented with the help of [Roman Rakic](https://code-institute-room.slack.com/archives/C026PTF46F5/p1718633149758449?thread_ts=1718600949.810239&cid=C026PTF46F5)
 - [Tech Corner Website](https://github.com/j0hanz/tech-corner-website)
+- [Successful comment editing test](https://github.com/blahosyl/spicy/commit/50c3f7d6f3f79a7f296d018503cacb05ae3bfbe2)  rewritten with the help of tutor Roo
 
 
 ### Study/lookup sources
