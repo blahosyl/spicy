@@ -20,23 +20,18 @@ let currentTheme = localStorage.getItem("colorTheme")
 
 /** populate storage with the value form the color theme selector form */
 function storeColorTheme() {
-    console.log("storeColorTheme");
     localStorage.setItem("colorTheme", themeSelector.value);
-    console.log(localStorage.getItem("colorTheme"));
     
     setColorTheme();
 }
 
 /** set the site's color theme based on the value in storage */
 function setColorTheme() {
-    console.log("setColorTheme");
     // if there is no stored value, default to orange
     if (!localStorage.getItem("colorTheme")) {
-        console.log("setColorTheme: default to orange");
         currentTheme = 'orange';
     } else {
         // get the theme value from storage
-        console.log("setColorTheme: get value from storage");
         currentTheme = localStorage.getItem("colorTheme");
     }
 
