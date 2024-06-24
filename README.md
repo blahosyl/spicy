@@ -11,6 +11,26 @@
 
 ## Design
 
+## Project Management | Agile
+
+### The 5 Ss
+
+### Agile Methodologies
+
+#### Themes, Epics, Stories & Tasks
+
+#### Project Board
+
+#### Labels
+
+#### Prioritization & reprioritization
+
+#### Timeboxing
+
+#### Sprint planning
+
+#### Sprint retroactives
+
 ### Data models
 
 #### Recipe
@@ -281,7 +301,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ### Unsolicited pull request by an unknown person
 
-A person unknown to me has forked the project repository and submitted a [pull request](https://github.com/blahosyl/spicy/pull/137) with some code comments added. I have not communicated with this person or asked for their contribution to the repository. The pull request was closed without merging.
+A person unknown to me has forked the project repository and submitted a [pull request](https://github.com/blahosyl/spicy/pull/137) with some code comments added. I had not communicated with this person before this nor asked for their contribution to the repository. The pull request was closed without merging.
 
 
 
