@@ -143,3 +143,15 @@ bootstrap
 
 https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF
 https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7
+
+## Bugs
+
+All bugs are tracked in [GitHub Issues](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3Abug).
+
+#### Known bugs
+
+Known bugs are listed in [GitHub Issues](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3Abug+is%3Aopen).
+
+#### Solved bugs
+
+Solved bugs are listed in [GitHub Issues](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3Abug+is%3Aclosed).
