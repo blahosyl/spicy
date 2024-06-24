@@ -15,18 +15,12 @@
 const bodyStyles = document.body.style;
 // get the color theme selector dropdown form
 let themeSelector = document.getElementById('theme-selector');
-
-/** check if storage is already populated */
-function checkStorage() {
-    if(!localStorage.getItem('theme-selector')) {
-        storeColorTheme();
-    } else {
-        setColorTheme();
-    }
-}
+// get the locally stored color theme value (if any)
+let currentTheme = localStorage.getItem("colorTheme")
 
 /** populate storage with the value form the color theme selector form */
 function storeColorTheme() {
+    console.log("storeColorTheme");
     localStorage.setItem("colorTheme", themeSelector.value);
     console.log(localStorage.getItem("colorTheme"));
     
@@ -35,8 +29,16 @@ function storeColorTheme() {
 
 /** set the site's color theme based on the value in storage */
 function setColorTheme() {
-    // get the theme value from storage
-    let currentTheme = localStorage.getItem("colorTheme");
+    console.log("setColorTheme");
+    // if there is no stored value, default to orange
+    if (!localStorage.getItem("colorTheme")) {
+        console.log("setColorTheme: default to orange");
+        currentTheme = 'orange';
+    } else {
+        // get the theme value from storage
+        console.log("setColorTheme: get value from storage");
+        currentTheme = localStorage.getItem("colorTheme");
+    }
 
     // set the theme selector value to the one retrieved from storage
     themeSelector.value = currentTheme;
@@ -59,5 +61,5 @@ function setColorTheme() {
     }
 }
 
-themeSelector.addEventListener("change", checkStorage);
+themeSelector.addEventListener("change", storeColorTheme);
 document.addEventListener("DOMContentLoaded", setColorTheme);
