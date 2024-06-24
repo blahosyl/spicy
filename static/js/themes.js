@@ -44,21 +44,10 @@ function setColorTheme() {
     themeSelector.value = currentTheme;
 
     // set the CSS color variables depending on the selected theme
-
-    if (currentTheme) {
-        bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-' + currentTheme + ')');
-        bodyStyles.setProperty('--dark-highlight', 'var(--dark-' + currentTheme + ')');
-        bodyStyles.setProperty('--highlight', 'var(--med-' + currentTheme + ')');
-        bodyStyles.setProperty('--light-highlight', 'var(--light-' + currentTheme + ')');
-        }
-
-    // default is orange
-    else {
-        bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-orange)');
-        bodyStyles.setProperty('--dark-highlight', 'var(--dark-orange)');
-        bodyStyles.setProperty('--highlight', 'var(--med-orange)');
-        bodyStyles.setProperty('--light-highlight', 'var(--light-orange)');
-    }
+    bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-' + currentTheme + ')');
+    bodyStyles.setProperty('--dark-highlight', 'var(--dark-' + currentTheme + ')');
+    bodyStyles.setProperty('--highlight', 'var(--med-' + currentTheme + ')');
+    bodyStyles.setProperty('--light-highlight', 'var(--light-' + currentTheme + ')');
 }
 
 themeSelector.addEventListener("change", storeColorTheme);
