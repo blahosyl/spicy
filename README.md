@@ -95,7 +95,7 @@ Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
 ## Depoyment
 
 The following instrcutions describe the deployment process with the tools used for this project. 
-Of course, you can choose other tools/providers for the individual functions described below, e. g., a different Postgres database instead of Neon or a different development environment instead of GitPod. 
+Of course, you can choose other tools/providers for the individual functions described below, e. g., a different Postgres database instead of Neon, or a different development environment instead of GitPod. 
 Naturally, detailed instructions are only provided for the tools used in this project.
 
 ### Prerequisites
@@ -104,9 +104,10 @@ Naturally, detailed instructions are only provided for the tools used in this pr
 - [Python 3](https://www.python.org/downloads/release/python-385/)
 - [pip](https://github.com/pypa/pip)
 - [git](https://git-scm.com/)
-- [Neon](https://neon.tech/) (or other Postgres database)
+- [Neon](https://neon.tech/) (or another Postgres database)
 - [Cloudinary](https://cloudinary.com/) (or another media hosting provider)
 - [Google Mail](https://google.com) with an [app password](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237) (or another email server)
+- [Heroku](https://www.heroku.com/) (or another could platform)
 
 ### Fork the repository
 
@@ -121,18 +122,48 @@ You can fork the repository by following these steps:
 >[!TIP]
 >If you do rename the repository, make sure to keep the [GitHub naming conventions](https://github.com/bcgov/BC-Policy-Framework-For-GitHub/blob/master/BC-Gov-Org-HowTo/Naming-Repos.md) in mind.
 
-### Local deployment
+### Deploy in the development environment
 
+1. Open the repository in a new workspace in GitPod. GitPod will automatically run the Python virtual environment for you. If you're using a different development environment, see [this documentation](https://docs.python.org/3/library/venv.html).
+2. Install the required dependencies:
+	```
+	pip3 -r requirements.txt.
+	```
+3. To store access credentials and other secrets, create a file called `env.py` in your top-level projct directory. 
+Before adding any content to it, add `env.py` to `.gitignore` and commit your changes. 
+This will prevent the contents of `env.py` from being pushed to the Git repository.
+4. Add the following information to your `env.py` file:
+  	- `CLOUDINARY_URL` -you can find this in your [Cloudinary](https://cloudinary.com/) console under **API Keys**
+	- `DATABASE_URL`
+	- `DEFAULT_FROM_EMAIL`
+	- `SECRET_KEY`
+5. In `settings.py`, add your GitPod workspace URL to `ALLOWED_HOSTS`
+6. Run a migration to create your database tables:
+	```
+	python manage.py migrate
+	```
+7. Create a superuser (make sure you save the username and password you use here):
+	```
+	python manage.py createsuperuser
+	```
+8. Run the development server
+	```
+	python manage.py runserver
+	```
 
-
-### Deploy to Heroku
+### Deploy to production
 
 #### Pre-deployment steps
 
-Make sure to complete the following pre-deployment steps on your local setup:
+Make sure to complete the following pre-deployment steps in your development environment, especially if you made changes to the project:
 
-1. Create a list of requirements by going to the terminal and typing `pip3 freeze > requirements.txt`. This popuplates your `requirements.txt` file with the list of required files.
-2. Push your changes to GitHub.
+1. (Re-)create a list of requirements by going to the terminal and typing `pip3 freeze > requirements.txt`. This popuplates your `requirements.txt` file with the list of required files.
+2. Collect static files (these are hosted with [whitenoise](http://whitenoise.evans.io/en/stable/)):
+	```
+	python manage.py collectstatic
+	```
+3. In `settings.py`, make sure `DEBUG=False`
+4. Commit and push your changes to GitHub.
 
 #### Steps on Heroku
 
@@ -144,12 +175,14 @@ Make sure to complete the following pre-deployment steps on your local setup:
 	- `DEFAULT_FROM_EMAIL`: this can be the same as `EMAIL_APP_USER`
 	- `EMAIL_APP_PASSWORD`: [instructions for obtaining one](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237)
 	- `EMAIL_APP_USER`: the email used with your email server
-4. Under **Deploy > Deployment method** in Heroku, select **GitHub** and connect Heroku to your GitHub account.<br>
-Type in your repository name, then click **Search**. When your repository appears, click **Connect** next to it.
-5. Under **Deploy > Manual deploy** in Heroku, select **Deploy branch** to deploy manually.<br>
-Once the process is finished, the following message will appear:<br>
-_Your app was successfully deployed_<br>
-Click **View** under the message, and a new tab will appear with your deployed app.
+	- `SECRET_KEY`
+4. Under **Deploy > Deployment method** in Heroku, select **GitHub** and connect Heroku to your GitHub account.
+	- Type in your repository name, then click **Search**. 
+	- When your repository appears, click **Connect** next to it.
+5. Under **Deploy > Manual deploy** in Heroku, select **Deploy branch** to deploy manually.
+	- Once the process is finished, the following message will appear:<br>
+	_Your app was successfully deployed_
+	- Click **View** under the message, and a new tab will appear with your deployed app.
 6. (optional) Under **Deploy > Automatic deploy** in Heroku, select **Enable Automatic Deploys** if you want your app to be rebuilt each time you push to the `main` branch of your GitHub repository (but make sure your `settings.py` file always has `DEBUG=False` when you do). 
 
 ## Testing
