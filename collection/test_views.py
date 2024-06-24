@@ -4,6 +4,7 @@ from django.test import TestCase
 from .forms import CommentForm
 from .models import Recipe, Comment
 
+
 class TestCollectionViews(TestCase):
 
     def setUp(self):
@@ -22,20 +23,20 @@ class TestCollectionViews(TestCase):
             password="user2Password",
             email="user2@test.com"
         )
-        self.recipe = Recipe(title="Recipe title", 
-                         author=self.user,
-                         slug="recipe-title", 
-                         excerpt="Recipe excerpt",
-                         instructions="Recipe instructions",
-                         prep_time="10",
-                         cook_time="10",
-                         published=True)
+        self.recipe = Recipe(title="Recipe title",
+                             author=self.user,
+                             slug="recipe-title",
+                             excerpt="Recipe excerpt",
+                             instructions="Recipe instructions",
+                             prep_time="10",
+                             cook_time="10",
+                             published=True)
         self.recipe.save()
         # comment setup rewritten with the help of tutor Roo
-        self.comment = Comment.objects.create( 
-            recipe=self.recipe, 
-            author=self.user1, 
-            body="Comment for deletion" )
+        self.comment = Comment.objects.create(
+            recipe=self.recipe,
+            author=self.user1,
+            body="Comment for deletion")
         # self.comment.save()
 
     def test_render_recipe_detail_page_with_comment_form(self):
@@ -90,7 +91,8 @@ class TestCollectionViews(TestCase):
         """Test for successfully editing a comment"""
         self.client.login(
             username="user1Name", password="user1Password")
-        edit_url = reverse('comment_edit', args=['recipe-title', self.comment.id])
+        edit_url = reverse('comment_edit',
+                           args=['recipe-title', self.comment.id])
         print(f"Edit URL: {edit_url}")
         comment_data = {
             'body': 'Edited comment.'
@@ -99,9 +101,36 @@ class TestCollectionViews(TestCase):
         print(f"Response status code: {response.status_code}")
         self.comment.refresh_from_db()  # Refresh to get updated data
         print(f"Updated comment body: {self.comment.body}")
-        self.assertEqual(response.status_code, 302) 
+        self.assertEqual(response.status_code, 302)
         self.assertEqual(self.comment.body, 'Edited comment.')
 
+    def test_successful_comment_deletion(self):
+        """Test for successfully deleting a comment"""
+        self.client.login(
+            username="user1Name", password="user1Password")
+        delete_url = reverse('comment_delete',
+                             args=['recipe-title', self.comment.id])
+        print(f"Delete URL: {delete_url}")
+        response = self.client.post(delete_url)
+        print(f"Response status code: {response.status_code}")
+        self.assertEqual(response.status_code, 302)
+        self.assertNotIn(b'Comment for deletion', response.content)
+
+    def test_unsuccessful_comment_deletion(self):
+        """Test for unsuccessfully deleting a comment"""
+        self.client.login(
+            username="user2Name", password="user2Password")
+        delete_url = reverse('comment_delete',
+                             args=['recipe-title', self.comment.id])
+        print(f"Delete URL: {delete_url}")
+        # response = self.client.post(delete_url)
+        response = self.client.post(reverse(
+            'recipe_detail', args=['recipe-title']))
+        print(f"Response status code: {response.status_code}")
+        # print(response.content)
+        # self.assertEqual(response.status_code, 403)
+        self.assertIn(b'Comment for deletion', response.content)
+        # self.assertIn(b'You can only delete your own comments!', response.content)
 
     # this needs more work
     # def test_successful_comment_deletion(self):
@@ -132,3 +161,4 @@ class TestCollectionViews(TestCase):
     #         b'Comment for deletion',
     #         response.content
     #     )
+    
