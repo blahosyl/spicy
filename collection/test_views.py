@@ -82,6 +82,23 @@ class TestCollectionViews(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertEqual(self.comment.body, 'Edited comment')
 
+    def test_unsuccessful_comment_editing(self):
+        """Test for successfully editing a comment"""
+        self.client.login(
+            username="user2Name", password="user2Password")
+        edit_url = reverse('comment_edit',
+                           args=['recipe-title', self.comment.id])
+        print(f"Edit URL: {edit_url}")
+        comment_data = {
+            'body': 'Edited comment'
+        }
+        response = self.client.post(edit_url, comment_data)
+        print(f"Response status code: {response.status_code}")
+        self.comment.refresh_from_db()  # Refresh to get updated data
+        print(f"Updated comment body: {self.comment.body}")
+        self.assertEqual(response.status_code, 302)
+        self.assertNotEqual(self.comment.body, 'Edited comment')
+
     def test_successful_comment_deletion(self):
         """Test for successfully deleting a comment"""
         self.client.login(
