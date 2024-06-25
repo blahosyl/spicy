@@ -270,7 +270,9 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Django `formfield_for_foreignkey` documentation](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.formfield_for_foreignkey)
 - [Bootstrap sizing](https://getbootstrap.com/docs/5.0/utilities/sizing/)
 - [preferred way of breaking lines in Python](https://stackoverflow.com/a/53180)
--[built-in error views](https://docs.djangoproject.com/en/4.2/ref/views/)
+- [built-in error views](https://docs.djangoproject.com/en/4.2/ref/views/)
+- [displaying messages based on tags](https://stackoverflow.com/a/16285005)
+- [Django messages documentation](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
 
 ### General advice
 

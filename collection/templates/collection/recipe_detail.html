@@ -119,7 +119,7 @@
 
         <!-- Create New Comments -->
         <div class="col-md-4 card mb-4 mt-3">
-            <!-- Add placeholder messages -->
+            <!-- Add placeholder for comment messages -->
             {% for message in messages %}
             {% if "comment" in message.extra_tags %}
             <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" id="msg" role="alert">
