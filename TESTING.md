@@ -25,11 +25,7 @@ bootstrap
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |hamburger icon visible||
-|page loads    |logo and brand name visible||
-|page loads    |nav links not visible||
-|page loads    |search bar not visible||
-|page loads    |color selector not visible||
+|page loads    |hamburger icon visible<br>logo and brand name visible<br>brand text not visible<br>nav links not visible<br>search bar not visible<br>color selector not visible||
 |hamburger icon clicked|search bar and color selector revealed||
 |hamburger icon clicked again |search bar and color selector hidden||
 |logo and brand name clicked|home page loaded||
@@ -41,23 +37,17 @@ bootstrap
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |hamburger icon not visible||
-|page loads    |logo and brand name visible||
-|page loads    |nav links visible||
-|page loads    |search bar visible||
-|page loads    |color selector visible||
+|page loads    |hamburger icon not visible<br>logo and brand name visible<br>brand text visible<br>nav links visible<br>search bar visible<br>color selector visible||
 |logo and brand name clicked|home page loaded||
 |color selector changed|page color scheme changes persistently||
-|**Search** button clicked |search page loaded||
+|**Search** button clicked |[search page](#search-results-page) loaded||
 
 
 
 ##### User bar | if user signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |"Welcome, `user`!" visible||
-|page loads    |"You are not logged in" not visible||
-|page loads    |signout link visible||
+|page loads    |"Welcome, `user`!" visible<br>"You are not logged in" not visible<br>signout link visible||
 |signout link clicked|signout page loaded||
 
 
@@ -65,19 +55,14 @@ bootstrap
 ##### User bar | if user not signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |"Welcome, `user`!" not visible||
-|page loads    |"You are not logged in" visible||
-|page loads    |signin link visible||
-|page loads    |signup link visible||
+|page loads    |"Welcome, `user`!" not visible<br>"You are not logged in" visible<br>signin link visible<br>||
 |signin link clicked|signin page loaded||
 |signup link clicked|signup page loaded||
 
 ### Footer
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |copyright info visible||
-|page loads    |GitHub icon visible||
-|page loads    |LinkedIn icon visible||
+|page loads    |copyright info visible<br>GitHub icon visible<br>LinkedIn icon visible||
 |GitHub icon clicked | GitHub profile opens in new tab||
 |LinkedIn icon clicked | LinkedIn profile opens in new tab||
 
@@ -85,37 +70,43 @@ bootstrap
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|home page loads    |filters visible||
-|home page loads    |recipe list visible||
-|filter changed     |filter message visible||
-|filter changed     |recipe list is filtered||
+|home page loads    |filters visible<br>recipe list visible<br>pagination visible||
+|filter changed     |result count visible<br>recipe list is filtered||
+|result count > 6   |pagination visible||
+
+
+### Pagination links
+|Action				|Expected result	|Result|
+|---				|---				|:---:	|
+|home page loads    |filters visible<br>recipe list visible<br>pagination visible||
+
+### Search results page
+
+|Action				|Expected result	|Result|
+|---				|---				|:---:	|
+|search page loaded |result count visible<br>recipe list is filtered||
+|result count > 6   |pagination visible||
+
+
 
 ### Signin page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|signin page loads    |signin text visible ||
-|signin page loads    |signup link visible ||
-|signin page loads    |username field visible ||
-|signin page loads    |password field visible ||
-|signin page loads    |signin button visible ||
-|signin page loads    |password reset link visible ||
+|signin page loads    |signin text visible<br>signup link visible<br>username field visible<br>password field visible<br>password reset link visible||
 |signup link clicked|signup page loaded||
 |password reset link clicked|password reset page loaded||
-|signout button clicked & username field empty |"Please fill in this field"||
-|signout button clicked & password field empty |"Please fill in this field"||
-|signout button clicked & username & password field not empty & credentials correct |user is signed in||
-|signout button clicked & username & password field not empty & credentials correct |home page loads||
-|signout button clicked & username & password field not empty & credentials not correct |"The username and/or password you specified are not correct."||
+|signout button clicked<br>username field empty |"Please fill in this field"||
+|signout button clicked<br>password field empty |"Please fill in this field"||
+|signout button clicked<br>username field not empty<br>password field not empty<br>credentials correct |user is signed in<br>home page loads||
+|signout button clicked<br>username field not empty<br>password field not empty<br>credentials not correct|"The username and/or password you specified are not correct."||
 
 
 
 ### Signout page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|signout page loads  |signout text n visible||
-|signout page loads  |signout button visible||
-|signout button clicked  |user signed out||
-|signout button clicked  |home page loads||
+|signout page loads  |signout text visible<br>signout button visible||
+|signout button clicked  |user signed out<br>home page loads||
 
 
 ### Signup page
