@@ -19,32 +19,29 @@ bootstrap
 
 ## Manual feature testing
 
-### Navigation bar
+### Collection/recipes manual testing
 
-##### Navigation bar | mobile 
+####  Navigation bar | desktop 
+
+|Action				|Expected result	|Result|
+|---				|---				|:---:	|
+|page loads    |hamburger icon not visible<br>logo and brand name visible<br>brand text visible<br>nav links visible<br>Search bar visible<br>color selector visible||
+|Community link clicked |[Community page](#community-page) loaded||
+|Recipes link clicked |[Home page](#home-page) loaded||
+|logo and brand name clicked|[home page](#home-page) loaded||
+|color selector changed|page color scheme changes persistently||
+|**Search** button clicked |[Search page](#Search-results-page) loaded||
+
+####  Navigation bar | mobile 
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |hamburger icon visible<br>logo and brand name visible<br>brand text not visible<br>nav links not visible<br>Search bar not visible<br>color selector not visible||
 |hamburger icon clicked|Search bar and color selector revealed||
 |hamburger icon clicked again |Search bar and color selector hidden||
-|logo and brand name clicked|[home page](#home-page) loaded||
-|color selector changed|page color scheme changes persistently||
-|**Search** button clicked |[Search page](#Search-results-page) loaded||
 
 
-##### Navigation bar | desktop 
-
-|Action				|Expected result	|Result|
-|---				|---				|:---:	|
-|page loads    |hamburger icon not visible<br>logo and brand name visible<br>brand text visible<br>nav links visible<br>Search bar visible<br>color selector visible||
-|logo and brand name clicked|[home page](#home-page) loaded||
-|color selector changed|page color scheme changes persistently||
-|**Search** button clicked |[Search page](#Search-results-page) loaded||
-
-
-
-##### User bar | if user signed in
+####  User bar | if user signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |"Welcome, `user`!" visible<br>"You are not logged in" not visible<br>Signout link visible||
@@ -52,21 +49,21 @@ bootstrap
 
 
 
-##### User bar | if user not signed in
+####  User bar | if user not signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |"Welcome, `user`!" not visible<br>"You are not logged in" visible<br>Signin link visible<br>||
 |Signin link clicked|[Signin page](#Signin-page) loaded||
 |Signup link clicked|[Signup page](#Signup-page) loaded||
 
-### Footer
+####  Footer
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |copyright info visible<br>GitHub icon visible<br>LinkedIn icon visible||
 |GitHub icon clicked | GitHub profile opens in new tab||
 |LinkedIn icon clicked | LinkedIn profile opens in new tab||
 
-### Home page
+####  Home page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
@@ -75,7 +72,7 @@ bootstrap
 |filter changed     |result count visible<br>recipe list is filtered||
 |result count > 6   |[pagination](#pagination-links) visible||
 
-### Recipe detail page
+####  Recipe detail page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
@@ -88,31 +85,17 @@ bootstrap
 |Edit button clicked|comment text filled into comment field<br>Submit button changes to Update||
 |Update button clicked|comment text updated<br>comment set to unapproved||
 |Delete button clicked|delete modal pops up||
-|Delete button on delete modal |delete modal closes<br>comment remains||
+|Close button clicked on delete modal |delete modal closes<br>comment remains||
 |Delete button clicked on delete modal|comment is deleted<br>confirmation message appears||
 
-
-### Community page
-
-|Action				|Expected result	|Result|
-|---				|---				|:---:	|
-|Community page loads  |profile cards visible||
-|any profile card clicked|corresponding [profile detail page](#profile-detail-page) loads||
-
-### Profile detail page
-
-|Action				|Expected result	|Result|
-|---				|---				|:---:	|
-|Profile detail page loads|name or username visible<br>status visible<br>pronouns visible (if any)<br>neurodiversity visible (if any)<br>about text visible (if any)||
-
-### Search results page
+####  Search results page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Search page loaded |result count visible<br>recipe list is filtered||
 |result count > 6   |[pagination](#pagination-links) visible||
 
-### Pagination links
+####  Pagination links
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |more recipes/results exist |**Next** button visible||
@@ -120,8 +103,24 @@ bootstrap
 |**Next** button clicked |next page of results is loaded||
 |**Prev** button clicked |previous page of results is loaded||
 
+### Community manual testing
 
-### Signin page
+####  Community page
+
+|Action				|Expected result	|Result|
+|---				|---				|:---:	|
+|Community page loads  |profile cards visible||
+|any profile card clicked|corresponding [profile detail page](#profile-detail-page) loads||
+
+####  Profile detail page
+
+|Action				|Expected result	|Result|
+|---				|---				|:---:	|
+|Profile detail page loads|name or username visible<br>status visible<br>pronouns visible (if any)<br>neurodiversity visible (if any)<br>about text visible (if any)||
+
+### Authentication manual testing
+
+####  Signin page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Signin page loads    |Signin text visible<br>Signup link visible<br>username field visible<br>password field visible<br>Signup button visible<br>password reset link visible||
@@ -132,14 +131,14 @@ bootstrap
 |Signin button clicked<br>both fields filled<br>credentials correct<br>email not confirmed |user is signed in<br>[Email sent page](#email-sent-page) loads<br>confirmation email sent||
 |Signin button clicked<br>both fields filled<br>credentials correct<br>email confirmed|user is signed in<br>[home page](#home-page) loads||
 
-### Signout page
+####  Signout page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Signout page loads  |Signout text visible<br>Signout button visible||
 |Signout button clicked  |user signed out<br>home page loads||
 
 
-### Signup page
+####  Signup page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Signup page loads    |Signup text visible<br>Signin link visible<br>email filed visible<br>username field visible<br>password field visible<br>password rules visible<br>password (again) field visible<br>Signup button visible<br>password reset link visible||
@@ -153,18 +152,18 @@ bootstrap
 |user clicks link in verification email|[Confirm email page](#confirm-email-page) loads|
 
 
-### Email sent page
+####  Email sent page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Email sent page loads    |confirmation email sent to user||
 
-### Confirm email page
+####  Confirm email page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Confirm email page loads|confirm text visible<br>confirm button visible<br> ||
 |confirm button clicked    |resitration confirmed<br>[Signin page](#Signin-page) loads||
 
-### Password reset page
+####  Password reset page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |password reset page loads |reset text visible<br>email field visible<br>reset button visible||
@@ -173,7 +172,7 @@ bootstrap
 |reset button clicked<br>email valid<br>email in database|reset confirmation page loads<br>password reset email sent||
 |reset link in email clicked|[change password page](#change-password-page) shown||
 
-### Change password page
+####  Change password page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |change password loads|change password text visible<br>new password field visible<br>new password again field visible<br>change pasword button visible<br> ||
@@ -181,7 +180,7 @@ bootstrap
 
 ## Accessibility testing
 
-### Lighthouse
+###  Lighthouse
 
 ### Color contrasts
 
