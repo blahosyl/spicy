@@ -39,20 +39,21 @@ body {
     color: var(--very-dark-highlight);
 }
 
-.navbar-text {
-    color: var(--dark-highlight);
-}
-
 .nav-link:hover{
     color: var(--dark-highlight);
 }
 
 nav .brand {
+    color: var(--dark-highlight);
     font-weight: 400;
 }
 
-nav .brand:hover {
+.brand-text {
     color: var(--very-dark-highlight);
+}
+
+nav .brand:hover {
+    text-decoration: underline;
 }
 
 .nav-item .active{
