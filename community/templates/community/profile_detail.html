@@ -32,20 +32,24 @@
                             {% endif %}
                         </div>
                     <hr>
-                    {% if profile.pronouns%}
                     <p class="profile-fields-card">
                         <span class="profile-field-name">pronouns:</span>
                         <br>
-                        {{ profile.pronouns}}
-                    </p>
+                    {% if profile.pronouns%}
+                        {{ profile.pronouns}} 
+                    {% else%}
+                        <span class="fst-italic">not specified</span>
                     {% endif %}
-                    {% if profile.neurodivergence%}
+                    </p>
                         <p class="profile-fields-card">
                             <span class="profile-field-name">neurodivergence:</span>
                         <br>
-                        {{ profile.neurodivergence}}
+                        {% if profile.neurodivergence%}
+                            {{ profile.neurodivergence}}
+                        {% else%}
+                            <span class="fst-italic">not specified</span>
+                        {% endif %}
                     </p>
-                    {% endif %}
                 </div>
                 <div class="col-12 col-md-8 col-xl-9">
                     {{ profile.about}}
