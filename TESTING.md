@@ -26,11 +26,12 @@ bootstrap
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |hamburger icon not visible<br>logo and brand name visible<br>brand text visible<br>nav links visible<br>Search bar visible<br>color selector visible||
+|color selector changed|page color scheme changes persistently||
 |Community link clicked |[Community page](#community-page) loaded||
 |Recipes link clicked |[Home page](#home-page) loaded||
-|logo and brand name clicked|[home page](#home-page) loaded||
-|color selector changed|page color scheme changes persistently||
 |**Search** button clicked |[Search page](#Search-results-page) loaded||
+|logo and brand name clicked|[home page](#home-page) loaded||
+
 
 ####  Navigation bar | mobile 
 
@@ -65,12 +66,15 @@ bootstrap
 
 ####  Home page
 
+Displays the list of recipes
+
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |home page loads    |filters visible<br>recipe cards visible<br>pagination visible||
-|any recipe card clicked|corresponding [recipe detail page](#recipe-detail-page) loads||
 |filter changed     |result count visible<br>recipe list is filtered||
 |result count > 6   |[pagination](#pagination-links) visible||
+|any recipe card clicked|corresponding [recipe detail page](#recipe-detail-page) loads||
+
 
 ####  Recipe detail page
 
@@ -106,6 +110,9 @@ bootstrap
 ### Community manual testing
 
 ####  Community page
+
+Displays the list of profiles
+
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
