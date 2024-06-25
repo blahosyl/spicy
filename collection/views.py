@@ -168,7 +168,7 @@ class FilterResultsView(generic.ListView):
             ).distinct()
         return object_list
 
-    # add query and object count to context,
+    # add filters and object count to context,
     # so they can be displayed on the results page
     def get_context_data(self, **kwargs):
         context = super(FilterResultsView, self).get_context_data(**kwargs)
