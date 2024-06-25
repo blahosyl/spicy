@@ -20,7 +20,7 @@
             </div>
             <div class="d-block col-md-7 col-lg-8 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="{% static 'images/default.jpg' %}" class="scale detail-img" alt="placeholder image">
+                <img src="{% static 'images/pots.jpg' %}" class="scale detail-img" alt="placeholder image">
                 {% else %}
                 <img src="{{ recipe.featured_image.url }}" class="scale" alt="{{ recipe.title }}">
                 {% endif %}
