@@ -53,7 +53,7 @@
                     <div class="align-self-center">
                     <ul>
                         {% for recipe_ingredient in recipe_ingredients %}
-                        <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of
+                        <li>{{ recipe_ingredient.quantity | floatformat:"-2"}} {{ recipe_ingredient.unit }} of
                             {{ recipe_ingredient.ingredient }}</li>
                         {% endfor %}
                     </ul>
