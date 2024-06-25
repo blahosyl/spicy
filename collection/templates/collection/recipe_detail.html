@@ -121,10 +121,12 @@
         <div class="col-md-4 card mb-4 mt-3">
             <!-- Add placeholder messages -->
             {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {% if "comment" in message.extra_tags %}
+            <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" id="msg" role="alert">
                 {{ message | safe }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            {% endif %}
             {% endfor %}
             <div class="card-body">
                 {% if user.is_authenticated %}

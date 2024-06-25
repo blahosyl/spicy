@@ -46,7 +46,8 @@ def recipe_detail(request, slug):
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
+                'Comment submitted and awaiting approval',
+                extra_tags='comment'
             )
     comment_form = CommentForm()
 
@@ -80,10 +81,10 @@ def comment_edit(request, slug, comment_id):
             comment.recipe = recipe
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment updated!')
+            messages.add_message(request, messages.SUCCESS, 'Comment updated!', extra_tags='comment')
         else:
             messages.add_message(request, messages.ERROR,
-                                 'Error updating comment!')
+                                 'Error updating comment!', extra_tags='comment')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
@@ -98,10 +99,10 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='comment')
     else:
         messages.add_message(request, messages.ERROR,
-                             'You can only delete your own comments!')
+                             'You can only delete your own comments!', extra_tags='comment')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
