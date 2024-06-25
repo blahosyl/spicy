@@ -45,17 +45,19 @@
             </div>
             <!-- Show ingredients (if any) -->
             {% if ingredient_count %}
-            <div class="card-body">
-                <h4 class="card-header">
+            <div class="card-body d-flex flex-column">
+                <h4 class="card-header mb-4 text-center">
                     Ingredients
                     ({{ ingredient_count | safe }})
                 </h4>
-                <ul>
-                    {% for recipe_ingredient in recipe_ingredients %}
-                    <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of
-                        {{ recipe_ingredient.ingredient }}</li>
-                    {% endfor %}
-                </ul>
+                    <div class="align-self-center">
+                    <ul>
+                        {% for recipe_ingredient in recipe_ingredients %}
+                        <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of
+                            {{ recipe_ingredient.ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
             {% endif %}
         </div>
