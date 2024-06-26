@@ -8,6 +8,9 @@ from django.db import models
 
 
 class Profile(models.Model):
+    """
+    A model for user profiles, related to but distinct from the User model
+    """
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="profile"
     )
@@ -20,5 +23,8 @@ class Profile(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         return "username: " + self.user.username + " | first name: "\
             + self.firstname
