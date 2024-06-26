@@ -123,16 +123,101 @@ Validation found no issues.
 Validation found no issues.
 
 
-![JavaScript validation of `themes.js`: no issues](testing/code-validation/js-validation/themes-js-validation.png)
+![JavaScript validation of `themes.js`: ](testing/code-validation/js-validation/themes-js-validation.png)
 
 
 ### Pyton validation
 
+All self-written or modified Python files in the project were validated with the [Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/). No errors were found.
+
 #### `collection` app Python validation
+
+##### `admin.py`
+
+Validation found no issues.
+
+![Python validation of `admin.py`: no issues](testing/code-validation/python-validation/collection-admin-py-validation.png)
+
+##### `forms.py`
+
+![Python validation of `forms.py`: no issues](testing/code-validation/python-validation/collection-forms-py-validation.png)
+
+##### `models.py`
+
+Validation found no issues.
+
+![Python validation of `models.py`: no issues](testing/code-validation/python-validation/collection-models-py-validation.png)
+
+##### `test_forms.py`
+
+Validation found no issues.
+
+![Python validation of `test_forms.py`: no issues](testing/code-validation/python-validation/collection-test-forms-py-validation.png)
+
+##### `test_views.py`
+
+Validation found no issues.
+
+![Python validation of `test_views.py`: no issues](testing/code-validation/python-validation/collection-test-views-py-validation.png)
+
+##### `urls.py`
+
+Validation found no issues.
+
+![Python validation of `urls.py`: no issues](testing/code-validation/python-validation/collection-urls-py-validation.png)
+
+##### `views.py`
+
+Validation found no issues.
+
+![Python validation of `views.py`: no issues](testing/code-validation/python-validation/collection-views-py-validation.png)
+
+##### `urls.py`
+
+Validation found no issues.
+
+![Python validation of `urls.py`: no issues](testing/code-validation/python-validation/collection-urls-py-validation.png)
 
 #### `community` app Python validation
 
+##### `admin.py`
+
+Validation found no issues.
+
+![Python validation of `admin.py`: no issues](testing/code-validation/python-validation/community-admin-py-validation.png)
+
+##### `models.py`
+
+Validation found no issues.
+
+![Python validation of `models.py`: no issues](testing/code-validation/python-validation/community-models-py-validation.png)
+
+##### `views.py`
+
+Validation found no issues.
+
+![Python validation of `views.py`: no issues](testing/code-validation/python-validation/community-views-py-validation.png)
+
+##### `urls.py`
+
+Validation found no issues.
+
+![Python validation of `urls.py`: no issues](testing/code-validation/python-validation/community-urls-py-validation.png)
+
+
 ### Project-level Python validation
+
+##### `settings.py`
+
+Validation found no issues.
+
+![Python validation of `settings.py`: no issues](testing/code-validation/python-validation/spicy-settings-py-validation.png)
+
+##### `urls.py`
+
+Validation found no issues.
+
+![Python validation of `urls.py`: no issues](testing/code-validation/python-validation/spicy-urls-py-validation.png)
 
 
 ## Manual feature testing
