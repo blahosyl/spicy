@@ -16,7 +16,7 @@ const bodyStyles = document.body.style;
 // get the color theme selector dropdown form
 let themeSelector = document.getElementById('theme-selector');
 // get the locally stored color theme value (if any)
-let currentTheme = localStorage.getItem("colorTheme")
+let currentTheme = localStorage.getItem("colorTheme");
 
 /** populate storage with the value form the color theme selector form */
 function storeColorTheme() {
@@ -45,5 +45,7 @@ function setColorTheme() {
     bodyStyles.setProperty('--light-highlight', 'var(--light-' + currentTheme + ')');
 }
 
+// store the theme when the selector is changed
 themeSelector.addEventListener("change", storeColorTheme);
+// apply the stored theme on page load
 document.addEventListener("DOMContentLoaded", setColorTheme);
