@@ -15,7 +15,23 @@ The file `comments.js` (which is identical to [the one used in the walkthrough p
 bootstrap
 ```
 
-![JavaScript validation error: unknown variable `bootstrap`](testing/code-validation/js-validation/js-validation-known-error-bootstrap.png)
+![JavaScript validation error: unknown variable `bootstrap`](testing/code-validation/js-validation/comments-js-validation.png)
+
+### `filter.js`
+
+Validation found no issues.
+
+
+![JavaScript validation of `filter.js`: no issues](testing/code-validation/js-validation/filter-js-validation.png)
+
+### `themes.js`
+
+Validation found no issues.
+
+
+![JavaScript validation of `themes.js`: no issues](testing/code-validation/js-validation/themes-js-validation.png)
+
+
 
 ## Manual feature testing
 
