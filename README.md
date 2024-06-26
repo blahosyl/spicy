@@ -19,6 +19,12 @@
 
 #### Themes, Epics, Stories & Tasks
 
+##### Prioritization
+
+Epics that had User Stories of various levels of prioritization received all applicable labels. As the User Stories in the Epic were completed, the labels of completed User Stories were removed from the Epic.
+
+For example, [EPIC: View author info](https://github.com/blahosyl/spicy/issues/27) has one User Story with priority `should have` completed, and another User Story with priority `could have` remaining to be done, so it now only has the label `p: could have`.
+
 #### Project Board
 
 #### Labels
