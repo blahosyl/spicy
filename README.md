@@ -194,14 +194,23 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ### Code credits
 
-- [I Think Therefore I Blog walkthrough project by Code Institute](https://github.com/Code-Institute-Solutions/blog)
+- The architecture of the project was based on the [I Think Therefore I Blog walkthrough project](https://github.com/Code-Institute-Solutions/blog) by Code Institute
+- Leon Potgieter suggested I use Neon DB when I discovered ElephantSQL's EOL, helped with [testing on local DB issue](https://code-institute-room.slack.com/archives/C02B3MJQABA/p1716915411743489?thread_ts=1716855535.547499&cid=C02B3MJQABA), and gave me a [handy tip for line breaking](https://code-institute-room.slack.com/archives/C06JCL29EBD/p1718953195099119?thread_ts=1718941634.864539&cid=C06JCL29EBD) 
 - [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
 - [querying of related models](https://github.com/blahosyl/spicy/issues/115) implemented with the help of [Roman Rakic](https://code-institute-room.slack.com/archives/C026PTF46F5/p1718633149758449?thread_ts=1718600949.810239&cid=C026PTF46F5)
 - [Tech Corner Website](https://github.com/j0hanz/tech-corner-website)
 - [Successful comment editing test](https://github.com/blahosyl/spicy/commit/50c3f7d6f3f79a7f296d018503cacb05ae3bfbe2)  rewritten with the help of tutor Roo
 
+### Related advice
+
+- [Daisy McGirr on the Allauth social plugin](https://code-institute-room.slack.com/archives/C026PTF46F5/p1717142987306069?thread_ts=1717110872.353119&cid=C026PTF46F5)
+- [Rachel O'Donnell](https://code-institute-room.slack.com/archives/C026PTF46F5/p1719421906829349?thread_ts=1719420790.046999&cid=C026PTF46F5) and [Joanna Gorska](https://code-institute-room.slack.com/archives/C026PTF46F5/p1684951227697019?thread_ts=1684831337.699099&cid=C026PTF46F5) on how to allow creating mockups with [amiresponsive](https://ui.dev/amiresponsive) by installing the [Ignore X-Frame Headers Chrome plugin](https://chromewebstore.google.com/detail/ignore-x-frame-headers/gleekbfjekiniecknbkamfmkohkpodhe)
+
+
 
 ### Study/lookup sources
+
+The following resources were used to learn/double check general, atomic functionalities/syntax/errors:
 
 
 - [Show labels and Milestones in GitHub Projects Kanban board](https://github.com/orgs/community/discussions/10788)
@@ -281,14 +290,11 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Django messages documentation](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
 - [`floatformat` template tag](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/) 
 
-### General advice
+### Text
 
-- Daisy McGirr: allauth social option
-- Leon Potgieter: Neon DB, help with [testing on local DB issue](https://code-institute-room.slack.com/archives/C02B3MJQABA/p1716915411743489?thread_ts=1716855535.547499&cid=C02B3MJQABA)
+Profile texts for the mockup users based on [Terry Pratchett's Discworld series](https://www.terrypratchettbooks.com/discworld-characters/) were taken from [Wikipedia](https://www.wikipedia.org/).
 
-### Content
-
-All text content was written by me.
+All other text was written by me.
 
 [Lemon bar](https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/lemon-bar/) recipe based on [Chili&Vanilia's post](https://chiliesvanilia.blogspot.com/2006/08/amerikai-citromkrmes-szelet-lemon-bar.html).
 
@@ -328,5 +334,7 @@ I would like to express my deepest gratitude to my mentor, [Rory Patrick Sherida
 Issues raised by him or discussed with him can be found [here](https://github.com/blahosyl/spicy/issues?q=label%3Amentor) (see the individual ticket descriptions for the details of his contribution).
 
 I am also grateful to the Code Institute tutoring team, in particular, to John and Roo for their help. The details of their contributions can be found [here](https://github.com/blahosyl/spicy/issues?q=label%3Atutoring).
+
+I would also like to thank Peter Litauszki for photo and video editing help.
 
 
