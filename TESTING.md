@@ -236,6 +236,12 @@ Validation found no issues.
 |logo and brand name clicked|[home page](#home-page) loaded||
 
 
+
+
+https://github.com/blahosyl/spicy/assets/26421503/7c897e0e-44b6-486a-afe9-7b4603f3bb12
+
+
+
 ####  Navigation bar | mobile 
 
 |Action				|Expected result	|Result|
