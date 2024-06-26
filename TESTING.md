@@ -454,6 +454,11 @@ https://github.com/blahosyl/spicy/assets/26421503/0d272dd9-1541-4aa5-b72a-f20f11
 |Email sent page loads    |confirmation email sent to user|✅|
 
 
+Signup confirmation email
+
+![Password reset email sent to unregistered user](testing/manual-testing/signup-confirmation-email.png)
+
+
 ####  Confirm email page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
@@ -461,7 +466,6 @@ https://github.com/blahosyl/spicy/assets/26421503/0d272dd9-1541-4aa5-b72a-f20f11
 |confirm button clicked    |resitration confirmed<br>[Signin page](#Signin-page) loads|✅|
 
 *Click to play video*
-
 
 
 https://github.com/blahosyl/spicy/assets/26421503/8a521faa-9be8-4505-84a6-d22b07c68115
@@ -481,6 +485,13 @@ https://github.com/blahosyl/spicy/assets/26421503/8a521faa-9be8-4505-84a6-d22b07
 
 https://github.com/blahosyl/spicy/assets/26421503/1be204aa-a718-4d30-970c-9686135a8ca8
 
+Password reset email sent to unregistered user
+
+![Password reset email sent to unregistered user](testing/manual-testing/password-reset-email-unregistered.png)
+
+Password reset email sent to registered user
+
+![Password reset email sent to registered user](testing/manual-testing/password-reset-email-registered.png)
 
 ####  Change password page
 |Action				|Expected result	|Result|
