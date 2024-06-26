@@ -608,6 +608,28 @@ In addition to Lighthouse, color contrasts were also tested with the [WebAIM Con
 |dark-green	    |white 	        |4.63:1 	|AA | |
 |dark-green	    |light-green 	|3.66   :1 	|AAA|Only used for large text|
 
+## Automated testing
+
+Automated tests were written for the following test cases:
+
+`collection/test_forms`:
+
+- comment form is valid
+- comment form is invalid
+
+`collection/test_views`:
+
+- render recipe detail page with comment form
+- successful comment submission
+- successful comment editing
+- unsuccessful comment editing
+- successful comment deletion
+- unsuccessful comment deletion
+
+All automated tests pass without issues.
+
+![All automated tests pass without issues](testing/automated-testing/automated-tests.png)
+
 ## Bugs
 
 All bugs are tracked in [GitHub Issues](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3Abug).
