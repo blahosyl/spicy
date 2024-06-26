@@ -6,8 +6,13 @@ from .models import Recipe, Comment
 
 
 class TestCollectionViews(TestCase):
-
+    """
+    Test views in the Collection app
+    """
     def setUp(self):
+        """
+        Mock up 3 users, a recipe and a comment
+        """
         self.user = User.objects.create_superuser(
             username="superUserName",
             password="superUserPassword",
@@ -39,7 +44,13 @@ class TestCollectionViews(TestCase):
             body="Original comment")
         # self.comment.save()
 
+    # the following 2 tests were written basen on the walkthrough project
+    # "I Think Therefore I Blog" by Code Institute
+    # https://github.com/Code-Institute-Solutions/blog
     def test_render_recipe_detail_page_with_comment_form(self):
+        """
+        Test for displaying the recipe page with the comment form
+        """
         response = self.client.get(reverse(
             'recipe_detail', args=['recipe-title']))
         self.assertEqual(response.status_code, 200)
@@ -57,7 +68,6 @@ class TestCollectionViews(TestCase):
         }
         response = self.client.post(reverse(
             'recipe_detail', args=['recipe-title']), recipe_data)
-        # print(response.content)
         self.assertEqual(response.status_code, 200)
         self.assertIn(
             b'Comment submitted and awaiting approval',
@@ -83,7 +93,7 @@ class TestCollectionViews(TestCase):
         self.assertEqual(self.comment.body, 'Edited comment')
 
     def test_unsuccessful_comment_editing(self):
-        """Test for successfully editing a comment"""
+        """Test for unsuccessfully editing a comment"""
         self.client.login(
             username="user2Name", password="user2Password")
         edit_url = reverse('comment_edit',

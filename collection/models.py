@@ -6,6 +6,9 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 class Recipe(models.Model):
+    """
+    The Recipe model EXCLUDING ingredients and attributes
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     excerpt = models.TextField(max_length=1000, blank=True)
@@ -27,13 +30,22 @@ class Recipe(models.Model):
         ordering = ["-updated_on"]
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         return f"{self.title} | {self.author}"
 
     def total_time(self):
+        """
+        Calculate total time from prep time and cook time
+        """
         return self.prep_time + self.cook_time
 
 
 class Ingredient(models.Model):
+    """
+    Ingredients globally available to all recipes
+    """
     ingr_name = models.CharField(max_length=50)
     preparation = models.CharField(max_length=200, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -45,6 +57,9 @@ class Ingredient(models.Model):
         unique_together = [("ingr_name", "preparation")]
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         string = f"{self.ingr_name}"
         if self.preparation:
             string += f", {self.preparation}"
@@ -52,6 +67,10 @@ class Ingredient(models.Model):
 
 
 class IngredientQuantity(models.Model):
+    """
+    The intermediary model between Recipes and Ingredients,
+    containing extra information for each instance
+    """
     quantity = models.DecimalField(
         max_digits=7,
         decimal_places=2,
@@ -101,6 +120,9 @@ class IngredientQuantity(models.Model):
         verbose_name_plural = "Ingredient quantities"
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         if self.quantity:
             quantity_string = f"{self.quantity} {self.unit} of "
         else:
@@ -110,6 +132,9 @@ class IngredientQuantity(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Comments on recipes
+    """
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name="comments"
     )
@@ -128,10 +153,16 @@ class Comment(models.Model):
     # show recipes by title in admin panel
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         return f"Comment {self.body} by {self.author} Appr: {self.approved}"
 
 
 class Attribute(models.Model):
+    """
+    Globally available attributes
+    """
     category = models.CharField(max_length=50)
     attr_value = models.CharField(max_length=200)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -143,10 +174,16 @@ class Attribute(models.Model):
         unique_together = [("category", "attr_value")]
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         return f"{self.category}: {self.attr_value}"
 
 
 class RecipeAttribute(models.Model):
+    """
+    The intermediary model between Recipes and Attributes
+    """
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE,
         related_name="attributes",
@@ -168,5 +205,8 @@ class RecipeAttribute(models.Model):
         ordering = ["attribute", "recipe"]
 
     def __str__(self):
+        """
+        How instances of this model are shown in the admin panel
+        """
         string = f"{self.attribute} | {self.recipe}"
         return string

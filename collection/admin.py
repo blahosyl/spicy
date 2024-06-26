@@ -35,6 +35,10 @@ class CommentInline(admin.TabularInline):
 
 @admin.register(Recipe)
 class PostAdmin(SummernoteModelAdmin):
+    """
+    Enables the administration of Recipe objects, including related
+    IngredientQuantity, RecipeAttribute and Commnent objects
+    """
 
     list_display = ('title', 'slug')
     search_fields = ['title']
@@ -58,16 +62,28 @@ class PostAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Ingredient)
+
 class IngredientAdmin(admin.ModelAdmin):
+    """
+    Enables the administration of Ingredient objects 
+    and related IngredientQuantity objects
+    """
     inlines = [IngredientQuantityInline]
 
 
 @admin.register(Attribute)
 class IngredientAdmin(admin.ModelAdmin):
+    """
+    Enables the administration of Attribute objects 
+    and related RecipeAttribute objects
+    """
     inlines = [RecipeAttributeInline]
 
 
 class StaffAdmin(admin.ModelAdmin):
+    """
+    Restrict the Administration of certain objects for Staff users
+    """
 
     # staff users can only view, change & delete their own objects
     def get_queryset(self, request):
@@ -84,7 +100,7 @@ class StaffAdmin(admin.ModelAdmin):
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
 
 
-# also register these models as stand-alone in the admin panel
+# also register "dependent" models as stand-alone in the admin panel
 # staff users only create, view, change & delete ingredient quantities
 # related to their own recipes
 admin.site.register(IngredientQuantity, StaffAdmin)

@@ -7,8 +7,10 @@ from .models import Recipe, Comment
 from .forms import CommentForm
 
 
-# Create your views here.
 class RecipeList(generic.ListView):
+    """
+    Provide a paginated list of all published recipes
+    """
     queryset = Recipe.objects.filter(published=True)
     template_name = "collection/index.html"
     paginate_by = 6
@@ -67,7 +69,7 @@ def recipe_detail(request, slug):
 
 def comment_edit(request, slug, comment_id):
     """
-    view to edit comments
+    View to edit comments
     """
     if request.method == "POST":
 
@@ -81,17 +83,22 @@ def comment_edit(request, slug, comment_id):
             comment.recipe = recipe
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment updated!', extra_tags='comment')
+            messages.add_message(request,
+                                 messages.SUCCESS,
+                                 'Comment updated!',
+                                 extra_tags='comment')
         else:
-            messages.add_message(request, messages.ERROR,
-                                 'Error updating comment!', extra_tags='comment')
+            messages.add_message(request,
+                                 messages.ERROR,
+                                 'Error updating comment!',
+                                 extra_tags='comment')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):
     """
-    view to delete comment
+    View to delete comment
     """
     queryset = Recipe.objects.filter(published=True)
     recipe = get_object_or_404(queryset, slug=slug)
@@ -99,16 +106,24 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, 'Comment deleted!', extra_tags='comment')
+        messages.add_message(request,
+                             messages.SUCCESS,
+                             'Comment deleted!',
+                             extra_tags='comment')
     else:
-        messages.add_message(request, messages.ERROR,
-                             'You can only delete your own comments!', extra_tags='comment')
+        messages.add_message(request,
+                             messages.ERROR,
+                             'You can only delete your own comments!',
+                             extra_tags='comment')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
 
 # based on https://learndjango.com/tutorials/django-search-tutorial
 class SearchResultsView(generic.ListView):
+    """
+    Provide a list of recipes matching the search query
+    """
     model = Recipe
     template_name = 'collection/search_results.html'
     paginate_by = 6
@@ -136,7 +151,7 @@ class SearchResultsView(generic.ListView):
 
 class FilterResultsView(generic.ListView):
     """
-    view for getting filtered recipes using the following dropdown forms:
+    Provide filtered recipes using the following dropdown forms:
     temp
     diet
     taste
