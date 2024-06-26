@@ -266,10 +266,7 @@ https://github.com/blahosyl/spicy/assets/26421503/4f80ed67-5698-425b-85a8-9166ff
 
 *Click to play video*
 
-
-
 https://github.com/blahosyl/spicy/assets/26421503/c91a3a0b-db04-4886-aa12-7798926934bc
-
 
 
 ####  User bar | if user not signed in
@@ -279,12 +276,26 @@ https://github.com/blahosyl/spicy/assets/26421503/c91a3a0b-db04-4886-aa12-779892
 |Signin link clicked|[Signin page](#Signin-page) loaded|✅|
 |Signup link clicked|[Signup page](#Signup-page) loaded|✅|
 
+
+
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/dec9b12d-9319-497f-8d89-f59fb99c8d19
+
+
+
 ####  Footer
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |copyright info visible<br>GitHub icon visible<br>LinkedIn icon visible|✅|
 |GitHub icon clicked | GitHub profile opens in new tab|✅|
 |LinkedIn icon clicked | LinkedIn profile opens in new tab|✅|
+
+*Click to play video*
+
+https://github.com/blahosyl/spicy/assets/26421503/6655b581-354b-43c9-a9c7-fbdae3ed3c08
+
 
 ####  Home page
 
@@ -296,6 +307,12 @@ Displays the list of recipes
 |filter changed     |result count visible<br>recipe list is filtered|✅|
 |result count > 6   |[pagination](#pagination-links) visible|✅|
 |any recipe card clicked|corresponding [recipe detail page](#recipe-detail-page) loads|✅|
+
+*Click to play video*
+
+
+
+https://github.com/blahosyl/spicy/assets/26421503/ddf2f609-f4a6-4107-bd38-48024aba99f4
 
 
 ####  Recipe detail page
@@ -314,12 +331,33 @@ Displays the list of recipes
 |Close button clicked on delete modal |delete modal closes<br>comment remains|✅|
 |Delete button clicked on delete modal|comment is deleted<br>confirmation message appears|✅|
 
+*Click to play video*
+
+
+
+https://github.com/blahosyl/spicy/assets/26421503/014a8da2-57dc-4c47-8f1b-3ac8cfc0c1c9
+
+*Click to play video*
+
+
+
+https://github.com/blahosyl/spicy/assets/26421503/5ba96824-3df9-4c56-8126-208083207e7d
+
+
+
 ####  Search results page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Search page loaded |result count visible<br>recipe list is filtered|✅|
 |result count > 6   |[pagination](#pagination-links) visible|✅|
+
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/2e4cc54d-e155-4dfe-bd7d-b4f7fe1e1387
+
+
 
 ####  Pagination links
 |Action				|Expected result	|Result|
@@ -328,6 +366,12 @@ Displays the list of recipes
 |previous results exist |**Prev** button visible|✅|
 |**Next** button clicked |next page of results is loaded|✅|
 |**Prev** button clicked |previous page of results is loaded|✅|
+
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/716b9563-cbd5-400e-8963-d0fcb08f6492
+
 
 ### Community manual testing
 
