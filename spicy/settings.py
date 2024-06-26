@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url  # converts database URL to format understood by Django
 if os.path.isfile('env.py'):
     import env
@@ -29,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-blahosyl-spicy-mec78zb7wjt.ws.codeinstitute-ide.net',
                  'spicy-recipes-django-5d174ffc7c94.herokuapp.com'
@@ -115,6 +116,17 @@ DATABASES = {
 #     }
 # }
 
+# this was suggested by Leon Potgieter. Need to run `set_pg` before, then it works
+if 'test' in sys.argv:
+    DATABASES = {'default': {
+                    'ENGINE': 'django.db.backends.postgresql',
+                    'NAME': 'test_db',
+                    'OPTIONS': {
+                        'options': '-c search_path=public',
+                    },
+                }
+    }
+
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
     "https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/",
@@ -124,6 +136,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+# line breaking suggested by Leon Potgieter
 
 AUTH_PASSWORD_VALIDATORS = [
     {

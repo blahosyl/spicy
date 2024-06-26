@@ -15,49 +15,37 @@
 const bodyStyles = document.body.style;
 // get the color theme selector dropdown form
 let themeSelector = document.getElementById('theme-selector');
-
-/** check if storage is already populated */
-function checkStorage() {
-    if(!localStorage.getItem('theme-selector')) {
-        storeColorTheme();
-    } else {
-        setColorTheme();
-    }
-}
+// get the locally stored color theme value (if any)
+let currentTheme = localStorage.getItem("colorTheme");
 
 /** populate storage with the value form the color theme selector form */
 function storeColorTheme() {
     localStorage.setItem("colorTheme", themeSelector.value);
-    console.log(localStorage.getItem("colorTheme"));
     
     setColorTheme();
 }
 
 /** set the site's color theme based on the value in storage */
 function setColorTheme() {
-    // get the theme value from storage
-    let currentTheme = localStorage.getItem("colorTheme");
+    // if there is no stored value, default to orange
+    if (!localStorage.getItem("colorTheme")) {
+        currentTheme = 'orange';
+    } else {
+        // get the theme value from storage
+        currentTheme = localStorage.getItem("colorTheme");
+    }
 
     // set the theme selector value to the one retrieved from storage
     themeSelector.value = currentTheme;
 
     // set the CSS color variables depending on the selected theme
-
-    if (currentTheme) {
-        bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-' + currentTheme + ')');
-        bodyStyles.setProperty('--dark-highlight', 'var(--dark-' + currentTheme + ')');
-        bodyStyles.setProperty('--highlight', 'var(--med-' + currentTheme + ')');
-        bodyStyles.setProperty('--light-highlight', 'var(--light-' + currentTheme + ')');
-        }
-
-    // default is orange
-    else {
-        bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-orange)');
-        bodyStyles.setProperty('--dark-highlight', 'var(--dark-orange)');
-        bodyStyles.setProperty('--highlight', 'var(--med-orange)');
-        bodyStyles.setProperty('--light-highlight', 'var(--light-orange)');
-    }
+    bodyStyles.setProperty('--very-dark-highlight', 'var(--very-dark-' + currentTheme + ')');
+    bodyStyles.setProperty('--dark-highlight', 'var(--dark-' + currentTheme + ')');
+    bodyStyles.setProperty('--highlight', 'var(--med-' + currentTheme + ')');
+    bodyStyles.setProperty('--light-highlight', 'var(--light-' + currentTheme + ')');
 }
 
-themeSelector.addEventListener("change", checkStorage);
+// store the theme when the selector is changed
+themeSelector.addEventListener("change", storeColorTheme);
+// apply the stored theme on page load
 document.addEventListener("DOMContentLoaded", setColorTheme);

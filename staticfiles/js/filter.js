@@ -1,4 +1,5 @@
-// Persist the selected value of the temperature and diet filter.
+// Governs the behaviour of the temperature, diet, taste and texture filters.
+// Only one filter can be active at a time.
 // Code based on `themes.js` in this repository.
 
 // get the temperature & diet selector dropdown forms
@@ -61,21 +62,18 @@ function resetTexture() {
 /** if the URL doesn't include the string 'filter', reset all filters */
 function resetAllFilters() {
     if (!window.location.href.includes('filter')) {
-        console.log("reset all filters");
 
-        localStorage.setItem("temperatureFilter", "any temperature");
-        temperatureSelector.value = "any temperature";
+        resetTemperature();
 
-        localStorage.setItem("dietFilter", "any diet");
-        dietSelector.value = "any diet";
+        resetDiet();
 
-        localStorage.setItem("tasteFilter", "any taste");
-        tasteSelector.value = "any taste";
+        resetTaste();
         
-        localStorage.setItem("textureFilter", "any texture");
-        textureSelector.value = "any texture";
+        resetTexture();
     }
 }
+
+// if a filter is changed, store its value and reset all other filters
 
 temperatureSelector.addEventListener("change", storeFilters);
 temperatureSelector.addEventListener("change", resetDiet);
@@ -98,6 +96,5 @@ textureSelector.addEventListener("change", resetTemperature);
 textureSelector.addEventListener("change", resetDiet);
 textureSelector.addEventListener("change", resetTaste);
 
-
-document.addEventListener("DOMContentLoaded", applyFilters);
+// when loading the home page, reset the filters
 document.addEventListener("DOMContentLoaded", resetAllFilters);

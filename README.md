@@ -1,35 +1,35 @@
+<!--Shield.io badges-->
 
-## Gitpod Reminders
+# Spicy Recipes
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![GitHub last commit](https://img.shields.io/github/last-commit/blahosyl/spicy?color=red)
+![GitHub contributors](https://img.shields.io/github/contributors/blahosyl/spicy?color=orange)
+![GitHub language count](https://img.shields.io/github/languages/count/blahosyl/spicy?color=black)
 
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
 ## UX
 
 ## Design
+
+## Project Management | Agile
+
+### The 5 Ss
+
+### Agile Methodologies
+
+#### Themes, Epics, Stories & Tasks
+
+#### Project Board
+
+#### Labels
+
+#### Prioritization & reprioritization
+
+#### Timeboxing
+
+#### Sprint planning
+
+#### Sprint retroactives
 
 ### Data models
 
@@ -89,6 +89,97 @@ Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
 
 ## Depoyment
 
+The following instrcutions describe the deployment process with the tools used for this project. 
+Of course, you can choose other tools/providers for the individual functions described below, e. g., a different Postgres database instead of Neon, or a different development environment instead of GitPod. 
+Naturally, detailed instructions are only provided for the tools used in this project.
+
+### Prerequisites
+
+- [GitPod](https://www.gitpod.io/) (or another IDE)
+- [Python 3](https://www.python.org/downloads/release/python-385/)
+- [pip](https://github.com/pypa/pip)
+- [git](https://git-scm.com/)
+- [Neon](https://neon.tech/) (or another Postgres database)
+- [Cloudinary](https://cloudinary.com/) (or another media hosting provider)
+- [Google Mail](https://google.com) with an [app password](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237) (or another email server)
+- [Heroku](https://www.heroku.com/) (or another could platform)
+
+### Fork the repository
+
+You can fork the repository by following these steps:
+
+1. Log in to [GitHub](https://github.com/) (if you don't have a GitHub account yet, you can [create one](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) for free).
+2. Navigate to the project website [https://github.com/blahosyl/spicy](https://github.com/blahosyl/spicy).
+3. Click on **Fork** in the upper right part of the screen.
+4. On the next page you have the possibility to change the repository name. To do this, simply write your desired name in the text field in the center part of the screen. You can also leave the name as it is.
+5. Click **Fork** in the bottom right part of the screen.
+
+>[!TIP]
+>If you do rename the repository, make sure to keep the [GitHub naming conventions](https://github.com/bcgov/BC-Policy-Framework-For-GitHub/blob/master/BC-Gov-Org-HowTo/Naming-Repos.md) in mind.
+
+### Deploy in the development environment
+
+1. Open the repository in a new workspace in GitPod. GitPod will automatically run the Python virtual environment for you. If you're using a different development environment, see [this documentation](https://docs.python.org/3/library/venv.html).
+2. Install the required dependencies:
+	```
+	pip3 -r requirements.txt.
+	```
+3. To store access credentials and other secrets, create a file called `env.py` in your top-level projct directory. 
+Before adding any content to it, add `env.py` to `.gitignore` and commit your changes. 
+This will prevent the contents of `env.py` from being pushed to the Git repository.
+4. Add the following information to your `env.py` file:
+  	- `CLOUDINARY_URL` -you can find this in your [Cloudinary](https://cloudinary.com/) console under **API Keys**
+	- `DATABASE_URL`
+	- `DEFAULT_FROM_EMAIL`
+	- `SECRET_KEY`
+5. In `settings.py`, add your GitPod workspace URL to `ALLOWED_HOSTS`
+6. Run a migration to create your database tables:
+	```
+	python manage.py migrate
+	```
+7. Create a superuser (make sure you save the username and password you use here):
+	```
+	python manage.py createsuperuser
+	```
+8. Run the development server
+	```
+	python manage.py runserver
+	```
+
+### Deploy to production
+
+#### Pre-deployment steps
+
+Make sure to complete the following pre-deployment steps in your development environment, especially if you made changes to the project:
+
+1. (Re-)create a list of requirements by going to the terminal and typing `pip3 freeze > requirements.txt`. This popuplates your `requirements.txt` file with the list of required files.
+2. Collect static files (these are hosted with [whitenoise](http://whitenoise.evans.io/en/stable/)):
+	```
+	python manage.py collectstatic
+	```
+3. In `settings.py`, make sure `DEBUG=False`
+4. Commit and push your changes to GitHub.
+
+#### Steps on Heroku
+
+1. Log in to your [Heroku](https://www.heroku.com/) account (or create a new one if you have not done so yet).
+2. [Create a new Heroku app](https://dashboard.heroku.com/new-app) by selecting your region and app name.
+3. Under **Settings > Config Vars** in Heroku, add the following variables:
+	- `CLOUDINARY_URL` -you can find this in your [Cloudinary](https://cloudinary.com/) console under **API Keys**
+	- `DATABASE_URL`
+	- `DEFAULT_FROM_EMAIL`: this can be the same as `EMAIL_APP_USER`
+	- `EMAIL_APP_PASSWORD`: [instructions for obtaining one](https://knowledge.workspace.google.com/kb/how-to-create-app-passwords-000009237)
+	- `EMAIL_APP_USER`: the email used with your email server
+	- `SECRET_KEY`
+4. Under **Deploy > Deployment method** in Heroku, select **GitHub** and connect Heroku to your GitHub account.
+	- Type in your repository name, then click **Search**. 
+	- When your repository appears, click **Connect** next to it.
+5. Under **Deploy > Manual deploy** in Heroku, select **Deploy branch** to deploy manually.
+	- Once the process is finished, the following message will appear:<br>
+	_Your app was successfully deployed_
+	- Click **View** under the message, and a new tab will appear with your deployed app.
+6. (optional) Under **Deploy > Automatic deploy** in Heroku, select **Enable Automatic Deploys** if you want your app to be rebuilt each time you push to the `main` branch of your GitHub repository (but make sure your `settings.py` file always has `DEBUG=False` when you do). 
+
 ## Testing
 
 See the document [`TESTING.md`](TESTING.md) for details.
@@ -100,6 +191,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [I Think Therefore I Blog walkthrough project by Code Institute](https://github.com/Code-Institute-Solutions/blog)
 - [search tutorial](https://learndjango.com/tutorials/django-search-tutorial)
 - [querying of related models](https://github.com/blahosyl/spicy/issues/115) implemented with the help of [Roman Rakic](https://code-institute-room.slack.com/archives/C026PTF46F5/p1718633149758449?thread_ts=1718600949.810239&cid=C026PTF46F5)
+- [Tech Corner Website](https://github.com/j0hanz/tech-corner-website)
+- [Successful comment editing test](https://github.com/blahosyl/spicy/commit/50c3f7d6f3f79a7f296d018503cacb05ae3bfbe2)  rewritten with the help of tutor Roo
 
 
 ### Study/lookup sources
@@ -177,6 +270,10 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Django `formfield_for_foreignkey` documentation](https://docs.djangoproject.com/en/4.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.formfield_for_foreignkey)
 - [Bootstrap sizing](https://getbootstrap.com/docs/5.0/utilities/sizing/)
 - [preferred way of breaking lines in Python](https://stackoverflow.com/a/53180)
+- [built-in error views](https://docs.djangoproject.com/en/4.2/ref/views/)
+- [displaying messages based on tags](https://stackoverflow.com/a/16285005)
+- [Django messages documentation](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
+- [`floatformat` template tag](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/) 
 
 ### General advice
 
@@ -191,9 +288,7 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 [Logo/favicon](https://pixabay.com/illustrations/autism-infinity-symbol-1192408/) by [janeb13](https://pixabay.com/users/janeb13-725943/) on [Pixabay](https://pixabay.com/), converted to `ico` format with [`Favicon.io`](https://favicon.io/favicon-converter/).
 
-### Readme
-
-### Readme
+### Readmes
 
 - [Creating your first README with Kera Cudmore](https://www.youtube.com/watch?v=XbYJ4VlhSnY) by Code Institute
 - [Creating your first README](https://github.com/kera-cudmore/readme-examples) by Kera Cudmore
@@ -204,9 +299,14 @@ See the document [`TESTING.md`](TESTING.md) for details.
 - [Horizon Photo](https://github.com/Ri-Dearg/horizon-photo/blob/master/README.md#mobile-testing) by Rory Patrick Sheridan
 - [BackeStock](https://github.com/amylour/BakeStock/) by [Amy Richardson](https://github.com/amylour)
 - [American Pizza Order System](https://github.com/useriasminnaamerican_pizza_order_system/) by [Iasmina Pal](https://github.com/useriasminna)
+- [Neverlost](https://github.com/Ri-Dearg/neverlost-thrift) by [Rory Patrick Sheridan](https://github.com/Ri-Dearg)
 - [The README of my first Code Institute project](https://github.com/blahosyl/academic-publishing)
 - [The README of my second Code Institute project](https://github.com/blahosyl/operator-game)
 - [The README of my third Code Institute project](https://github.com/blahosyl/dinner-party)
+
+### Unsolicited pull request by an unknown person
+
+A person unknown to me has forked the project repository and submitted a [pull request](https://github.com/blahosyl/spicy/pull/137) with some code comments added. I had not communicated with this person before this nor asked for their contribution to the repository. The pull request was closed without merging.
 
 
 

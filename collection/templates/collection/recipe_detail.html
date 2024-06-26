@@ -20,7 +20,7 @@
             </div>
             <div class="d-block col-md-7 col-lg-8 masthead-image">
                 {% if "placeholder" in recipe.featured_image.url %}
-                <img src="{% static 'images/default.jpg' %}" class="scale detail-img" alt="placeholder image">
+                <img src="{% static 'images/pots.jpg' %}" class="scale detail-img" alt="placeholder image">
                 {% else %}
                 <img src="{{ recipe.featured_image.url }}" class="scale" alt="{{ recipe.title }}">
                 {% endif %}
@@ -45,17 +45,19 @@
             </div>
             <!-- Show ingredients (if any) -->
             {% if ingredient_count %}
-            <div class="card-body">
-                <h4 class="card-header">
+            <div class="card-body d-flex flex-column">
+                <h4 class="card-header mb-4 text-center">
                     Ingredients
                     ({{ ingredient_count | safe }})
                 </h4>
-                <ul>
-                    {% for recipe_ingredient in recipe_ingredients %}
-                    <li>{{ recipe_ingredient.quantity }} {{ recipe_ingredient.unit }} of
-                        {{ recipe_ingredient.ingredient }}</li>
-                    {% endfor %}
-                </ul>
+                    <div class="align-self-center">
+                    <ul>
+                        {% for recipe_ingredient in recipe_ingredients %}
+                        <li>{{ recipe_ingredient.quantity | floatformat:"-2"}} {{ recipe_ingredient.unit }} of
+                            {{ recipe_ingredient.ingredient }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
             {% endif %}
         </div>
@@ -119,12 +121,14 @@
 
         <!-- Create New Comments -->
         <div class="col-md-4 card mb-4 mt-3">
-            <!-- Add placeholder messages -->
+            <!-- Add placeholder for comment messages -->
             {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {% if "comment" in message.extra_tags %}
+            <div class="alert alert-{{ message.level_tag }} alert-dismissible fade show" id="msg" role="alert">
                 {{ message | safe }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            {% endif %}
             {% endfor %}
             <div class="card-body">
                 {% if user.is_authenticated %}
@@ -136,7 +140,7 @@
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% else %}
-                <p>Log in to leave a comment</p>
+                <p>Sign in to leave a comment</p>
                 {% endif %}
             </div>
         </div>

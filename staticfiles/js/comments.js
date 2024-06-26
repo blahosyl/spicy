@@ -1,3 +1,7 @@
+// The comment functionality in this project is implemented identically to
+// the "I Think Therefore I Blog" walkthrough projct by Code Institute
+// https://github.com/Code-Institute-Solutions/blog
+
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");

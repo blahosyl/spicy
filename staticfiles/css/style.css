@@ -39,20 +39,21 @@ body {
     color: var(--very-dark-highlight);
 }
 
-.navbar-text {
-    color: var(--dark-highlight);
-}
-
 .nav-link:hover{
     color: var(--dark-highlight);
 }
 
 nav .brand {
+    color: var(--dark-highlight);
     font-weight: 400;
 }
 
-nav .brand:hover {
+.brand-text {
     color: var(--very-dark-highlight);
+}
+
+nav .brand:hover {
+    text-decoration: underline;
 }
 
 .nav-item .active{
@@ -94,7 +95,7 @@ nav .brand:hover {
 /* Recipe detail view */
 
 .main-bg {
-    background-color: var(--light-neutral);
+    background-color: var(--white);
 }
 
 .card {
@@ -162,9 +163,15 @@ nav .brand:hover {
     color: var(--very-dark-highlight) ;
 }
 
-.recipe-link:hover,
 .page-link {
-    color: var(--highlight) ;
+    color: var(--very-dark-highlight);
+    background-color: var(--light-highlight);
+    border-radius: 7px;
+}
+
+.recipe-link:hover,
+.page-link:hover {
+    color: var(--dark-highlight) ;
 }
 
 .footer-link:hover,
@@ -192,6 +199,7 @@ nav .brand:hover {
 
 .recipe-card {
     height: 95%;
+    background-color: var(--light-neutral);
 }
 
 .card-header {
@@ -204,7 +212,7 @@ nav .brand:hover {
 
 .btn-signup,
 .btn-edit {
-    background-color: var(--highlight);
+    background-color: var(--dark-highlight);
     color: var(--white);
 }
 
@@ -212,7 +220,7 @@ nav .brand:hover {
 .btn-delete,
 .btn-search {
     color: var(--white);
-    background: var(--dark-highlight) ;
+    background: var(--very-dark-highlight) ;
 }
 
 .btn-signup:hover,
@@ -226,13 +234,13 @@ nav .brand:hover {
 }
 
 .link {
-    color: var(--highlight);
+    color: var(--dark-highlight);
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: var(--dark-highlight) ;
+    color: var(--highlight) ;
     text-decoration: underline;
 }
 
@@ -260,8 +268,9 @@ nav .brand:hover {
 /* Profile list */
 
 .profile-card {
-    background-color: var(--light-highlight);
-    border-radius: 5px;
+    background-color: var(--white);
+    border-radius: 8px;
+    border: solid 4px var(--highlight);
 }
 
 .profile-name {
