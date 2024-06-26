@@ -1,9 +1,17 @@
+<!-- Shows the list of recipes -->
+<!--Adapted from the "I Think Therefore I Blog" Walkthrough project by Code Institute -->
+<!-- https://github.com/Code-Institute-Solutions/blog -->
+
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
 
+<!-- The temperature, diet, taste and texture filters-->
+
 {% include "./snippets/filters.html" %}
+
+<!-- Show filter and result count (if recipes are filtered) -->
 
 {% if 'filter' in request.path %}
 
@@ -26,6 +34,7 @@
             {% endif %}
         </div>
 
+        <!-- Link to reset filters -->
         {% if temp != "any temperature" and diet != "any diet" and taste != "any taste" and texture != "any texture" %}
         <div class="col-2 col-md-4  d-flex justify-content-end">
             <a class="link" href="{% url 'home' %}" aria-label="Reset filters">Reset filters</a>
@@ -36,10 +45,12 @@
 
 {% endif %}
 
+<!-- Recipes start here -->
+
 {% include "./snippets/before_recipe_list.html" %}
 
 {% for recipe in recipe_list %}
-{% include "./snippets/recipe_list.html" %}
+    {% include "./snippets/recipe_list.html" %}
 {% endfor %}
 
 {% include "./snippets/after_recipe_list.html" %}
@@ -48,7 +59,7 @@
 
 {% block extras %}
 
-    <!-- filter script -->
+    <!-- Filter script -->
     <script src="{% static 'js/filter.js' %}"></script>
 
 {% endblock %}

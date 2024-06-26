@@ -1,3 +1,5 @@
+<!-- Show search results -->
+
 {% extends "base.html" %}
 {% load static %}
 
@@ -5,13 +7,14 @@
 
 <div class="container-fluid">
 
-
+    <!-- Show result count and query -->
     <h2>{{ object_count }}  results for "{{ query }}"</h2>
 
     {% if query == '' %}
         <p>You did not enter anything into the search field.</p>
     {% elif object_list%}
 
+        <!-- recipes start here -->
         {% include "./snippets/before_recipe_list.html" %}
 
         {% for recipe in object_list %}

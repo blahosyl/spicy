@@ -1,9 +1,12 @@
+<!-- Displays the list of recipes on the home page and search page -->
+
 {% load static %}
 
 <div class="col-md-4">
     <div class="card recipe-card border text-center mb-4">
         <div class="card-body">
             <div class="image-container">
+                <!-- recipe image or placeholder -->
                 {% if "placeholder" in recipe.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/pots.jpg' %}"
                   alt="placeholder image">

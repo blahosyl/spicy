@@ -1,3 +1,7 @@
+<!-- Shows details of individual recipes -->
+<!--Adapted from the "I Think Therefore I Blog" Walkthrough project by Code Institute -->
+<!-- https://github.com/Code-Institute-Solutions/blog -->
+
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_tags %}
@@ -12,6 +16,7 @@
                 <h1 class="recipe-title">{{ recipe.title }}</h1>
                 <!-- Recipe author goes before the | the recipe's created date goes after -->
                 <p class="recipe-subtitle">{{ recipe.author }} | {{ recipe.created_on }}</p>
+                <!-- Show attributes, if any -->
                 <p class="recipe-attributes mb-4">
                     {% for recipe_attribute in recipe_attributes %}
                     #{{ recipe_attribute.attribute.attr_value }}
@@ -32,9 +37,8 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 card mb-4  mt-3 left  top">
-            <!-- The recipe content goes inside the card-text. -->
-            <!-- Use the | safe filter inside the template tags -->
             <div class="card-body">
+                <!-- Show total time, cook time & prep time -->
                 <p class="card-text text-center">
                     Total time: {{ recipe.total_time }} minute{{ recipe.total_time | pluralize }}
                     <br>
@@ -63,6 +67,8 @@
         </div>
         <div class="col-12 col-md-6 col-lg-8 card mb-4 mt-3 left top">
             <div id="instructions" class="card-body">
+                <!-- The recipe content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
                 <div class="card-text">
                     {{ recipe.instructions | safe }}
                 </div>
