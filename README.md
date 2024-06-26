@@ -319,5 +319,8 @@ A person unknown to me has forked the project repository and submitted a [pull r
 ### Acknowledgements
 
 I would like to express my deepest gratitude to my mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his incredibly useful and understanding support throughout the project.
+Issues raised by him or discussed with him can be found [here](https://github.com/blahosyl/spicy/issues?q=label%3Amentor) (see the individual ticket descriptions for the details of his contribution).
+
+I am also grateful to the Code Institute tutoring team, in particular, to John and Roo for their help. The details of their contributions can be found [here](https://github.com/blahosyl/spicy/issues?q=label%3Atutoring).
 
 
