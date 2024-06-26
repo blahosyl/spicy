@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<div class="container-fluid">
+<div class="container-fluid px-lg-5">
     <h1>Profiles</h1>
     <div class="row">
 
@@ -13,7 +13,7 @@
         <div class="col-12 my-3 left">
             <div class="row">
                 {% for profile in profiles %}
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 my-2">
+                <div class="col-md-4 my-2">
                     <div class="card mb-4 px-2 h-100 text-center profile-card">
                         <div class="card-body">
                                     <div class="author p-2 mb-2 d-flex flex-wrap align-content-center justify-content-center profile-name">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:3 %}
             </div>
             <div class="row">
                 {% endif %}
