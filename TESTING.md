@@ -425,7 +425,6 @@ https://github.com/blahosyl/spicy/assets/26421503/9d5eb187-e503-42b5-82a8-15479b
 *Click to play video*
 
 
-
 https://github.com/blahosyl/spicy/assets/26421503/f62c36c3-d8b2-48d5-89d0-59ecf49c0c99
 
 
@@ -442,6 +441,11 @@ https://github.com/blahosyl/spicy/assets/26421503/f62c36c3-d8b2-48d5-89d0-59ecf4
 |Signup button clicked<br>email already registered|"A user with that username already exists"|✅|
 |Signup button clicked<br>all fields filled correctly |user is signed up<br>[Email sent page](#email-sent-page) loads<br>verification email sent to user|✅|
 |user clicks link in verification email|[Confirm email page](#confirm-email-page) loads|
+
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/0d272dd9-1541-4aa5-b72a-f20f115cc479
 
 
 ####  Email sent page
