@@ -230,12 +230,12 @@ Validation found no issues.
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |hamburger icon not visible<br>logo and brand name visible<br>brand text visible<br>nav links visible<br>Search bar visible<br>color selector visible||
-|color selector changed|page color scheme changes persistently||
-|Community link clicked |[Community page](#community-page) loaded||
-|Recipes link clicked |[Home page](#home-page) loaded||
-|**Search** button clicked |[Search page](#Search-results-page) loaded||
-|logo and brand name clicked|[home page](#home-page) loaded||
+|page loads    |hamburger icon not visible<br>logo and brand name visible<br>brand text visible<br>nav links visible<br>Search bar visible<br>color selector visible|✅|
+|color selector changed|page color scheme changes persistently|✅|
+|Community link clicked |[Community page](#community-page) loaded|✅|
+|Recipes link clicked |[Home page](#home-page) loaded|✅|
+|**Search** button clicked |[Search page](#Search-results-page) loaded|✅|
+|logo and brand name clicked|[home page](#home-page) loaded|✅|
 
 
 *Click to play video*
@@ -248,32 +248,32 @@ https://github.com/blahosyl/spicy/assets/26421503/7c897e0e-44b6-486a-afe9-7b4603
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |hamburger icon visible<br>logo and brand name visible<br>brand text not visible<br>nav links not visible<br>Search bar not visible<br>color selector not visible||
-|hamburger icon clicked|Search bar and color selector revealed||
-|hamburger icon clicked again |Search bar and color selector hidden||
+|page loads    |hamburger icon visible<br>logo and brand name visible<br>brand text not visible<br>nav links not visible<br>Search bar not visible<br>color selector not visible|✅|
+|hamburger icon clicked|Search bar and color selector revealed|✅|
+|hamburger icon clicked again |Search bar and color selector hidden|✅|
 
 
 ####  User bar | if user signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |"Welcome, `user`!" visible<br>"You are not logged in" not visible<br>Signout link visible||
-|Signout link clicked|[Signout page](#Signout-page) loaded||
+|page loads    |"Welcome, `user`!" visible<br>"You are not logged in" not visible<br>Signout link visible|✅|
+|Signout link clicked|[Signout page](#Signout-page) loaded|✅|
 
 
 
 ####  User bar | if user not signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |"Welcome, `user`!" not visible<br>"You are not logged in" visible<br>Signin link visible<br>||
-|Signin link clicked|[Signin page](#Signin-page) loaded||
-|Signup link clicked|[Signup page](#Signup-page) loaded||
+|page loads    |"Welcome, `user`!" not visible<br>"You are not logged in" visible<br>Signin link visible<br>|✅|
+|Signin link clicked|[Signin page](#Signin-page) loaded|✅|
+|Signup link clicked|[Signup page](#Signup-page) loaded|✅|
 
 ####  Footer
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|page loads    |copyright info visible<br>GitHub icon visible<br>LinkedIn icon visible||
-|GitHub icon clicked | GitHub profile opens in new tab||
-|LinkedIn icon clicked | LinkedIn profile opens in new tab||
+|page loads    |copyright info visible<br>GitHub icon visible<br>LinkedIn icon visible|✅|
+|GitHub icon clicked | GitHub profile opens in new tab|✅|
+|LinkedIn icon clicked | LinkedIn profile opens in new tab|✅|
 
 ####  Home page
 
@@ -281,42 +281,42 @@ Displays the list of recipes
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|home page loads    |filters visible<br>recipe cards visible<br>pagination visible||
-|filter changed     |result count visible<br>recipe list is filtered||
-|result count > 6   |[pagination](#pagination-links) visible||
-|any recipe card clicked|corresponding [recipe detail page](#recipe-detail-page) loads||
+|home page loads    |filters visible<br>recipe cards visible<br>pagination visible|✅|
+|filter changed     |result count visible<br>recipe list is filtered|✅|
+|result count > 6   |[pagination](#pagination-links) visible|✅|
+|any recipe card clicked|corresponding [recipe detail page](#recipe-detail-page) loads|✅|
 
 
 ####  Recipe detail page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|recipe detail page loads|title visible<br>author visible<br>attributes visible (if any)<br>ingedients visible (if any)<br>image visible<br>total time, prep time & cook time visible<br>instructions visible<br>comments visible (if any)||
-|user not logged in|"Sign in to leave a comment"||
-|user logged in|comment field visible<br>comment field & button visible<br>own pending comments visible||
-|user logged in<br>user has comments|Edit & Delete button visible for each comment<br>||
-|comment button clicked<br>comment field empy|"Please fill in this field"||
-|comment button clicked<br>comment field not empy|comment appears as unapproved<br>edit & delete buttons appear||
-|Edit button clicked|comment text filled into comment field<br>Submit button changes to Update||
-|Update button clicked|comment text updated<br>comment set to unapproved||
-|Delete button clicked|delete modal pops up||
-|Close button clicked on delete modal |delete modal closes<br>comment remains||
-|Delete button clicked on delete modal|comment is deleted<br>confirmation message appears||
+|recipe detail page loads|title visible<br>author visible<br>attributes visible (if any)<br>ingedients visible (if any)<br>image visible<br>total time, prep time & cook time visible<br>instructions visible<br>comments visible (if any)|✅|
+|user not logged in|"Sign in to leave a comment"|✅|
+|user logged in|comment field visible<br>comment field & button visible<br>own pending comments visible|✅|
+|user logged in<br>user has comments|Edit & Delete button visible for each comment<br>|✅|
+|comment button clicked<br>comment field empy|"Please fill in this field"|✅|
+|comment button clicked<br>comment field not empy|comment appears as unapproved<br>edit & delete buttons appear|✅|
+|Edit button clicked|comment text filled into comment field<br>Submit button changes to Update|✅|
+|Update button clicked|comment text updated<br>comment set to unapproved|✅|
+|Delete button clicked|delete modal pops up|✅|
+|Close button clicked on delete modal |delete modal closes<br>comment remains|✅|
+|Delete button clicked on delete modal|comment is deleted<br>confirmation message appears|✅|
 
 ####  Search results page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Search page loaded |result count visible<br>recipe list is filtered||
-|result count > 6   |[pagination](#pagination-links) visible||
+|Search page loaded |result count visible<br>recipe list is filtered|✅|
+|result count > 6   |[pagination](#pagination-links) visible|✅|
 
 ####  Pagination links
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|more recipes/results exist |**Next** button visible||
-|previous results exist |**Prev** button visible||
-|**Next** button clicked |next page of results is loaded||
-|**Prev** button clicked |previous page of results is loaded||
+|more recipes/results exist |**Next** button visible|✅|
+|previous results exist |**Prev** button visible|✅|
+|**Next** button clicked |next page of results is loaded|✅|
+|**Prev** button clicked |previous page of results is loaded|✅|
 
 ### Community manual testing
 
@@ -327,74 +327,76 @@ Displays the list of profiles
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Community page loads  |profile cards visible||
-|any profile card clicked|corresponding [profile detail page](#profile-detail-page) loads||
+|Community page loads  |profile cards visible|✅|
+|any profile card clicked|corresponding [profile detail page](#profile-detail-page) loads|✅|
 
 ####  Profile detail page
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Profile detail page loads|name or username visible<br>status visible<br>pronouns visible (if any)<br>neurodiversity visible (if any)<br>about text visible (if any)||
+|Profile detail page loads|name or username visible<br>status visible<br>pronouns visible (if any)<br>neurodiversity visible (if any)<br>about text visible (if any)|✅|
 
 ### Authentication manual testing
 
 ####  Signin page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Signin page loads    |Signin text visible<br>Signup link visible<br>username field visible<br>password field visible<br>Signup button visible<br>password reset link visible||
-|Signup link clicked|[Signup page](#Signup-page) loaded||
-|password reset link clicked|[password reset page](#password-reset-page) loaded||
-|Signin button clicked<br>any field empty |"Please fill in this field"||
-|Signin button clicked<br>noth fields filled<br>credentials not correct|"The username and/or password you specified are not correct."||
-|Signin button clicked<br>both fields filled<br>credentials correct<br>email not confirmed |user is signed in<br>[Email sent page](#email-sent-page) loads<br>confirmation email sent||
-|Signin button clicked<br>both fields filled<br>credentials correct<br>email confirmed|user is signed in<br>[home page](#home-page) loads||
+|Signin page loads    |Signin text visible<br>Signup link visible<br>username field visible<br>password field visible<br>Signup button visible<br>password reset link visible|✅|
+|Signup link clicked|[Signup page](#Signup-page) loaded|✅|
+|password reset link clicked|[password reset page](#password-reset-page) loaded|✅|
+|Signin button clicked<br>any field empty |"Please fill in this field"|✅|
+|Signin button clicked<br>noth fields filled<br>credentials not correct|"The username and/or password you specified are not correct."|✅|
+|Signin button clicked<br>both fields filled<br>credentials correct<br>email not confirmed |user is signed in<br>[Email sent page](#email-sent-page) loads<br>confirmation email sent|✅|
+|Signin button clicked<br>both fields filled<br>credentials correct<br>email confirmed|user is signed in<br>[home page](#home-page) loads|✅|
 
 ####  Signout page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Signout page loads  |Signout text visible<br>Signout button visible||
-|Signout button clicked  |user signed out<br>home page loads||
+|Signout page loads  |Signout text visible<br>Signout button visible|✅|
+|Signout button clicked  |user signed out<br>home page loads|✅|
 
 
 ####  Signup page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Signup page loads    |Signup text visible<br>Signin link visible<br>email filed visible<br>username field visible<br>password field visible<br>password rules visible<br>password (again) field visible<br>Signup button visible<br>password reset link visible||
-|Signin link clicked|[Signin page](#Signin-page) loaded||
-|password reset link clicked|[password reset page](#password-reset-page) loaded||
-|Signup button clicked<br>any field empty |"Please fill in this field"||
-|Signup button clicked<br>email field has no `@`|"Please include an `@`..."||
-|Signup button clicked<br>password fields don't match<br>OR password does not conform to rules |password fields get emptied||
-|Signup button clicked<br>email already registered|"A user with that username already exists"||
-|Signup button clicked<br>all fields filled correctly |user is signed up<br>[Email sent page](#email-sent-page) loads<br>verification email sent to user||
+|Signup page loads    |Signup text visible<br>Signin link visible<br>email filed visible<br>username field visible<br>password field visible<br>password rules visible<br>password (again) field visible<br>Signup button visible<br>password reset link visible|✅|
+|Signin link clicked|[Signin page](#Signin-page) loaded|✅|
+|password reset link clicked|[password reset page](#password-reset-page) loaded|✅|
+|Signup button clicked<br>any field empty |"Please fill in this field"|✅|
+|Signup button clicked<br>email field has no `@`|"Please include an `@`..."|✅|
+|Signup button clicked<br>password fields don't match<br>OR password does not conform to rules |password fields get emptied|✅|
+|Signup button clicked<br>email already registered|"A user with that username already exists"|✅|
+|Signup button clicked<br>all fields filled correctly |user is signed up<br>[Email sent page](#email-sent-page) loads<br>verification email sent to user|✅|
 |user clicks link in verification email|[Confirm email page](#confirm-email-page) loads|
 
 
 ####  Email sent page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Email sent page loads    |confirmation email sent to user||
+|Email sent page loads    |confirmation email sent to user|✅|
 
 ####  Confirm email page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Confirm email page loads|confirm text visible<br>confirm button visible<br> ||
-|confirm button clicked    |resitration confirmed<br>[Signin page](#Signin-page) loads||
+|Confirm email page loads|confirm text visible<br>confirm button visible<br> |✅|
+|confirm button clicked    |resitration confirmed<br>[Signin page](#Signin-page) loads|✅|
 
 ####  Password reset page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|password reset page loads |reset text visible<br>email field visible<br>reset button visible||
+|password reset page loads |reset text visible<br>email field visible<br>reset button visible|✅|
 |reset button clicked<br>email not valid|"email not valid"|
-|reset button clicked<br>email valid<br>email not in database|reset confirmation page loads<br>"we have no record of you" email sent||
-|reset button clicked<br>email valid<br>email in database|reset confirmation page loads<br>password reset email sent||
-|reset link in email clicked|[change password page](#change-password-page) shown||
+|reset button clicked<br>email valid<br>email not in database|reset confirmation page loads<br>"we have no record of you" email sent|✅|
+|reset button clicked<br>email valid<br>email in database|reset confirmation page loads<br>password reset email sent|✅|
+|reset link in email clicked|[change password page](#change-password-page) shown|✅|
 
 ####  Change password page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|change password loads|change password text visible<br>new password field visible<br>new password again field visible<br>change pasword button visible<br> ||
-|change pasword button clicked<br>passwords match|"Your password is now changed"||
+|change password loads|change password text visible<br>new password field visible<br>new password again field visible<br>change pasword button visible<br> |✅|
+|change pasword button clicked<br>only 1 password field filled|"Please fill out this field"|✅|
+|change pasword button clicked<br>passwords don't match|"You must type the same password each time"|✅|
+|change pasword button clicked<br>passwords match|"Your password is now changed"|✅|
 
 ## Accessibility testing
 
