@@ -1,8 +1,91 @@
 ## HTML validation
 
-### Allauth template: known issue
+### Home page
 
-The allauth template for [`Signup.html`](templates/account/Signup.html) has a [known issue](https://code-institute-room.slack.com/archives/C026PTF46F5/p1711715226907449) that produces validation errors. Since this is a problem with the framework code, and not the custom code written for this project, and it does not affect the functionality of the app, this was not corrected. 
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2F) found no errors or warnings.
+
+![HTML validation of home page: no issues](testing/code-validation/html-validation/home-html-validation.png)
+
+### Home page paginated
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2F%3Fpage%3D2) found no errors or warnings.
+
+![HTML validation of home page paginated: no issues](testing/code-validation/html-validation/home-paginated-html-validation.png)
+
+### Home page filtered
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Ffilter%2F%3Ftaste%3Dsweet) found no errors or warnings.
+
+![HTML validation of home page filtered: no issues](testing/code-validation/html-validation/home-filtered-html-validation.png)
+
+### Home page filtered paginated
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Ffilter%2F%3Fpage%3D2%26diet%3Dvegetarian) found no errors or warnings.
+
+![HTML validation of home page filtered & paginated: no issues](testing/code-validation/html-validation/home-filtered-paginated-html-validation.png)
+
+### Home page filtered with no results
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Ffilter%2F%3Ftaste%3Dbitter) found no errors or warnings.
+
+![HTML validation of home page filtered with no results: no issues](testing/code-validation/html-validation/home-filtered-no-result-html-validation.png)
+
+### Search page 
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fsearch%2F%3Fq%3Dcheese) found no errors or warnings.
+
+![HTML validation of search page: no issues](testing/code-validation/html-validation/search-html-validation.png)
+
+### Search page with no results
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fsearch%2F%3Fq%3Daperol) found no errors or warnings.
+
+![HTML validation of search page with no results: no issues](testing/code-validation/html-validation/search-no-result-html-validation.png)
+
+
+### Search page with paginated link
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fsearch%2F%3Fpage%3D2%26q%3Dvegetarian) found no errors or warnings.
+
+![HTML validation of search page paginated: no issues](testing/code-validation/html-validation/search-paginated-html-validation.png)
+
+### Signup: known issue
+
+The Allauth template for [`Signup.html`](templates/account/Signup.html) has a [known issue](https://code-institute-room.slack.com/archives/C026PTF46F5/p1711715226907449) that produces [validation errors](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Fsignup%2F). Since this is a problem with the framework code, and not the custom code written for this project, and it does not affect the functionality of the app, this was not corrected.
+
+![HTML validation of signup page: known issue](testing/code-validation/html-validation/signup-html-validation.png)
+
+
+### Signin
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Flogin%2F) found no errors or warnings.
+
+![HTML validation of signin page: no issues](testing/code-validation/html-validation/signin-html-validation.png)
+
+
+### Signout
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Flogout%2F) found no errors or warnings.
+
+![HTML validation of signput page: no issues](testing/code-validation/html-validation/signout-html-validation.png)
+
+### Confirm email
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Fconfirm-email%2F) found no errors or warnings.
+
+![HTML validation of confirm email page: no issues](testing/code-validation/html-validation/confirm-email-html-validation.png)
+
+### Community
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fcommunity%2F) found no errors or warnings.
+
+![HTML validation of community page: no issues](testing/code-validation/html-validation/community-html-validation.png)
+
+### Profile detail
+
+[Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fcommunity%2F8%2F) found no errors or warnings.
+
+![HTML validation of profile detail page: no issues](testing/code-validation/html-validation/profile-detail-html-validation.png)
 
 ## JavaScript validation
 
