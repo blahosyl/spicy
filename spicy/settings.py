@@ -63,6 +63,7 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# CrispyForms
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
@@ -106,17 +107,9 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-# local sqlite3 database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# this was suggested by Leon Potgieter. Need to run `set_pg` before, then it works
+# Use local database for testing
+# This was suggested by Leon Potgieter
+# Need to run `set_pg` before running tests
 if 'test' in sys.argv:
     DATABASES = {'default': {
                     'ENGINE': 'django.db.backends.postgresql',
@@ -157,6 +150,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Email verification with Allauth
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
