@@ -1,36 +1,36 @@
 ## HTML validation
 
-### Home page
+### Home page validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2F) found no errors or warnings.
 
 ![HTML validation of home page: no issues](testing/code-validation/html-validation/home-html-validation.png)
 
-### Home page paginated
+### Home page paginated validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2F%3Fpage%3D2) found no errors or warnings.
 
 ![HTML validation of home page paginated: no issues](testing/code-validation/html-validation/home-paginated-html-validation.png)
 
-### Home page filtered
+### Home page filtered validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Ffilter%2F%3Ftaste%3Dsweet) found no errors or warnings.
 
 ![HTML validation of home page filtered: no issues](testing/code-validation/html-validation/home-filtered-html-validation.png)
 
-### Home page filtered paginated
+### Home page filtered paginated validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Ffilter%2F%3Fpage%3D2%26diet%3Dvegetarian) found no errors or warnings.
 
 ![HTML validation of home page filtered & paginated: no issues](testing/code-validation/html-validation/home-filtered-paginated-html-validation.png)
 
-### Home page filtered with no results
+### Home page filtered with no results validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Ffilter%2F%3Ftaste%3Dbitter) found no errors or warnings.
 
 ![HTML validation of home page filtered with no results: no issues](testing/code-validation/html-validation/home-filtered-no-result-html-validation.png)
 
-### Search page 
+### Search page validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fsearch%2F%3Fq%3Dcheese) found no errors or warnings.
 
@@ -43,7 +43,7 @@
 ![HTML validation of search page with no results: no issues](testing/code-validation/html-validation/search-no-result-html-validation.png)
 
 
-### Search page with paginated link
+### Search page with paginated link validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fsearch%2F%3Fpage%3D2%26q%3Dvegetarian) found no errors or warnings.
 
@@ -56,38 +56,38 @@ The Allauth template for [`Signup.html`](templates/account/Signup.html) has a [k
 ![HTML validation of signup page: known issue](testing/code-validation/html-validation/signup-html-validation.png)
 
 
-### Signin
+### Signin validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Flogin%2F) found no errors or warnings.
 
 ![HTML validation of signin page: no issues](testing/code-validation/html-validation/signin-html-validation.png)
 
 
-### Signout
+### Signout validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Flogout%2F) found no errors or warnings.
 
 ![HTML validation of signput page: no issues](testing/code-validation/html-validation/signout-html-validation.png)
 
-### Confirm email
+### Confirm email validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Fconfirm-email%2F) found no errors or warnings.
 
 ![HTML validation of confirm email page: no issues](testing/code-validation/html-validation/confirm-email-html-validation.png)
 
-### Community
+### Community validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fcommunity%2F) found no errors or warnings.
 
 ![HTML validation of community page: no issues](testing/code-validation/html-validation/community-html-validation.png)
 
-### Profile detail
+### Profile detail validation
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Fcommunity%2F8%2F) found no errors or warnings.
 
 ![HTML validation of profile detail page: no issues](testing/code-validation/html-validation/profile-detail-html-validation.png)
 
-## CSS validation
+## CSS validation validation
 
 `style.css` was validated with [Jigsaw](https://jigsaw.w3.org/css-validator/validator) and passed without errors or warnings.
 
@@ -109,14 +109,14 @@ bootstrap
 
 ![JavaScript validation error: unknown variable `bootstrap`](testing/code-validation/js-validation/comments-js-validation.png)
 
-### `filter.js`
+### `filter.js` validation
 
 Validation found no issues.
 
 
 ![JavaScript validation of `filter.js`: no issues](testing/code-validation/js-validation/filter-js-validation.png)
 
-### `themes.js`
+### `themes.js` validation
 
 Validation found no issues.
 
