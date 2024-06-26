@@ -252,12 +252,23 @@ https://github.com/blahosyl/spicy/assets/26421503/7c897e0e-44b6-486a-afe9-7b4603
 |hamburger icon clicked|Search bar and color selector revealed|✅|
 |hamburger icon clicked again |Search bar and color selector hidden|✅|
 
+*Click to play video*
+
+https://github.com/blahosyl/spicy/assets/26421503/4f80ed67-5698-425b-85a8-9166ffde2373
+
+
 
 ####  User bar | if user signed in
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |page loads    |"Welcome, `user`!" visible<br>"You are not logged in" not visible<br>Signout link visible|✅|
 |Signout link clicked|[Signout page](#Signout-page) loaded|✅|
+
+*Click to play video*
+
+
+
+https://github.com/blahosyl/spicy/assets/26421503/c91a3a0b-db04-4886-aa12-7798926934bc
 
 
 
