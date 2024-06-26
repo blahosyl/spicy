@@ -391,6 +391,12 @@ Displays the list of profiles
 |---				|---				|:---:	|
 |Profile detail page loads|name or username visible<br>status visible<br>pronouns visible (if any)<br>neurodiversity visible (if any)<br>about text visible (if any)|✅|
 
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/ed51b208-71cb-4eec-b1bf-7a8c7a433ede
+
+
 ### Authentication manual testing
 
 ####  Signin page
@@ -404,11 +410,24 @@ Displays the list of profiles
 |Signin button clicked<br>both fields filled<br>credentials correct<br>email not confirmed |user is signed in<br>[Email sent page](#email-sent-page) loads<br>confirmation email sent|✅|
 |Signin button clicked<br>both fields filled<br>credentials correct<br>email confirmed|user is signed in<br>[home page](#home-page) loads|✅|
 
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/9d5eb187-e503-42b5-82a8-15479b801add
+
+
 ####  Signout page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Signout page loads  |Signout text visible<br>Signout button visible|✅|
 |Signout button clicked  |user signed out<br>home page loads|✅|
+
+*Click to play video*
+
+
+
+https://github.com/blahosyl/spicy/assets/26421503/f62c36c3-d8b2-48d5-89d0-59ecf49c0c99
+
 
 
 ####  Signup page
@@ -430,11 +449,19 @@ Displays the list of profiles
 |---				|---				|:---:	|
 |Email sent page loads    |confirmation email sent to user|✅|
 
+
 ####  Confirm email page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Confirm email page loads|confirm text visible<br>confirm button visible<br> |✅|
 |confirm button clicked    |resitration confirmed<br>[Signin page](#Signin-page) loads|✅|
+
+*Click to play video*
+
+
+
+https://github.com/blahosyl/spicy/assets/26421503/8a521faa-9be8-4505-84a6-d22b07c68115
+
 
 ####  Password reset page
 |Action				|Expected result	|Result|
@@ -445,6 +472,12 @@ Displays the list of profiles
 |reset button clicked<br>email valid<br>email in database|reset confirmation page loads<br>password reset email sent|✅|
 |reset link in email clicked|[change password page](#change-password-page) shown|✅|
 
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/1be204aa-a718-4d30-970c-9686135a8ca8
+
+
 ####  Change password page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
@@ -452,6 +485,12 @@ Displays the list of profiles
 |change pasword button clicked<br>only 1 password field filled|"Please fill out this field"|✅|
 |change pasword button clicked<br>passwords don't match|"You must type the same password each time"|✅|
 |change pasword button clicked<br>passwords match|"Your password is now changed"|✅|
+
+*Click to play video*
+
+
+https://github.com/blahosyl/spicy/assets/26421503/1ba29844-7477-45f4-9666-2b5bc55c4589
+
 
 ## Accessibility testing
 
