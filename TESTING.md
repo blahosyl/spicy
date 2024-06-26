@@ -392,6 +392,29 @@ Displays the list of profiles
 
 ###  Lighthouse
 
+The following pages have been tested with Lighthouse emulating both a mobile and a desktop use case:
+
+- home / recipe list
+- home / recipe list with paginated link
+- home / recipe list filtered
+- home / recipe list filtered with no results
+- home / recipe list filtered with paginated link
+- search
+- search with no results
+- search with paginated link
+- register / `/signup`
+- `signin`
+- signout  `/logout`confirm
+- `confirm-email` (when an unvalidated user tries to log in)
+- community / profile list
+- profile detail
+
+The accessibility audits uncovered some minor issues with color contrasts and heading precedence. These were all corrected (see the commits of [the corresponding Issue](https://github.com/blahosyl/spicy/issues/131)), so that the final accessibility audit result for all pages tested is 100%.
+
+![JavaScript validation error: unknown variable `bootstrap`](readme-pics/accessibility-100.png)
+
+All accessibility reports can be found in [this folder](testing/lighthouse/accessibility/). Reports starting with `100` are the final ones, while those with lower numbers are earlier reports whose issues have been corrected.
+
 ### Color contrasts
 
 https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF
