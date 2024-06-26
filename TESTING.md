@@ -417,7 +417,68 @@ All accessibility reports can be found in [this folder](testing/lighthouse/acces
 
 ### Color contrasts
 
-https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF
+In addition to Lighthouse, color contrasts were also tested with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker). This was especially important given that the project has multiple color schemes.
+
+#### Color specifications
+
+###### Orange theme specifications
+
+|color name 	|HEX code|
+|---			|---	|
+|very-dark-orange|#531D04| 
+|dark-orange|#D7410F|
+|med-orange|#FD7E14|
+|light-orange|#f7ddcf|
+
+###### Blue theme specifications
+
+|color name 	|HEX code
+|---			|---	|
+|very-dark-blue|#08374F|
+|dark-blue|#0F6895|
+|med-blue|#20A6E9|
+|light-blue|#BFE6F7|
+
+###### Green theme specifications
+
+|color name 	|HEX code|
+|---			|---	|
+|very-dark-green|#084f37|
+|dark-green|#1b871d|
+|med-green|#7ef075|
+|light-green|#ceedcc|
+
+###### Nuetral color specifications
+
+|color name 	|HEX code|
+|---			|---	|
+|light-neutral|#F9FAFC|
+|white|#FFFFFF|
+
+#### Orange theme contrast check
+
+| color 1 |color 2 |contrast | [WCAG AA/AAA](https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/) |Comment|
+|---			|---		|:---:		|:---:| ---|
+|very-dark-orange 	|white 	        |13.58:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|
+|very-dark-orange 	|light-orange 	|10.48:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF)| |
+|very-dark-orange 	|med-orange 	|5.28:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF)|Only used for large text|
+|very-dark-orange 	|light-neutral 	|13:01:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)| |
+|dark-orange	    |white 	        |4.51:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF) | |
+|dark-orange	    |light-orange 	|3.48:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF)|Only used for large text|
+
+
+#### Blue theme contrast check
+
+| color 1 |color 2 |contrast | [WCAG AA/AAA](https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/) |Comment|
+|---			|---		|:---:		|:---:| ---|
+|very-dark-blue 	|white 	        |12.57:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|
+|very-dark-blue 	|light-blue 	|10.48:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)| |
+|very-dark-blue 	|med-blue 	|4.6:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|Only used for large text|
+|very-dark-blue 	|light-neutral 	|12.04:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)| |
+|dark-blue	    |white 	        |6.11:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7) | |
+|dark-blue	    |light-blue 	|4.62:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|Only used for large text|
+
+
 https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7
 
 ## Bugs
