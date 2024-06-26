@@ -459,27 +459,35 @@ In addition to Lighthouse, color contrasts were also tested with the [WebAIM Con
 
 | color 1 |color 2 |contrast | [WCAG AA/AAA](https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/) |Comment|
 |---			|---		|:---:		|:---:| ---|
-|very-dark-orange 	|white 	        |13.58:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|
-|very-dark-orange 	|light-orange 	|10.48:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF)| |
-|very-dark-orange 	|med-orange 	|5.28:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF)|Only used for large text|
-|very-dark-orange 	|light-neutral 	|13:01:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)| |
-|dark-orange	    |white 	        |4.51:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF) | |
-|dark-orange	    |light-orange 	|3.48:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=531D04&bcolor=F7DDCF)|Only used for large text|
+|very-dark-orange 	|white 	        |13.58:1 	|AAA|
+|very-dark-orange 	|light-orange 	|10.48:1 	|AAA| |
+|very-dark-orange 	|med-orange 	|5.28:1 	|AA|Only used for large text|
+|very-dark-orange 	|light-neutral 	|13:01:1 	|AAA| |
+|dark-orange	    |white 	        |4.51:1 	|AA | |
+|dark-orange	    |light-orange 	|3.48:1 	|AA|Only used for large text|
 
 
 #### Blue theme contrast check
 
 | color 1 |color 2 |contrast | [WCAG AA/AAA](https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/) |Comment|
 |---			|---		|:---:		|:---:| ---|
-|very-dark-blue 	|white 	        |12.57:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|
-|very-dark-blue 	|light-blue 	|10.48:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)| |
-|very-dark-blue 	|med-blue 	|4.6:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|Only used for large text|
-|very-dark-blue 	|light-neutral 	|12.04:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)| |
-|dark-blue	    |white 	        |6.11:1 	|[AA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7) | |
-|dark-blue	    |light-blue 	|4.62:1 	|[AAA](https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7)|Only used for large text|
+|very-dark-blue 	|white 	        |12.57:1 	|AAA|
+|very-dark-blue 	|light-blue 	|10.48:1 	|AAA| |
+|very-dark-blue 	|med-blue 	|4.6:1 	|AAA|Only used for large text|
+|very-dark-blue 	|light-neutral 	|12.04:1 	|AAA| |
+|dark-blue	    |white 	        |6.11:1 	|AA | |
+|dark-blue	    |light-blue 	|4.62:1 	|AAA|Only used for large text|
 
+#### Green theme contrast check
 
-https://webaim.org/resources/contrastchecker/?fcolor=0F6895&bcolor=BFE6F7
+| color 1 |color 2 |contrast | [WCAG AA/AAA](https://ialabs.ie/what-is-the-difference-between-wcag-a-aa-and-aaa/) |Comment|
+|---			|---		|:---:		|:---:| ---|
+|very-dark-green 	|white 	        |9.61:1 	|AAA|
+|very-dark-green 	|light-green 	|7.6:1 	|AAA| |
+|very-dark-green 	|med-green 	|6.68:1 	|AAA|Only used for large text|
+|very-dark-green 	|light-neutral 	|9.2:1 	|AAA| |
+|dark-green	    |white 	        |4.63:1 	|AA | |
+|dark-green	    |light-green 	|3.66   :1 	|AAA|Only used for large text|
 
 ## Bugs
 
