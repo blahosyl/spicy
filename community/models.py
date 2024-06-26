@@ -22,6 +22,12 @@ class Profile(models.Model):
     about = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        """
+        order from most to least recently updated
+        """
+        ordering = ["-updated_on"]
+
     def __str__(self):
         """
         How instances of this model are shown in the admin panel
