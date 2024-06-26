@@ -282,11 +282,19 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 ### Content
 
+All text content was written by me.
+
+[Lemon bar](https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/lemon-bar/) recipe based on [Chili&Vanilia's post](https://chiliesvanilia.blogspot.com/2006/08/amerikai-citromkrmes-szelet-lemon-bar.html).
+
+[Red velvet cake](https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/red-velvet-cake/) recipe based on [Pamela Moxley's post](https://cooking.nytimes.com/recipes/1016333-beet-red-velvet-cake).
+
 ### Media
 
 #### Images
 
 [Logo/favicon](https://pixabay.com/illustrations/autism-infinity-symbol-1192408/) by [janeb13](https://pixabay.com/users/janeb13-725943/) on [Pixabay](https://pixabay.com/), converted to `ico` format with [`Favicon.io`](https://favicon.io/favicon-converter/).
+
+All other pictures taken by me.
 
 ### Readmes
 
@@ -308,6 +316,8 @@ See the document [`TESTING.md`](TESTING.md) for details.
 
 A person unknown to me has forked the project repository and submitted a [pull request](https://github.com/blahosyl/spicy/pull/137) with some code comments added. I had not communicated with this person before this nor asked for their contribution to the repository. The pull request was closed without merging.
 
+### Acknowledgements
 
+I would like to express my deepest gratitude to my mentor, [Rory Patrick Sheridan](https://github.com/Ri-Dearg) for his incredibly useful and understanding support throughout the project.
 
 
