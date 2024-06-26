@@ -2,10 +2,23 @@
 
 # Spicy Recipes
 
+A recipe blog for autistic and other neurodiverse folx. Utilitarian, customizable and to the point. No rambling, no unrelated stories, no word count fillers, no distracting desgin kitsch or vertigo-inducing moving backgrounds. Instead, the focus is on precise and searchable information to easily find recipes for specific needs.
+
+Developer: [Dr. Sylvia Blaho](https://www.linkedin.com/in/blahosylvia/)
+
+
+![Deployed site starting screen](readme-pics/amiresponsive/cover-amiresponsive.png)
+
+
+[Go to the deployed app](https://spicy-recipes-django-5d174ffc7c94.herokuapp.com/)
+
+See the development progress and further plans on [GitHub Projects](https://github.com/users/blahosyl/projects/5/views/2).
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/blahosyl/spicy?color=red)
 ![GitHub contributors](https://img.shields.io/github/contributors/blahosyl/spicy?color=orange)
 ![GitHub language count](https://img.shields.io/github/languages/count/blahosyl/spicy?color=black)
 
+## Table of Contents
 
 ## UX
 
