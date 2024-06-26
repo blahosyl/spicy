@@ -268,11 +268,12 @@ nav .brand:hover {
 /* Comments */
 
 .faded {
-    color: rgb(172, 175, 175);
+    background-color: var(--light-neutral);
 }
 
 .approval {
-    color: rgb(222, 146, 168);
+    color: var(--verydark-highlight);
+    background-color: var(--light-highlight);
 }
 
 /* Profile list */
