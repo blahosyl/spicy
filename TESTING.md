@@ -87,7 +87,16 @@ The Allauth template for [`Signup.html`](templates/account/Signup.html) has a [k
 
 ![HTML validation of profile detail page: no issues](testing/code-validation/html-validation/profile-detail-html-validation.png)
 
+## CSS validation
+
+`style.css` was validated with [Jigsaw](https://jigsaw.w3.org/css-validator/validator) and passed without errors or warnings.
+
+![CSS validation: no issues](testing/code-validation/css-validation/css-validation.png)
+
+
 ## JavaScript validation
+
+All self-written JavaScript files were validated with [JSHint](https://jshint.com/). No errors were found apart from the known issue below.
 
 ### `comments.js`: known issue
 
