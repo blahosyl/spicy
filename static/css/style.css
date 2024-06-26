@@ -1,27 +1,31 @@
 :root {
+    /* color variables */
+    /* orange theme */
     --very-dark-orange: #531D04;
     --dark-orange: #D7410F;
     --med-orange: #FD7E14;
     --light-orange: #f7ddcf;
+     /* blue theme */
     --very-dark-blue: #08374F;
     --dark-blue: #0F6895;
     --med-blue: #20A6E9;
-    --light-blue: #BFE6F7   ;
+    --light-blue: #BFE6F7;
+    /* green theme */
     --very-dark-green: #084f37;
     --dark-green: #1b871d;
     --med-green: #7ef075;
     --light-green: #ceedcc;
-    --teal: #188181;
-    --light-teal: #23BBBB;
+    /* neutrals */
     --light-neutral: #F9FAFC;
-    --dark-neutral: #313845;
     --white: #FFFFFF;
+    /* default varibale names used throughout */
     --very-dark-highlight: var(--very-dark-orange);
     --dark-highlight: var(--dark-orange);
     --highlight: var(--med-orange);
     --light-highlight: var(--light-orange);
-
   }
+
+/* styles throughout the pages */
 
 body {
     background-color: var(--white);
@@ -34,6 +38,99 @@ body {
     font-weight: 700;
     color: var(--dark-highlight);
 }
+
+.thin {
+    font-weight: 300;
+}
+
+.light-bg {
+    background-color: var(--light-highlight);
+}
+
+.dark-bg {
+    background-color: var(--dark-highlight);
+}
+
+
+.main-bg {
+    background-color: var(--white);
+}
+
+.pagination a:hover {
+    color: var(--dark-highlight)
+}
+
+.page-link {
+    color: var(--very-dark-highlight);
+    background-color: var(--light-highlight);
+    border-radius: 7px;
+}
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.recipe-link:hover,
+.page-link:hover {
+    color: var(--dark-highlight) ;
+}
+
+.footer-link:hover,
+.footer-link:active,
+.btn-search:hover,
+.btn-search:active {
+    color: var(--light-highlight);
+} 
+
+.btn-signup,
+.btn-edit {
+    background-color: var(--dark-highlight);
+    color: var(--white);
+}
+
+
+.btn-delete,
+.btn-search {
+    color: var(--white);
+    background: var(--very-dark-highlight) ;
+}
+
+.btn-signup:hover,
+.btn-signup:active,
+.btn-edit:hover,
+.btn-edit:active,
+.btn-delete:hover,
+.btn-delete:active {
+    background-color: var(--light-highlight);
+    color: var(--dark-highlight);
+}
+
+.link {
+    color: var(--dark-highlight);
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: var(--highlight) ;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: var(--highlight) ;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: var(--highlight) ;
+    background: transparent;
+    border: none;
+}
+
+
+/* nav bar */
 
 .nav-link {
     color: var(--very-dark-highlight);
@@ -71,37 +168,14 @@ nav .brand:hover {
     padding-top: 6px;
 }
 
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: var(--light-highlight);
-}
-
-.dark-bg {
-    background-color: var(--dark-highlight);
-}
-
-.pagination a:hover {
-    color: var(--dark-highlight)
-}
+/* Recipe list (home page) */
 
 .form-select {
     color: var(--very-dark-highlight);
     border-color: var(--light-highlight);
 }
 
-/* Recipe detail view */
-
-.main-bg {
-    background-color: var(--white);
-}
-
-.card {
-    border: none;
-    background-color: transparent;
-}
+/* Recipe detail page */
 
 .image-container {
     position: relative;
@@ -163,25 +237,6 @@ nav .brand:hover {
     color: var(--very-dark-highlight) ;
 }
 
-.page-link {
-    color: var(--very-dark-highlight);
-    background-color: var(--light-highlight);
-    border-radius: 7px;
-}
-
-.recipe-link:hover,
-.page-link:hover {
-    color: var(--dark-highlight) ;
-}
-
-.footer-link:hover,
-.footer-link:active,
-.btn-search:hover,
-.btn-search:active {
-    color: var(--light-highlight);
-} 
-
-
 .recipe-title {
     margin-top: 10%;
     margin-left: 5%;
@@ -210,52 +265,7 @@ nav .brand:hover {
     background-color: var(--light-highlight);
 }
 
-.btn-signup,
-.btn-edit {
-    background-color: var(--dark-highlight);
-    color: var(--white);
-}
-
-
-.btn-delete,
-.btn-search {
-    color: var(--white);
-    background: var(--very-dark-highlight) ;
-}
-
-.btn-signup:hover,
-.btn-signup:active,
-.btn-edit:hover,
-.btn-edit:active,
-.btn-delete:hover,
-.btn-delete:active {
-    background-color: var(--light-highlight);
-    color: var(--dark-highlight);
-}
-
-.link {
-    color: var(--dark-highlight);
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: var(--highlight) ;
-    text-decoration: underline;
-}
-
-.btn-like {
-    color: var(--highlight) ;
-    border: none;
-    background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: var(--highlight) ;
-    background: transparent;
-    border: none;
-}
+/* Comments */
 
 .faded {
     color: rgb(172, 175, 175);
@@ -293,7 +303,6 @@ nav .brand:hover {
     color: var(--dark-highlight);
 }
 
-
 .staff-label {
     font-size: larger;
     font-weight: bold;
@@ -302,7 +311,8 @@ nav .brand:hover {
     border-radius: 10px;
 }
 
-/* laptops and desktops */
+/* Media queries */
+/* laptops */
 @media screen and (min-width: 768px) {
 
     .masthead {
@@ -321,7 +331,7 @@ nav .brand:hover {
     }
 }
 
-/* laptops and desktops */
+/* desktops */
 @media screen and (min-width: 1024px) {
 
     .masthead {
