@@ -1,12 +1,12 @@
+<!-- Displays the details of individual profiles -->
+
 {% extends "base.html" %}
 {% load static %}
 
 {% block content %}
 
 <div class="container-fluid">
-
     <div class="row m-3">
-
         <div class="col-12 my-3 my-lg-5 left">
             <div class="row">
                 <div class="col-12 col-md-4 col-xl-3 pe-md-5 text-center">
@@ -15,42 +15,46 @@
                         {% if profile.firstname %}
                         {{ profile.firstname }}
                         <!-- if first name and last name are both available, show both -->
-                            {% if profile.lastname %}
-                                {{ profile.lastname }}
-                            {% endif %}
+                        {% if profile.lastname %}
+                        {{ profile.lastname }}
+                        {% endif %}
                         <!-- otherwise, display the username -->
                         {% else %}
                         {{ profile.user.username }}
                         {% endif %}
                     </h1>
-                        <div class="d-inline-block px-2 py-1 
+                    <!-- staff status -->
+                    <div class="d-inline-block px-2 py-1 
                         {% if profile.user.is_staff%} staff-label {% endif %}">
-                            {% if profile.user.is_staff%}
-                                staff
-                            {% else %}
-                                community member
-                            {% endif %}
-                        </div>
+                        {% if profile.user.is_staff%}
+                        staff
+                        {% else %}
+                        community member
+                        {% endif %}
+                    </div>
                     <hr>
+                    <!-- pronouns -->
                     <p class="profile-fields-card">
                         <span class="profile-field-name">pronouns:</span>
                         <br>
-                    {% if profile.pronouns%}
-                        {{ profile.pronouns}} 
-                    {% else%}
+                        {% if profile.pronouns%}
+                        {{ profile.pronouns}}
+                        {% else%}
                         <span class="fst-italic">not specified</span>
-                    {% endif %}
+                        {% endif %}
                     </p>
-                        <p class="profile-fields-card">
-                            <span class="profile-field-name">neurodivergence:</span>
+                    <!-- neurodivergence -->
+                    <p class="profile-fields-card">
+                        <span class="profile-field-name">neurodivergence:</span>
                         <br>
                         {% if profile.neurodivergence%}
-                            {{ profile.neurodivergence}}
+                        {{ profile.neurodivergence}}
                         {% else%}
-                            <span class="fst-italic">not specified</span>
+                        <span class="fst-italic">not specified</span>
                         {% endif %}
                     </p>
                 </div>
+                <!-- about info (if any) -->
                 <div class="col-12 col-md-8 col-xl-9">
                     {{ profile.about | linebreaks }}
                 </div>
@@ -60,4 +64,3 @@
 </div>
 
 {% endblock content %}
-

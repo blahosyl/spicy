@@ -1,14 +1,12 @@
+<!-- Displays the list of profiles (only for selected users, not all registered users) -->
+
 {% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
 
-
-<!-- index.html content starts here -->
 <div class="container-fluid">
-
     <h1>Profiles</h1>
-
     <div class="row">
 
         <!-- Profile Entries Column -->
@@ -31,7 +29,9 @@
                                             {{ profile.user.username }}
                                         {% endif %}
                                     </div>
+                            <!-- the whole profile card is clickable -->
                             <a href="{% url 'profile_detail' profile.slug %}" class="recipe-link stretched-link">
+                            <!-- staff status -->
                             {% if profile.user.is_staff%}
                                 staff
                             {% else %}
@@ -39,6 +39,7 @@
                             {% endif %}
                             </a>
                             <hr>
+                            <!-- pronouns -->
                             <p class="profile-fields-card">
                                 <span class="profile-field-name">pronouns:</span>
                                 <br>
@@ -48,6 +49,7 @@
                                     <span class="fst-italic">not specified</span>
                                 {% endif %}
                             </p>
+                            <!-- neurodivergence -->
                             <p class="profile-fields-card">
                                 <span class="profile-field-name">neurodivergence:</span>
                                 <br>
@@ -57,7 +59,6 @@
                                     <span class="fst-italic">not specified</span>
                                 {% endif %}
                             </p>
-
                         </div>
                     </div>
                 </div>
@@ -70,6 +71,7 @@
             </div>
         </div>
     </div>
+    <!-- pagination links -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
