@@ -18,54 +18,62 @@ See the development progress and further plans on [GitHub Projects](https://gith
 
 ## Table of Contents
 
-## UX
+## UX/UI
 
-### The 5 Planes of User Experience
-
-#### Strategy
+### Strategy
 
 In a world designed for neurotypical people, the needs of neurodivergent people are often disregarded. When it comes to recipe blogs, the 3 main culprits I aim to tackle in this project are
 
 - [superfluos information](#superfluos-information)
-- [lack of specifics](#lack-of-specifics)
+- [lack of specificity](#lack-of-specificity)
 - [lack of customization](#dopamine-design)
 
 Each issue and its implemented remedy is described below.
 
-##### Superfluos information
+#### Superfluos information
 
 An [oft-parodied trend](https://www.facebook.com/reel/771271748497011) of many food blogs is their inflated word count by paraphrasing and unlerated personal stories, presumably in an effort to improve their SEO ranking.
 
 While this is a mild annoyance to neutotypical people, it can be a serious accessibility issue for those who are neurodivergent and have executive functioning issues, such as problems focusing or [front-end perfectionism](https://www.psychologytoday.com/us/blog/rethinking-adult-adhd/202012/adult-adhd-perfectionism-and-procrastination).
 
-To combat this, this recipe is designed to clearly separate the different components of a recipe to provide a better overview for visitors, and a helpful template for recipe writers.
-
-##### Lack of specifics
+#### Lack of specificity
 
 Many autistic people are very particular about food (termed [food selectivity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/) in scientific literature; [some](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/table/jcm-12-05469-t002/?report=objectonly) [examples](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/table/jcm-12-05469-t004/?report=objectonly)). However, most recipe blogs do not offer easy ways to search for particular textrues, tastes or temperatures.
 
-This is why this recipe blog has an emphasis on on tagging, searching and filtering recipes, enabling visitors to find recipes mathcing their specific needs.
-
-##### Dopamine design
+#### Dopamine design
 
 Analogous to [dopamine dressing](https://fromtheslowlane.com/anywhere/fashion/what-is-dopamine-dressing/), being able to surround themselves with colors that match or complement their mood and energy levels is a useful coping strategy for neurodivergent people.
 
-To facilitate this, the blog offers a selection of color schemes that users can chose from.
+
+### Scope
+
+#### Clearly separated fields for creating and viewing recipes
+
+To combat the problem of [superfluos information](#superfluos-information), this recipe site is designed to clearly separate the different components of a recipe to provide a better overview for visitors, and a helpful template for recipe writers.
+
+#### Searching and filtering
+
+To address the problem of [lack of specificity](#lack-of-specificity), this recipe blog has an emphasis on tagging, searching and filtering recipes, enabling visitors to find recipes matching their specific needs.
 
 
-#### Scope
+#### Alternative color themes
+
+To facilitate users being able to [customize the look of the site](#dopamine-design), the blog offers a selection of color themes that users can chose from.
+
+![Initial scope of the MVP](readme-pics/user-stories/pp4-user-stories-initial.pdf)
+
+### Structure
 
 
-#### Structure
+### Skeleton
+
+Wireframes
+
+### Surface
+
+Design
 
 
-#### Skeleton
-
-
-#### Surface
-
-
-## Design
 
 ## Project Management | Agile
 
