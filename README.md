@@ -74,10 +74,86 @@ Accordingly, the User Stories in the MVP were determined as follows:
 
 ![Initial scope of the MVP](readme-pics/user-stories/pp4-user-stories-initial-mvp.png)
 
-Naturally, this list was modified somewhat during development. The final list can be seen in [GitHub Issues](https://github.com/blahosyl/spicy/issues?page=2&q=is%3Aissue+label%3A%22p%3A+must+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug)
+Naturally, this list was modified somewhat during development (see the [Prioritization](#prioritization) section for details). The final list can be seen in [GitHub Issues](https://github.com/blahosyl/spicy/issues?page=2&q=is%3Aissue+label%3A%22p%3A+must+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug).
 
 ### Structure
 
+#### Data models
+
+The initial design of data models was as follows:
+
+![Initial ERD](readme-pics/erd-initial.png)
+
+Notable aspects of the models are described below.
+
+##### Recipe model
+
+Partially based on the Post model of the I Think Therefore I Blog walkthrough, but changed several aspects:
+
+- Published is Boolean
+- Separated content into
+	- Instructions
+	- PrepTime
+	- CookTime
+	- Ingredients (separate model)
+
+##### Ingredient & IngredientQuantity models
+
+Ingredients are available across the project, while IngredientQuantities are specific to individual recipes.
+
+The reasoning behind this setup was threefold:
+
+1. To allow for more fine-grained access permissions
+2. To lay the foundations for a future implementation of a shopping list making functionality, along the lines of the [Dinner Party app I made](https://github.com/blahosyl/dinner-party/).
+3. The intermediary IngredientQuantity model also has unit and quantity attributes. 
+
+###### Quantity data type
+
+[Decimal](https://docs.python.org/3/library/decimal.html#module-decimal) instead of float used for quantity.
+
+###### IngredientQuantity not compulsory
+
+Recipes can be saved without any ingredients (to allow better management of  drafts).
+
+###### Instances of Ingredient cannot be duplicated
+
+Instances of ingredient where `ingr_name` & `preparation` is the same cannot be duplicated. 
+
+- "cheese, sliced" and "cheese, grated" are both possible
+- 2 instances of "cheese, grated" are not allowed
+
+This is true when added new ingredients as well as when editing exisitng one would result in a duplicated.
+
+###### IngredientQuantities **can** be duplicated
+
+Each instance of IngredientQuantity is unique, that is, even if there are 2 recipes that call for 2 apples each, these are treated as separate entities.
+
+##### Comment model
+
+This model is based entirely on the Comment model of the [I Think Therefore I Blog walkthrough project]((https://github.com/Code-Institute-Solutions/blog)).
+
+##### RecipeAttribute and Attribute models
+
+These models were added to the intial desgin in order to enable more filtering and more precise tagging of recipes. 
+Their implementation parallels IngredientQuantity and Ingredient:
+RecipeAttribute acts as an intermediary between the Recipe and Attribute models.
+
+Using this design as oppsed to a ManyToManyField relation between Recipe and Attribute enables setting up a better control of the scope of permissions for staff users.
+
+##### Profile model
+
+When implementing the `community` app of the project, this model was added to store public information about the users, with the intention that logged-in users will be able to create and manage profiles for themselves.
+
+Crucially, the Profile model is distinct from the built-in User model, connected by a OnetoOne field. 
+
+There are 2 advantages to this setup:
+
+1. Allow for user information to be accessible in the admin panel but not on the website UI
+2. Avoid accidentally overwriting crucial user information needed for signin and permissions.
+
+Accordingly, the current Entity Relationship Diagram is as follows:
+
+![Initial ERD](readme-pics/erd-final.png)
 
 ### Skeleton
 
@@ -120,52 +196,6 @@ For example, [EPIC: View author info](https://github.com/blahosyl/spicy/issues/2
 #### Sprint planning
 
 #### Sprint retroactives
-
-### Data models
-
-#### Recipe
-
-Partially based on the Post model of the I Think Therefore I Blog walkthrough, but changed several aspects:
-
-- Published is Boolean
-- Separated content into
-	- Instructions
-	- PrepTime
-	- CookTime
-	- Ingredients (separate table)
-
-#### Ingredient
-
-##### 2 tables for ingredients
-
-- Ingredient: lists ingredients, global list
-- IngredientQueantity: connects ingredients with recipes, has unit and quantity attributes. Even if there are 2 recipes that call for 2 apples each, these are treated as separate entities.
-
-
-##### Quantity data type
-
-[Decimal](https://docs.python.org/3/library/decimal.html#module-decimal) instead of float used for quantity.
-
-##### IngredientQuantity not compulsory
-
-Recipes can be saved without any ingredients (at least for a draft).
-
-Maybe add check to see if a recipe has at least 1 ingredient before publishing?
-
-##### Instances of Ingredient cannot be duplicated
-
-Instances of ingredient where `ingr_name` & `preparation` is the same cannot be duplicated. 
-
-- "cheese, sliced" and "cheese, grated" are both possible
-- 2 instances of "cheese, grated" are not allowed
-
-This is true when added new ingredients as well as when editing exisitng one would result in a duplicated.
-
-##### IngredientQuantities **can** be duplicated
-
-#### Comment
-
-Based entirely on the Comment model of the I Think Therefore I Blog walkthrough.
 
 ## Features
 
@@ -406,6 +436,7 @@ All other pictures taken by me.
 - [BackeStock](https://github.com/amylour/BakeStock/) by [Amy Richardson](https://github.com/amylour)
 - [American Pizza Order System](https://github.com/useriasminnaamerican_pizza_order_system/) by [Iasmina Pal](https://github.com/useriasminna)
 - [Neverlost](https://github.com/Ri-Dearg/neverlost-thrift) by [Rory Patrick Sheridan](https://github.com/Ri-Dearg)
+- [EastStr](https://github.com/ndsurgenor/east-street) by Nathan Surgenor
 - [The README of my first Code Institute project](https://github.com/blahosyl/academic-publishing)
 - [The README of my second Code Institute project](https://github.com/blahosyl/operator-game)
 - [The README of my third Code Institute project](https://github.com/blahosyl/dinner-party)
