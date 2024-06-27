@@ -590,7 +590,7 @@ In addition to Lighthouse, color contrasts were also tested with the [WebAIM Con
 |med-green|#7ef075|
 |light-green|#ceedcc|
 
-###### Nuetral color specifications
+###### Neutral color specifications
 
 |color name 	|HEX code|
 |---			|---	|

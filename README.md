@@ -2,7 +2,7 @@
 
 # Spicy Recipes
 
-A recipe blog for autistic and other [neurospicy](https://www.neurosparkhealth.com/blog/neurospicy-meaning-what-it-means-and-where-it-came-from.html) folx. Utilitarian, customizable and to the point. No rambling, no unrelated stories, no word count fillers, no distracting desgin kitsch or vertigo-inducing moving backgrounds. Instead, the focus is on precise and searchable information to easily find recipes for specific needs.
+A recipe blog for autistic and other [neurospicy](https://www.neurosparkhealth.com/blog/neurospicy-meaning-what-it-means-and-where-it-came-from.html) folx. Utilitarian, customizable and to the point. No rambling, no unrelated stories, no word count fillers, no distracting design kitsch or vertigo-inducing moving backgrounds. Instead, the focus is on precise and searchable information to easily find recipes for specific needs.
 
 Developer: [Dr. Sylvia Blaho](https://www.linkedin.com/in/blahosylvia/)
 
@@ -24,17 +24,17 @@ See the development progress and further plans on [GitHub Projects](https://gith
 
 In a world designed for neurotypical people, the needs of neurodivergent people are often disregarded. When it comes to recipe blogs, the 3 main culprits I aim to tackle in this project are
 
-- [superfluos information](#superfluos-information)
+- [superfluous information](#superfluous-information)
 - [lack of specificity](#lack-of-specificity)
 - [lack of customization](#dopamine-design)
 
 Each issue and its implemented mitigation is described below.
 
-#### Superfluos information
+#### Superfluous information
 
-An [oft-parodied trend](https://www.facebook.com/reel/771271748497011) of many food blogs is their inflated word count by paraphrasing and unlerated personal stories, presumably in an effort to improve their SEO ranking.
+An [oft-parodied trend](https://www.facebook.com/reel/771271748497011) of many food blogs is their inflated word count by paraphrasing and unrelated personal stories, presumably in an effort to improve their SEO ranking.
 
-While this is a mild annoyance to neutotypical people, it can be a serious accessibility issue for those who are neurodivergent and have executive functioning issues, such as problems focusing or [front-end perfectionism](https://www.psychologytoday.com/us/blog/rethinking-adult-adhd/202012/adult-adhd-perfectionism-and-procrastination).
+While this is a mild annoyance to neurotypical people, it can be a serious accessibility issue for those who are neurodivergent and have executive functioning issues, such as problems focusing or [front-end perfectionism](https://www.psychologytoday.com/us/blog/rethinking-adult-adhd/202012/adult-adhd-perfectionism-and-procrastination).
 
 #### Lack of specificity
 
@@ -49,7 +49,7 @@ Analogous to [dopamine dressing](https://fromtheslowlane.com/anywhere/fashion/wh
 
 #### Clearly separated fields for creating and viewing recipes
 
-To combat the problem of [superfluos information](#superfluos-information), this recipe site is designed to clearly separate the different components of a recipe to provide a better overview for visitors, and a helpful template for recipe writers.
+To combat the problem of [superfluous information](#superfluous-information), this recipe site is designed to clearly separate the different components of a recipe to provide a better overview for visitors, and a helpful template for recipe writers.
 
 #### Searching and filtering
 
@@ -58,7 +58,7 @@ To address the problem of [lack of specificity](#lack-of-specificity), this reci
 
 #### Alternative color themes
 
-To facilitate users being able to [customize the look of the site](#dopamine-design), the blog offers a selection of color themes that users can chose from.
+To facilitate users being able to [customize the look of the site](#dopamine-design), the blog offers a selection of color themes that users can choose from.
 
 #### Planning and prioritization
 
@@ -117,12 +117,12 @@ Recipes can be saved without any ingredients (to allow better management of  dra
 
 ###### Instances of Ingredient cannot be duplicated
 
-Instances of ingredient where `ingr_name` & `preparation` is the same cannot be duplicated. 
+Instances of Ingredient where `ingr_name` & `preparation` are the same cannot be duplicated. 
 
 - "cheese, sliced" and "cheese, grated" are both possible
 - 2 instances of "cheese, grated" are not allowed
 
-This is true when added new ingredients as well as when editing exisitng one would result in a duplicated.
+This is true when adding new ingredients as well as when editing existing ones would result in a duplicated.
 
 ###### IngredientQuantities **can** be duplicated
 
@@ -134,11 +134,11 @@ This model is based entirely on the Comment model of the [I Think Therefore I Bl
 
 ##### RecipeAttribute and Attribute models
 
-These models were added to the intial desgin in order to enable more filtering and more precise tagging of recipes. 
+These models were added to the initial design in order to enable more filtering and more precise tagging of recipes. 
 Their implementation parallels IngredientQuantity and Ingredient:
 RecipeAttribute acts as an intermediary between the Recipe and Attribute models.
 
-Using this design as oppsed to a ManyToManyField relation between Recipe and Attribute enables setting up a better control of the scope of permissions for staff users.
+Using this design as opposed to a ManyToManyField relation between Recipe and Attribute enables setting up a better control of the scope of permissions for staff users.
 
 ##### Profile model
 
@@ -176,7 +176,7 @@ Only their own objects are available to Staff users in the Admin Panel, while th
 
 This is present on every page, thus it contains elements that are used throughout the site.
 
-The most prominent position has the navigation links letting the user switch between the `collection` app containing the reicpes, and the `community` app containing the user profiles.
+The most prominent position has the navigation links letting the user switch between the `collection` app containing the recipes, and the `community` app containing the user profiles.
 
 The center position of the nav bar has the blog name, logo and tagline.
 
@@ -192,7 +192,7 @@ Clicking on any recipe takes the visitor to the recipe detail page.
 
 ##### Community app
 
-To ease navigation, this app is laid out similarly to the `collection` app: the main page show a list of profiles, and clicking on them leads to the profile detail page.
+To ease navigation, this app is laid out similarly to the `collection` app: the main page shows a list of profiles, and clicking on them leads to the profile detail page.
 
 ##### Footer
 
@@ -202,7 +202,7 @@ The footer is also present on every page, but the information contained here is 
 
 #### Home page wireframes
 
-Since this recipe blog is modelled after the [I Think Therefore I Blog walkthrough project](https://github.com/Code-Institute-Solutions/blog), and one of the project's aims is to keep layouts simple and intuitive, the basic layout of the home page and footer was not modified significantly (see the [UX improvements](#ux-improvements) section for changes that might not be obvious at first glance).
+Since this recipe blog is modeled after the [I Think Therefore I Blog walkthrough project](https://github.com/Code-Institute-Solutions/blog), and one of the project's aims is to keep layouts simple and intuitive, the basic layout of the home page and footer was not modified significantly (see the [UX improvements](#ux-improvements) section for changes that might not be obvious at first glance).
 
 However, I decided to make several alterations and additions to the navigation bar.
 
@@ -264,7 +264,7 @@ Neurodivergent people are highly likely to experience some of these issues due t
 As detailed in [above](#dopamine-design), I wanted to offer users to customize the color theme of the site to match their particular needs.
 
 For the MVP I designed 3 monochrome color themes: orange, blue and green.
-I pland to expand the available themes for future versions of this project.
+I plan to expand the available themes for future versions of this project.
 
 #### UX Improvements
 
@@ -281,7 +281,7 @@ The names of the navigation links were changed to **Collection** and **Community
  I also separated messages based on their function, and had them display in separate locations:
 
  - messages related to comments pop up right inside the **Comment** block
- - other messages, which at this point are all related to Account Management, pop up in the lefthand side of the user bar (where the Account Management links and information are located).
+ - other messages, which at this point are all related to Account Management, pop up in the left hand side of the user bar (where the Account Management links and information are located).
 
  This puts all messages physically close to where the relevant actions have been performed, preventing distractions and confusion, and aiding processing.
 
@@ -329,7 +329,7 @@ Some work items that have initially been classified as Epics have later been rec
 ### Estimation
 
 Estimating the time it would take to complete each User Story is notoriously difficult, doubly so with the first project  in a new framework. 
-This is why I did not assign sizes to the individual User Stories, instead, I treaded them as one unit.
+This is why I did not assign sizes to the individual User Stories, instead, I treated them as one unit.
 
 This proved to be the right strategy in retrospect, as inexperince caused me to take disproportionately long on tasks that would be much faster the second time around. On the other side, some other tasks could be completed much faster than estimated. All in all, the lack of relative sizing of individual User Stories did not have an adverse effect on the project.
 
@@ -397,7 +397,7 @@ However, as tends to happen in real life, different sprints had different veloci
 
 #### Sprint planning
 
-At the beginning of every sprint, I reviewed the Issues assigned to the current milestone and decided the order in which they are to be inplemented, in a more fine-grained wat than the existing prioritization labels.
+At the beginning of every sprint, I reviewed the Issues assigned to the current milestone and decided the order in which they are to be implemented, in a more fine-grained way than the existing prioritization labels.
 
 I also defined tasks for the highest priority items, with tasks definitions for lower-priority items following as soon as it became plausible that I can finish them that sprint.
 
@@ -484,7 +484,7 @@ The top of the home page has 4 filters:
 - taste
 - texture
 
-These show recipes with the selected recipe attributes in a the same grid structure as the home page.
+These show recipes with the selected recipe attributes in the same grid structure as the home page.
 
 ![Filtering responsivity](readme-pics/amiresponsive/filter-amiresponsive.png)
 
@@ -493,7 +493,7 @@ In the current version of the app, only one filter can be active at a time. I ho
 
 ##### Searching
 
-The search page displays recipes where  the word entered into the Search field (in the navigation bar) is found in any of the folowing fields:
+The search page displays recipes where  the word entered into the Search field (in the navigation bar) is found in any of the following fields:
 
 - title
 - excerpt
@@ -524,7 +524,7 @@ These include:
 - ingredient list
 - instructions
 
-Visual separation and simpliciy aids processing, which can accommodate users with attention or executive functioning issues.
+Visual separation and simplicity aids processing, which can accommodate users with attention or executive functioning issues.
   
 #### Commenting
   
@@ -551,7 +551,7 @@ Similarly to the recipe list, the whole surface of a profile card is clickable t
 
 Each profile page shows the information users chose to share publicly (if any):
 
-- username or fist name (last name optional)
+- username or first name (last name optional)
 - staff status
 - pronouns
 - neurodiversity status
@@ -591,9 +591,9 @@ They can also manage all instances of related models from the Recipe Admin view.
 
 The current version of the app does not contain the functionality to manage recipes from the website's UI. Following the suggestion of my mentor, I have deprioritized this and focused my time on creating automated tests instead.
 
-As an interim workaround, I have set up the Admin Panel to provide restricted access to Staff users (Gytha and Tiffany), so that the can manage their own items, but not others'.
+As an interim workaround, I have set up the Admin Panel to provide restricted access to Staff users (Gytha and Tiffany), so that they can manage their own items, but not others'.
 
-Below, we can see the options of the Admin Panel for staff user Tiffany. The available models on the lefthand side are considerably restricted, as is the list of recipes, as only those recipes are shown where Tiffany is the author.
+Below, we can see the options of the Admin Panel for staff user Tiffany. The available models on the left hand side are considerably restricted, as is the list of recipes, as only those recipes are shown where Tiffany is the author.
 
 ![Admin Panel: Staff user](readme-pics/admin-panel/recipe-list-staff-admin.png)
 
@@ -609,7 +609,7 @@ Finally, we see that related models are also limited: the Comment model does not
 
 For future versions of the project, I would like to implement those User Stories that could not be done for this version for lack of time. They are listed under the label [`v2`](https://github.com/blahosyl/spicy/labels/v2).
 
-In addition, I would like to extend customization options for the color theme selector, with a wide range of monochromatic palettes, thematic multicolor palettes and dark mode(s).
+In addition, I would like to extend customization options for the color theme selector, with a wide range of monochromatic palettes, thematic multicolored palettes and dark mode(s).
 
 Similarly, I would like to extend filtering capabilities to combine several filter vectors and also filter for negative attributes (e.g., "not bitter").
 
@@ -633,7 +633,7 @@ The Javascript files written for this project have been through several iteratio
 
 I have also [restructured the templates](https://github.com/blahosyl/spicy/commit/d756a84a9c4a17407d66f4cf8ab6966b8908e7c4) of the `collection` app so that the home page, filter results page and search page all use the same code snippets for displaying the recipes and pagination links.
 
-## Technoogies used
+## Technologies used
 
 ### Languages used
 
@@ -676,9 +676,9 @@ I have also [restructured the templates](https://github.com/blahosyl/spicy/commi
 - [W3C HTML validator](https://validator.w3.org/) – validate HTML code
 - [WebAIM](https://webaim.org/resources/contrastchecker/) – color contrast checking
 
-## Depoyment
+## Deployment
 
-The following instrcutions describe the deployment process with the tools used for this project. 
+The following instructions describe the deployment process with the tools used for this project. 
 Of course, you can choose other tools/providers for the individual functions described below, e. g., a different Postgres database instead of Neon, or a different development environment instead of GitPod. 
 Naturally, detailed instructions are only provided for the tools used in this project.
 
@@ -713,7 +713,7 @@ You can fork the repository by following these steps:
 	```
 	pip3 -r requirements.txt.
 	```
-3. To store access credentials and other secrets, create a file called `env.py` in your top-level projct directory. 
+3. To store access credentials and other secrets, create a file called `env.py` in your top-level project directory. 
 Before adding any content to it, add `env.py` to `.gitignore` and commit your changes. 
 This will prevent the contents of `env.py` from being pushed to the Git repository.
 4. Add the following information to your `env.py` file:
@@ -830,7 +830,7 @@ The following resources were used to learn/double check general, atomic function
 - [managing static files in Django](https://docs.djangoproject.com/en/5.0/howto/static-files/)
 - [change app name (used by Allauth emails)](https://stackoverflow.com/a/30017741)
 - [Git merge vs rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
-- [recorver deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
+- [recover deleted GitHub branch](https://github.com/orgs/community/discussions/55884)
 - [direct link to Google app passwords](https://support.google.com/mail/thread/267471964?hl=en&msgid=268430543)
 - [`Attribute error (missing)` caused by indentation error in `views.py`](https://stackoverflow.com/a/64709139)
 - [Mozilla JS `sessionStorage` docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
@@ -841,7 +841,7 @@ The following resources were used to learn/double check general, atomic function
 - [many-to-many relationships in Django](https://www.sankalpjonna.com/learn-django/the-right-way-to-use-a-manytomanyfield-in-django)
 - [intermediary table vs. ManyToManyField](https://www.reddit.com/r/django/comments/awgt3q/is_it_better_to_use_multiple_foreignkey_in_an/)
 - [Django documentation on many-to-many relationships](https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_many/)
-- [accessing foreign key valies in ListView](https://stackoverflow.com/questions/52649906/accessing-foreign-key-values-in-django-listview-of-gcbv)
+- [accessing foreign key values in ListView](https://stackoverflow.com/questions/52649906/accessing-foreign-key-values-in-django-listview-of-gcbv)
 - [querying backwards related objects](https://docs.djangoproject.com/en/4.2/topics/db/queries/#backwards-related-objects)
 - ["`ReverseManyToOneDescriptor` object has no attribute" error](https://stackoverflow.com/questions/40250430/reversemanytoonedescriptor-object-has-no-attribute-latest)
 - [Django search documentation](https://docs.djangoproject.com/en/5.0/ref/contrib/postgres/search/)
