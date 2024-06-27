@@ -155,6 +155,34 @@ Accordingly, the current Entity Relationship Diagram is as follows:
 
 ![Initial ERD](readme-pics/erd-final.png)
 
+#### UI information design
+
+##### Navigation bar
+
+This is present on every page, thus it contains elements that are used throughout the site.
+
+The most prominent position has the navigation links letting the user switch between the `collection` app containing the reicpes, and the `community` app containing the user profiles.
+
+The center position of the nav bar has the blog name, logo and tagline.
+
+On the right, we find the color theme selector toggle and the recipe search bar, but of these being important targeted features of the project.
+
+##### Collection app
+
+As the primary purpose of the project is to show recipes, the home page of the site displays the list of published recipes. 
+
+The recipe filters are prominently placed at the top, since it is anticipated that this feature will be widely used by the target audience.
+
+Clicking on any recipe takes the visitor to the recipe detail page.
+
+##### Community app
+
+To ease navigation, this app is laid out similarly to the `collection` app: the main page show a list of profiles, and clicking on them leads to the profile detail page.
+
+##### Footer
+
+The footer is also present on every page, but the information contained here is predicted to be used less frequently: the developer name and social media profile links.
+
 ### Skeleton
 
 Wireframes
