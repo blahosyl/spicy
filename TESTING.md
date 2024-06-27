@@ -18,7 +18,9 @@ As this functionality was not part of the MVP, and the allotted time did not all
 Work items that were not part of the initial planning phase and were adding during the course of development as requirements became clarified are as follows:
 
 - The Epic [Manage own ingredients (Collaborators)](https://github.com/blahosyl/spicy/issues/123) and its User Stories
+- The Epic [Recipe attributes](https://github.com/blahosyl/spicy/issues/152) and its User Stories
 - [the color theme selection functionality](https://github.com/blahosyl/spicy/issues/98)
+- [restricted Staff access to the Admin panel](https://github.com/blahosyl/spicy/issues/121)
 
 
 ## Code validation
