@@ -4,7 +4,7 @@ Back to  [`README.md`](README.md).
 
 At the end of the development process, a final check was made on the list of initially planned User Stories to document which ones have been completed.
 
-The results are summarized in the following table:
+The results are summarized in the following table (click [here](https://docs.google.com/spreadsheets/d/1QDYJlX4RVgoKokpcXgFkGtmrwcCMplf8XZcpNxoEYRU/) for the original Sheet):
 
 ![Themes, Epics & User Stories completed for version 1](/readme-pics/user-stories/pp4-user-stories-v1.png)
 

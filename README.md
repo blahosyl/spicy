@@ -28,7 +28,7 @@ In a world designed for neurotypical people, the needs of neurodivergent people 
 - [lack of specificity](#lack-of-specificity)
 - [lack of customization](#dopamine-design)
 
-Each issue and its implemented remedy is described below.
+Each issue and its implemented mitigation is described below.
 
 #### Superfluos information
 
@@ -38,7 +38,7 @@ While this is a mild annoyance to neutotypical people, it can be a serious acces
 
 #### Lack of specificity
 
-Many autistic people are very particular about food (termed [food selectivity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/) in scientific literature; [some](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/table/jcm-12-05469-t002/?report=objectonly) [examples](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/table/jcm-12-05469-t004/?report=objectonly)). However, most recipe blogs do not offer easy ways to search for particular textrues, tastes or temperatures.
+Many autistic people are very particular about food (termed [food selectivity](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/) in scientific literature; [some](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/table/jcm-12-05469-t002/?report=objectonly) [examples](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10488249/table/jcm-12-05469-t004/?report=objectonly)). However, most recipe blogs do not offer easy ways to search for particular textures, tastes or temperatures.
 
 #### Dopamine design
 
@@ -62,7 +62,7 @@ To facilitate users being able to [customize the look of the site](#dopamine-des
 
 #### Planning and prioritization
 
-Along with usual blog features like access management, post management and collaboration, the following Themes, Epics and User Stories were defined at the beginning of the project:
+Along with usual blog features like access management, post management and collaboration, the following Themes, Epics and User Stories were defined at the beginning of the project (click [here](https://docs.google.com/spreadsheets/d/1QDYJlX4RVgoKokpcXgFkGtmrwcCMplf8XZcpNxoEYRU/) for the original Sheet):
 
 ![Initial scope of project](readme-pics/user-stories/pp4-user-stories-initial.png)
 
@@ -70,7 +70,7 @@ However, as the development time available for the project was only 1 month, and
 
 Based on the considerations specific to a neurodivergent audience (described above), clarity of presentation and customizability was rated more important than collaboration.
 
-Accordingly, the User Stories in the MVP were determined as follows:
+Accordingly, the User Stories in the MVP were determined as follows (click [here](https://docs.google.com/spreadsheets/d/1QDYJlX4RVgoKokpcXgFkGtmrwcCMplf8XZcpNxoEYRU/) for the original Sheet):
 
 ![Initial scope of the MVP](readme-pics/user-stories/pp4-user-stories-initial-mvp.png)
 
@@ -311,7 +311,7 @@ The work to be done was divided into the following Themes:
 - Produce content
 - View content
 
-Each theme was then divided into Epics, and Epics into User Stories, as seen here:
+Each theme was then divided into Epics, and Epics into User Stories, as seen here (click [here](https://docs.google.com/spreadsheets/d/1QDYJlX4RVgoKokpcXgFkGtmrwcCMplf8XZcpNxoEYRU/) for the original Sheet):
 
 ![Themes, Epics & User Stories](/readme-pics/user-stories/pp4-user-stories-initial.png)
 
@@ -323,6 +323,8 @@ Finally User Stories were broken down into tasks. These can be seen for each Use
 
 As this was my first project using Django, some User Stories have a very detailed task list, both as learning and as documentation/reference.
 Issues that have tasks that were already familiar only have high-level bullet points.
+
+Some work items that have initially been classified as Epics have later been reclassified as User Stories – typically these were "meta" items to do with testing and documentation.
 
 ### Estimation
 
@@ -408,7 +410,125 @@ At the end of every sprint, I reviewed the items that were not completed, and ei
 
 ## Features
 
+This section briefly introduces the features implemented in the current version of the project. For videos demonstrating how each feature works, see the [Manual feature testing section](TESTING.md#manual-feature-testing) of `TESTING.md`.
+
+### `collection`
+#### Navigation bar
+
+![Navigation bar on mobile: closed](readme-pics/features/nav-bar-mobile-closed.png)
+
+The navigation bar is present on all pages, and contains the most frequently used functionalities:
+
+- navigation links
+- brand name and logo
+- color theme selector
+- search field
+
+On small viewports parts of the navigation bar are hidden by default and revealed by tapping the hamburger icon.
+
+![Navigation bar on mobile: open](readme-pics/features/nav-bar-mobile-open.png)
+
+On desktop views, all nav bar items are visible by default.
+
+![Navigation bar on desktop](readme-pics/features/nav-bar.png)
+
+#### Color theme selector
+
+![Color theme selector](readme-pics/features/color-theme-selector.png)
+
+This dropdown lets users choose between pre-defined color themes. Currently, these are orange, blue and green, but more options are planned for future versions.
+
+The selected color theme is persistent, that is, it remains in effect even if the user navigates to another page within the site, or opens it in another tab.
+
+
+#### User bar
+
+![User bar](readme-pics/features/user-bar.png)
+
+The user bar is situated immediately below the admin bar and is present on all pages. It contains dynamically updated information on the user's login status, and links to the Signup & Signin or the Signout pages, as appropriate.
+
+The left side of the user bar displays ephemeral messages relating to login status (seen dynamically in the videos in [Authentication manual testing](TESTING.md#authentication-manual-testing)).
+
+![User bar with message](readme-pics/features/user-bar-message.png)
+
+
+The user bar is also fully responsive.
+
+![User bar responsivity](readme-pics/amiresponsive/cover-amiresponsive.png)
+
+#### Footer
+
+![Footer](readme-pics/features/footer.png)
+
+The footer shows the site developer information and social media links. These open in a new window. The footer is present on all pages and is fully responsive.
+
+![Footer responsivity](readme-pics/amiresponsive/footer-amiresponsive.png)
+
+
+#### Home page | recipe list
+##### Filtering
+
+![Filtering responsivity](readme-pics/amiresponsive/filter-amiresponsive.png)
+
+
+##### Searching
+
+![Search page responsivity](readme-pics/amiresponsive/search-amiresponsive.png)
+
+#### Recipe detail page
+  
+#### Commenting
+  
+ Signed-in users can comment on recipes using the form at the bottom of each recipe detail page. 
+ All comments need approval before becoming visible to other users.
+
+ Once a superadmin approved a comment, it becomes visible regardless of login status.
+
+Comments can be edited by their author. Edited comments change back to unapproved.
+
+Users can also delete their own comments regardless of approval status.
+
+### `community`
+
+#### community page/profile list
+
+This is the starting page of the `community` app, and shows all user profiles in a responsive grid.
+
+Similarly to the recipe list, the whole surface of a profile card is clickable to view individual profile pages.
+
+![Profile list page responsivity](readme-pics/amiresponsive/profile-list-amiresponsive.png)
+
+#### Profile detail page
+
+Each profile page shows the information users chose to share publicly (if any):
+
+- username or fist name (last name optional)
+- staff status
+- pronouns
+- neurodiversity status
+- about text
+
+The profile detail page is also fully responsive.
+
+![Profile detail page responsivity](readme-pics/amiresponsive/profile-detail-amiresponsive.png)
+
+
+### Access management
+#### Singin 
+
+#### Signup 
+
+![Signup detail page responsivity](readme-pics/amiresponsive/signup-amiresponsive.png)
+
+#### Signout 
+
+#### Email verification for Signup
+
+#### Password reset 
+
 ### Admin Panel
+
+### Future features
 
 ## Technoogies used
 
