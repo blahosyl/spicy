@@ -94,7 +94,7 @@ The Allauth template for [`Signup.html`](templates/account/Signup.html) has a [k
 
 [Validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspicy-recipes-django-5d174ffc7c94.herokuapp.com%2Faccounts%2Flogout%2F) found no errors or warnings.
 
-![HTML validation of signput page: no issues](testing/code-validation/html-validation/signout-html-validation.png)
+![HTML validation of signout page: no issues](testing/code-validation/html-validation/signout-html-validation.png)
 
 #### Confirm email validation
 
@@ -151,7 +151,7 @@ Validation found no issues.
 ![JavaScript validation of `themes.js`: ](testing/code-validation/js-validation/themes-js-validation.png)
 
 
-### Pyton validation
+### Python validation
 
 All self-written or modified Python files in the project were validated with the [Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/). No errors were found.
 
@@ -342,12 +342,12 @@ https://github.com/blahosyl/spicy/assets/26421503/ddf2f609-f4a6-4107-bd38-48024a
 
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|recipe detail page loads|title visible<br>author visible<br>attributes visible (if any)<br>ingedients visible (if any)<br>image visible<br>total time, prep time & cook time visible<br>instructions visible<br>comments visible (if any)|✅|
+|recipe detail page loads|title visible<br>author visible<br>attributes visible (if any)<br>ingredients visible (if any)<br>image visible<br>total time, prep time & cook time visible<br>instructions visible<br>comments visible (if any)|✅|
 |user not logged in|"Sign in to leave a comment"|✅|
 |user logged in|comment field visible<br>comment field & button visible<br>own pending comments visible|✅|
 |user logged in<br>user has comments|Edit & Delete button visible for each comment<br>|✅|
-|comment button clicked<br>comment field empy|"Please fill in this field"|✅|
-|comment button clicked<br>comment field not empy|comment appears as unapproved<br>edit & delete buttons appear|✅|
+|comment button clicked<br>comment field empty|"Please fill in this field"|✅|
+|comment button clicked<br>comment field not empty|comment appears as unapproved<br>edit & delete buttons appear|✅|
 |Edit button clicked|comment text filled into comment field<br>Submit button changes to Update|✅|
 |Update button clicked|comment text updated<br>comment set to unapproved|✅|
 |Delete button clicked|delete modal pops up|✅|
@@ -455,7 +455,7 @@ https://github.com/blahosyl/spicy/assets/26421503/f62c36c3-d8b2-48d5-89d0-59ecf4
 ####  Signup page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|Signup page loads    |Signup text visible<br>Signin link visible<br>email filed visible<br>username field visible<br>password field visible<br>password rules visible<br>password (again) field visible<br>Signup button visible<br>password reset link visible|✅|
+|Signup page loads    |Signup text visible<br>Signin link visible<br>email field visible<br>username field visible<br>password field visible<br>password rules visible<br>password (again) field visible<br>Signup button visible<br>password reset link visible|✅|
 |Signin link clicked|[Signin page](#Signin-page) loaded|✅|
 |password reset link clicked|[password reset page](#password-reset-page) loaded|✅|
 |Signup button clicked<br>any field empty |"Please fill in this field"|✅|
@@ -486,7 +486,7 @@ Signup confirmation email
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
 |Confirm email page loads|confirm text visible<br>confirm button visible<br> |✅|
-|confirm button clicked    |resitration confirmed<br>[Signin page](#Signin-page) loads|✅|
+|confirm button clicked    |registration confirmed<br>[Signin page](#Signin-page) loads|✅|
 
 *Click to play video*
 
@@ -519,10 +519,10 @@ Password reset email sent to registered user
 ####  Change password page
 |Action				|Expected result	|Result|
 |---				|---				|:---:	|
-|change password loads|change password text visible<br>new password field visible<br>new password again field visible<br>change pasword button visible<br> |✅|
-|change pasword button clicked<br>only 1 password field filled|"Please fill out this field"|✅|
-|change pasword button clicked<br>passwords don't match|"You must type the same password each time"|✅|
-|change pasword button clicked<br>passwords match|"Your password is now changed"|✅|
+|change password loads|change password text visible<br>new password field visible<br>new password again field visible<br>change password button visible<br> |✅|
+|change password button clicked<br>only 1 password field filled|"Please fill out this field"|✅|
+|change password button clicked<br>passwords don't match|"You must type the same password each time"|✅|
+|change password button clicked<br>passwords match|"Your password is now changed"|✅|
 
 *Click to play video*
 
