@@ -60,7 +60,21 @@ To address the problem of [lack of specificity](#lack-of-specificity), this reci
 
 To facilitate users being able to [customize the look of the site](#dopamine-design), the blog offers a selection of color themes that users can chose from.
 
-![Initial scope of the MVP](readme-pics/user-stories/pp4-user-stories-initial.pdf)
+#### Planning and prioritization
+
+Along with usual blog features like access management, post management and collaboration, the following Themes, Epics and User Stories were defined at the beginning of the project:
+
+![Initial scope of project](readme-pics/user-stories/pp4-user-stories-initial.png)
+
+However, as the development time available for the project was only 1 month, and this was my first Django project, these User Stories were vetted based on whether they were to be part of the Minimum Viable Product (MVP) or not.
+
+Based on the considerations specific to a neurodivergent audience (described above), clarity of presentation and customizability was rated more important than collaboration.
+
+Accordingly, the User Stories in the MVP were determined as follows:
+
+![Initial scope of the MVP](readme-pics/user-stories/pp4-user-stories-initial-mvp.png)
+
+Naturally, this list was modified somewhat during development. The final list can be seen in [GitHub Issues](https://github.com/blahosyl/spicy/issues?page=2&q=is%3Aissue+label%3A%22p%3A+must+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug)
 
 ### Structure
 
@@ -74,7 +88,6 @@ Wireframes
 Design
 
 
-
 ## Project Management | Agile
 
 ### Agile Methodologies
@@ -82,6 +95,15 @@ Design
 #### Themes, Epics, Stories & Tasks
 
 ##### Prioritization
+
+The links below show User Stories excluding "meta" issues such as testing & documentation.
+
+- [User Stories with priority `must have`](https://github.com/blahosyl/spicy/issues?page=2&q=is%3Aissue+label%3A%22p%3A+must+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug): 39
+- [User Stories with priority `should have`](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3A%22p%3A+should+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug+-label%3Av2+): 11
+- [User Stories with priority `could have`](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3A%22p%3A+could+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug+-label%3Av2+): 28
+
+The statistics on planned vs. implemented User Stories can be seen on the **Statistics** tab of the [User Stories Google Sheet](https://docs.google.com/spreadsheets/d/1QDYJlX4RVgoKokpcXgFkGtmrwcCMplf8XZcpNxoEYRU/edit?gid=1814855102#gid=1814855102).
+
 
 Epics that had User Stories of various levels of prioritization received all applicable labels. As the User Stories in the Epic were completed, the labels of completed User Stories were removed from the Epic.
 
