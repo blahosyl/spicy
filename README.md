@@ -2,7 +2,7 @@
 
 # Spicy Recipes
 
-A recipe blog for autistic and other neurodiverse folx. Utilitarian, customizable and to the point. No rambling, no unrelated stories, no word count fillers, no distracting desgin kitsch or vertigo-inducing moving backgrounds. Instead, the focus is on precise and searchable information to easily find recipes for specific needs.
+A recipe blog for autistic and other [neurospicy](https://www.neurosparkhealth.com/blog/neurospicy-meaning-what-it-means-and-where-it-came-from.html) folx. Utilitarian, customizable and to the point. No rambling, no unrelated stories, no word count fillers, no distracting desgin kitsch or vertigo-inducing moving backgrounds. Instead, the focus is on precise and searchable information to easily find recipes for specific needs.
 
 Developer: [Dr. Sylvia Blaho](https://www.linkedin.com/in/blahosylvia/)
 
@@ -252,7 +252,19 @@ The rainbow infinity logo represents the many different facets of autism, the wi
 
 The logo is also a not-so-subtle nod to Pride month, when this project was developed, as there is a striking correlation between the neurodivergent and queer communities: [autistic people are 8 times more likely to identify as queer as neurodivergent people](https://nhsdorset.nhs.uk/neurodiversity/living/lgbtq/).
 
+##### Minimalism
+
+I have consciously stayed away from any unnecessary visual clutter, such as excessive borders and shadows, elements of very different shapes, background images, and auto-moving elements of all kinds.
+
+These elements tend to cause problems for a variety of users (e.g. those with visual impairment, executive functioning impairment, vertigo, etc.). 
+Neurodivergent people are highly likely to experience some of these issues due to their heightened sensory processing, so steering clear of these chimes in perfectly with accessibility goals and particularly suited to the target audience.
+
 ##### Color schemes
+
+As detailed in [above](#dopamine-design), I wanted to offer users to customize the color theme of the site to match their particular needs.
+
+For the MVP I designed 3 monochrome color themes: orange, blue and green.
+I pland to expand the available themes for future versions of this project.
 
 #### UX Improvements
 
@@ -274,6 +286,17 @@ The names of the navigation links were changed to **Collection** and **Community
  This puts all messages physically close to where the relevant actions have been performed, preventing distractions and confusion, and aiding processing.
 
  ##### Content
+
+ For the content of the recipes, I used photos and text from my own recipe collection.
+ 
+ For mocking up the profile cards, I used characters from Terry Pratchett's Discworld (see also the [Credits](#text) section), as many neurodivergent people see themselves represented by them ([see](https://datsderbunnyblog.tumblr.com/post/638688498056118272/discworlds-best-autistic-power-moves) [these](https://www.tumblr.com/wyrdsisterspodcast) [examples](https://formerlyknownas-delight.tumblr.com/post/172059814822/tiffany-aching-from-the-discworld-book-the-wee)).
+
+ ##### Title
+
+ [Neurospicy](https://www.neurosparkhealth.com/blog/neurospicy-meaning-what-it-means-and-where-it-came-from.html) is a popular self-identification of neurodivergent people, reclaiming their self definition and reframing neurodiversity as something additional or different to neurotypical identities, rather than lacking.
+
+ Given that spicy is also a salient feature of recipes, it seemed natural to combine both meanings in the blog's title.
+
 
 ## Project Management | Agile
 
