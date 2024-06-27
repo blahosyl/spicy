@@ -155,7 +155,7 @@ Accordingly, the current Entity Relationship Diagram is as follows:
 
 ![Initial ERD](readme-pics/erd-final.png)
 
-#### Account management
+#### Access management
 
 The project implemented signup, signin and signout functionalities by using [Allauth](https://docs.allauth.org).
 
@@ -206,7 +206,7 @@ Since this recipe blog is modelled after the [I Think Therefore I Blog walkthrou
 
 However, I decided to make several alterations and additions to the navigation bar.
 
-First, I visually separated page navigation from account management functions (signing up/in/out): the page navigation stayed in the top left corner in the navigation, but account management links and information were moved to the so-called "user bar" immediately below.
+First, I visually separated page navigation from access management functions (signing up/in/out): the page navigation stayed in the top left corner in the navigation, but access management links and information were moved to the so-called "user bar" immediately below.
 
 Within the user bar, (semi-)permanent information was moved to the right side, while the left portion of the user bar was reserved for ephemeral dismissable messages having to do with signing in/out.
 
@@ -240,16 +240,40 @@ I did not make separate wireframes for the profile list and profile detail templ
 
 ### Surface
 
-Design
+#### Visual design
+
+##### Logo
+
+The logo I chose for this project is the Rainbow Infinity symbol representing autism. This symbol is [most widely used by autistic self-advocacy groups](https://www.123shoot.com/nothing-missing-why-the-puzzle-piece-isnt-used-in-autism-acceptance/), and is in stark contrasts with the [puzzle piece](https://www.altogetherautism.org.nz/autism-no-puzzle-nothing-wrong-with-us/) symbol that has been used to spread many harmful stereotypes about autistic people.
+
+![logo](static/images/autism-infinity-symbol.png)
+
+The rainbow infinity logo represents the many different facets of autism, the wide potential of autistic people, and the fact that autism is a circular spectrum without a "mild" end and "severe" end – mirroring the recognition that labels such as "low functioning" or "high functioning" are [harmful and irrelevant](https://www.bristolautismsupport.org/functioning-labels-damaging-irrelevant/).
+
+The logo is also a not-so-subtle nod to Pride month, when this project was developed, as there is a striking correlation between the neurodivergent and queer communities: [autistic people are 8 times more likely to identify as queer as neurodivergent people](https://nhsdorset.nhs.uk/neurodiversity/living/lgbtq/).
+
+##### Color schemes
 
 #### UX Improvements
 
-The names of the navigation links were later changed to **Collection** and **Community**, to better reflect the names of the apps.
+##### Meaningful navigation link names
+
+The names of the navigation links were changed to **Collection** and **Community**, to better reflect the names of the apps.
+
+##### Easier motor coordination
 
  On the recipe list and the profile list, the whole card was made clickable instead of just the title, to accommodate those with below average motor coordination (another frequent occurrence within neurodivergent individuals).
 
- Separated messages
+##### Localized messages
 
+ I also separated messages based on their function, and had them display in separate locations:
+
+ - messages related to comments pop up right inside the **Comment** block
+ - other messages, which at this point are all related to Account Management, pop up in the lefthand side of the user bar (where the Account Management links and information are located).
+
+ This puts all messages physically close to where the relevant actions have been performed, preventing distractions and confusion, and aiding processing.
+
+ ##### Content
 
 ## Project Management | Agile
 
