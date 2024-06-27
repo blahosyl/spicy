@@ -324,6 +324,14 @@ Finally User Stories were broken down into tasks. These can be seen for each Use
 As this was my first project using Django, some User Stories have a very detailed task list, both as learning and as documentation/reference.
 Issues that have tasks that were already familiar only have high-level bullet points.
 
+### Estimation
+
+Estimating the time it would take to complete each User Story is notoriously difficult, doubly so with the first project  in a new framework. 
+This is why I did not assign sizes to the individual User Stories, instead, I treaded them as one unit.
+
+This proved to be the right strategy in retrospect, as inexperince caused me to take disproportionately long on tasks that would be much faster the second time around. On the other side, some other tasks could be completed much faster than estimated. All in all, the lack of relative sizing of individual User Stories did not have an adverse effect on the project.
+
+
 ### Project Board
 
 The Issues were added to the [Project Board](https://github.com/users/blahosyl/projects/5/views/2) in GitHub projects.
