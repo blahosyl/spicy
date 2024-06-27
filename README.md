@@ -155,6 +155,21 @@ Accordingly, the current Entity Relationship Diagram is as follows:
 
 ![Initial ERD](readme-pics/erd-final.png)
 
+#### Account management
+
+The project implemented signup, signin and signout functionalities by using [Allauth](https://docs.allauth.org).
+
+[CRUD](#crud) functionalities are only available to logged-in users.
+
+Visitors who are not logged in can still access the search, filter and color theme functionalities.
+
+#### CRUD
+
+Logged-in users can Create, Read, Update and Delete their own comments. This functionality is implemented following the walkthrough project.
+
+In addition, Staff users can access the Admin Panel and Create, Read, Update and Delete their own recipes, ingredient quantities, recipe attributes and profiles. 
+Only their own objects are available to Staff users in the Admin Panel, while the Superuser can manage all objects.
+
 #### UI information design
 
 ##### Navigation bar
