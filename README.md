@@ -551,7 +551,42 @@ See the the writeups and videos in [Authentication manual testing](TESTING.md#au
 
 ### Admin Panel
 
+#### Default functionality
+
+The Admin Panel enables the superuser to manage all objects in all models in the app.
+
+![Admin Panel: superuser](readme-pics/admin-panel/recipe-list-super-admin.png)
+
+They can add any objects associated to any user, for example, add a recipe with any user in the database as the author.
+
+![recipe author choice: superuser](readme-pics/admin-panel/author-super-admin.png)
+
+They can also manage all instances of related models from the Recipe Admin view.
+
+![Attributes and comments: superuser](readme-pics/admin-panel/attr-super-admin.png)
+
+
+#### Restricted access for Staff users
+
+The current version of the app does not contain the functionality to manage recipes from the website's UI. Following the suggestion of my mentor, I have deprioritized this and focused my time on creating automated tests instead.
+
+As an interim workaround, I have set up the Admin Panel to provide restricted access to Staff users (Gytha and Tiffany), so that the can manage their own items, but not others'.
+
+Below, we can see the options of the Admin Panel for staff user Tiffany. The available models on the lefthand side are considerably restricted, as is the list of recipes, as only those recipes are shown where Tiffany is the author.
+
+![Admin Panel: Staff user](readme-pics/admin-panel/recipe-list-staff-admin.png)
+
+Inline foreign keys are also restricted, as shown below: the Staff user can only select themselves as the author of the recipe.
+
+![recipe author choice: Staff user](readme-pics/admin-panel/author-staff-admin.png)
+
+Finally, we see that related models are also limited: the Comment model does not appear in the Recipe view for the Staff user, and Attributes can be added to the recipe, but cannot be modified (as opposed to the superadmin view).
+
+![Attributes and ingredients: Staff user](readme-pics/admin-panel/attr-staff-admin.png)
+
 ### Future features
+
+
 
 ### Code features
 
