@@ -412,7 +412,8 @@ At the end of every sprint, I reviewed the items that were not completed, and ei
 
 This section briefly introduces the features implemented in the current version of the project. For videos demonstrating how each feature works, see the [Manual feature testing section](TESTING.md#manual-feature-testing) of `TESTING.md`.
 
-### `collection`
+### `collection` app
+
 #### Navigation bar
 
 ![Navigation bar on mobile: closed](readme-pics/features/nav-bar-mobile-closed.png)
@@ -487,6 +488,8 @@ These show recipes with the selected recipe attributes in a the same grid struct
 
 ![Filtering responsivity](readme-pics/amiresponsive/filter-amiresponsive.png)
 
+In the current version of the app, only one filter can be active at a time. I hope to extend this functionality for [future versions](#future-features).
+
 
 ##### Searching
 
@@ -504,6 +507,24 @@ The results are displayed in a responsive grid used on the home page.
 ![Search page responsivity](readme-pics/amiresponsive/search-amiresponsive.png)
 
 #### Recipe detail page
+
+![Recipe detail page](readme-pics/features/recipe-detail.png)
+
+This page shows the different pieces of information relating to the selected recipe in visually distinct, minimally styled blocks.
+
+These include:
+- title
+- updated on
+- attributes
+- image (or placeholder)
+- total time
+- preparation time
+- cooking time
+- ingredient count
+- ingredient list
+- instructions
+
+Visual separation and simpliciy aids processing, which can accommodate users with attention or executive functioning issues.
   
 #### Commenting
   
@@ -516,7 +537,7 @@ Comments can be edited by their author. Edited comments change back to unapprove
 
 Users can also delete their own comments regardless of approval status.
 
-### `community`
+### `community` app
 
 #### community page/profile list
 
@@ -586,7 +607,11 @@ Finally, we see that related models are also limited: the Comment model does not
 
 ### Future features
 
+For future versions of the project, I would like to implement those User Stories that could not be done for this version for lack of time. They are listed under the label [`v2`](https://github.com/blahosyl/spicy/labels/v2).
 
+In addition, I would like to extend customization options for the color theme selector, with a wide range of monochromatic palettes, thematic multicolor palettes and dark mode(s).
+
+Similarly, I would like to extend filtering capabilities to combine several filter vectors and also filter for negative attributes (e.g., "not bitter").
 
 ### Code features
 
