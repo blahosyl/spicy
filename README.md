@@ -298,15 +298,63 @@ The names of the navigation links were changed to **Collection** and **Community
  Given that spicy is also a salient feature of recipes, it seemed natural to combine both meanings in the blog's title.
 
 
-## Project Management | Agile
+## Project Management | Agile Methodologies
 
-### Agile Methodologies
 
-#### Themes, Epics, Stories & Tasks
+### Themes, Epics, Stories & Tasks
 
-##### Prioritization
+The work to be done was divided into the following Themes:
 
-The links below show User Stories excluding "meta" issues such as testing & documentation.
+- Access management
+- Collaboration
+- Commenting
+- Produce content
+- View content
+
+Each theme was then divided into Epics, and Epics into User Stories, as seen here:
+
+![Themes, Epics & User Stories](/readme-pics/user-stories/pp4-user-stories-initial.png)
+
+Each epic was assigned a distinctive color, which was also used for its [label in GitHub Issues](#labels). 
+Epics belonging to the same Theme were assigned colors of similar hues.
+This facilitated getting an overview of the work items.
+
+Finally User Stories were broken down into tasks. These can be seen for each User Story individually in [GitHub Issues](https://github.com/blahosyl/spicy/issues) and on the [Project Board](#project-board).
+
+As this was my first project using Django, some User Stories have a very detailed task list, both as learning and as documentation/reference.
+Issues that have tasks that were already familiar only have high-level bullet points.
+
+### Project Board
+
+The Issues were added to the [Project Board](https://github.com/users/blahosyl/projects/5/views/2) in GitHub projects.
+This has a table view and a Kanban board view – this was the one I used most during development.
+
+I have customized the Kanban columns to fit the project needs, and also added swimlanes representing milestones.
+
+![Project Board](readme-pics/project-board.png)
+
+### Labels
+
+I have used several categories of labels during the project:
+
+- Priority labels (those starting with `p:`)
+- An `epic` label to enable filtering between Epics and User Stories on the Project Board
+- A label for each epic (those starting with `e:`), to be assigned to the Epic and all its corresponding User Stories(since GitHub Issues does not provide any other way to link these).
+The individual epic labels are color-coded to match the [Google Sheet containing User Stories](https://docs.google.com/spreadsheets/d/1QDYJlX4RVgoKokpcXgFkGtmrwcCMplf8XZcpNxoEYRU/)
+- Other miscellaneous labels such as `bug`, `enhancement`, `mentor`, etc.
+
+These have provided an excellent way to both filter Issues and to maintain an easier visual overview of them.
+
+#### Prioritization: MoSCoW
+
+As the available time for development was only 3 weeks (setting the 4th week aside for testing and documentation), sorting User Stories into `must have`, `should have`, `could have` and `won't have` was done on the whole group of User Stories rather than on a sprint-by-sprint basis.
+
+I have modified the MoSCoW method slightly in that I split the `won't have` label into two:
+
+- [Issues with the label `wont have`](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3A%22wont+have%22) are duplicates or mistaken issues
+- Issues not completed for the first release of the project but still to be done in further development work are assigned the label [`v2`](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3A%22v2%22+).
+
+The links below show the User Stories excluding "meta" issues such as testing & documentation.
 
 - [User Stories with priority `must have`](https://github.com/blahosyl/spicy/issues?page=2&q=is%3Aissue+label%3A%22p%3A+must+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug): 39
 - [User Stories with priority `should have`](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3A%22p%3A+should+have%22+-label%3A%22epic%22+-label%3A%22e%3A+readme%22+-label%3A%22e%3A+testing%22+-label%3A%22e%3A+code+validation%22+-label%3A%22e%3A+code+structure+%26+comments%22+-label%3Abug+-label%3Av2+): 11
@@ -317,19 +365,38 @@ The statistics on planned vs. implemented User Stories can be seen on the **Stat
 
 Epics that had User Stories of various levels of prioritization received all applicable labels. As the User Stories in the Epic were completed, the labels of completed User Stories were removed from the Epic.
 
-For example, [EPIC: View author info](https://github.com/blahosyl/spicy/issues/27) has one User Story with priority `should have` completed, and another User Story with priority `could have` remaining to be done, so it now only has the label `p: could have`.
-
-#### Project Board
-
-#### Labels
-
-#### Prioritization & reprioritization
+For example, [EPIC: View author info](https://github.com/blahosyl/spicy/issues/27) has one User Story with priority `should have` completed, and another User Story with priority `could have` remaining to be done in version 2. Thus the label `p: should have` was removed from the Epic, and label the remaining  `p: could have`.
 
 #### Timeboxing
 
+The available development time for the project was 4 weeks. Accordingly, work items were divided into 4 milestones:
+
+1. [Create & display content](https://github.com/blahosyl/spicy/milestone/1)
+2. [Customization](https://github.com/blahosyl/spicy/milestone/2)
+3. [Interactivity & collaboration](https://github.com/blahosyl/spicy/milestone/3)
+4. [Testing & documentation](https://github.com/blahosyl/spicy/milestone/4)
+
+The first 3 milestones were assigned the User Stories discussed so far, while the last milestone was planned for "meta" tasks like testing and documentation.
+
+Each milestone was assigned to a week-long sprint. 
+
+Initially, roughly the same percentage of `must have`, `should have` and `could have` Stories were assigned to all 3 sprints.
+
+However, as tends to happen in real life, different sprints had different velocities, which is reflected in the uneven number of User Stories completed in each sprint.
+
+
 #### Sprint planning
 
+At the beginning of every sprint, I reviewed the Issues assigned to the current milestone and decided the order in which they are to be inplemented, in a more fine-grained wat than the existing prioritization labels.
+
+I also defined tasks for the highest priority items, with tasks definitions for lower-priority items following as soon as it became plausible that I can finish them that sprint.
+
+Whenever I have received updated information about prioritization or implementation from my mentor or the Code Institute community, I would also make appropriate changes in prioritization during sprints.
+
 #### Sprint retroactives
+
+At the end of every sprint, I reviewed the items that were not completed, and either reassigned them to the next sprint, or to [version 2 of the project](https://github.com/blahosyl/spicy/issues?q=is%3Aissue+label%3Av2).
+
 
 ## Features
 
