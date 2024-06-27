@@ -466,12 +466,40 @@ The footer shows the site developer information and social media links. These op
 
 
 #### Home page | recipe list
+
+![Home page](readme-pics/features/home-page.png)
+
+The home page shows published recipes in a responsive grid, with pagination links displaying at the bottom when needed.
+
+Each recipe card is clickable as a whole, to see the details of the selected recipe.
+
 ##### Filtering
+
+
+The top of the home page has 4 filters:
+
+- temperature
+- diet
+- taste
+- texture
+
+These show recipes with the selected recipe attributes in a the same grid structure as the home page.
 
 ![Filtering responsivity](readme-pics/amiresponsive/filter-amiresponsive.png)
 
 
 ##### Searching
+
+The search page displays recipes where  the word entered into the Search field (in the navigation bar) is found in any of the folowing fields:
+
+- title
+- excerpt
+- instructions
+- comments
+- attributes
+- ingredients
+
+The results are displayed in a responsive grid used on the home page.
 
 ![Search page responsivity](readme-pics/amiresponsive/search-amiresponsive.png)
 
@@ -514,21 +542,36 @@ The profile detail page is also fully responsive.
 
 
 ### Access management
-#### Singin 
-
-#### Signup 
 
 ![Signup detail page responsivity](readme-pics/amiresponsive/signup-amiresponsive.png)
 
-#### Signout 
+Access management has been implemented using Allauth. All functionalities work as intended, and the Allauth templates have been adjusted to fit the styling of the site.
 
-#### Email verification for Signup
-
-#### Password reset 
+See the the writeups and videos in [Authentication manual testing](TESTING.md#authentication-manual-testing) for more details.
 
 ### Admin Panel
 
 ### Future features
+
+### Code features
+
+#### Regular testing
+
+Code was manually tested and validated throughout development. 
+At the end of the development process, a final, comprehensive round of testing and validating was completed.
+The results are detailed in [TESTING.md](TESTING.md).
+
+#### Adequate commenting
+
+Apart from making sure that the app functions as intended, I have also taken special care to make sure the code is well organized and appropriately commented. Since I am just becoming familiar with Django (and dealing with executive functioning issues), I have erred on the side of "more is more" for code comments and docstrings for methods that were new to me.
+
+#### DRY
+
+I have also done my best to adhere to the principle of Don't Repeat Yourself (DRY).
+
+The Javascript files written for this project have been through several iterations of [refactoring](https://github.com/blahosyl/spicy/issues/114).
+
+I have also [restructured the templates](https://github.com/blahosyl/spicy/commit/d756a84a9c4a17407d66f4cf8ab6966b8908e7c4) of the `collection` app so that the home page, filter results page and search page all use the same code snippets for displaying the recipes and pagination links.
 
 ## Technoogies used
 
@@ -572,13 +615,6 @@ The profile detail page is also fully responsive.
 - [Slack](https://slack.com/) – mentor communication
 - [W3C HTML validator](https://validator.w3.org/) – validate HTML code
 - [WebAIM](https://webaim.org/resources/contrastchecker/) – color contrast checking
-
-### Deveopment process
-
-Code was manually tested and validated throughout development. 
-At the end of the development process, a final, comprehensive round of testing and validating was completed.
-The results are detailed in [TESTING.md](TESTING.md).
-
 
 ## Depoyment
 
