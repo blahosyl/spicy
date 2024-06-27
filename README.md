@@ -400,15 +400,57 @@ At the end of every sprint, I reviewed the items that were not completed, and ei
 
 ## Features
 
+### Admin Panel
+
 ## Technoogies used
 
-### Languages & frameworks used
+### Languages used
+
+- Django & Python for the app framework
+- HTML & CSS for the UI
+- JavaScript for forms
+
+### Other dependencies used
+
+- Allauth for access management
+- Cloudinary for storing images
+- Crispyforms for forms
+- Gunicorn for deployment
+- Summernote for rich text in the Admin Panel
+- Whitenoise for static file storage
 
 ### Tools used
 
+- [CI Python Linter](https://pep8ci.herokuapp.com/) – validate Python code
+- [Coolors.co](https://coolors.co/) - color palettes
+- [Favicon.io](https://favicon.io/) – create the favicon
 - [Freeconvert](https://www.freeconvert.com/): convert manual testing videos from `.mov` to `.mp4`
+- [Git](https://git-scm.com/) – version control
+- [GitHub](https://github.com/) – store the source files
+- [GitHub Desktop](https://desktop.github.com/) – GitHub UI
+- [GitHub Issues](https://github.com/features/issues) – feature management, bug tracking
+- [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) – project management
+- [GitHub TOC generator](http://github.com/3kh0/readme-toc/) – automatically generate a Markdown TOC
+- [GitHub web editor](https://github.com/)
+- [GitPod](https://gitpod.io/) – Integrated Development Environment
+- [Google Sheets](https://docs.google.com/spreadsheets) – planning user stories
+- [Heroku](https://heroku.com/) – host the production version of the app
+- [Jigsaw](https://jigsaw.w3.org/css-validator/) – validate CSS code
+- [JSHint](https://jshint.com/) – validate JavaScript code
+- [Lighthouse](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=de) – accessibility audits
+- [Lucidchart](https://www.lucidchart.com/) – make the ERD
+- [Preview](https://support.apple.com/guide/preview/welcome/mac) – cropping and annotating images
+- [Shields.io](https://shields.io/) – add badges to README
+- [Slack](https://slack.com/) – mentor communication
+- [W3C HTML validator](https://validator.w3.org/) – validate HTML code
+- [WebAIM](https://webaim.org/resources/contrastchecker/) – color contrast checking
 
 ### Deveopment process
+
+Code was manually tested and validated throughout development. 
+At the end of the development process, a final, comprehensive round of testing and validating was completed.
+The results are detailed in [TESTING.md](TESTING.md).
+
 
 ## Depoyment
 
