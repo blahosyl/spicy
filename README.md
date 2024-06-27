@@ -185,11 +185,55 @@ The footer is also present on every page, but the information contained here is 
 
 ### Skeleton
 
-Wireframes
+#### Home page wireframes
+
+Since this recipe blog is modelled after the [I Think Therefore I Blog walkthrough project](https://github.com/Code-Institute-Solutions/blog), and one of the project's aims is to keep layouts simple and intuitive, the basic layout of the home page and footer was not modified significantly (see the [UX improvements](#ux-improvements) section for changes that might not be obvious at first glance).
+
+However, I decided to make several alterations and additions to the navigation bar.
+
+First, I visually separated page navigation from account management functions (signing up/in/out): the page navigation stayed in the top left corner in the navigation, but account management links and information were moved to the so-called "user bar" immediately below.
+
+Within the user bar, (semi-)permanent information was moved to the right side, while the left portion of the user bar was reserved for ephemeral dismissable messages having to do with signing in/out.
+
+![Wireframe for recipe list | desktop](readme-pics/wireframes/recipe-list-desktop.png)
+
+I also moved the blog name to the middle of the navigation bar.
+
+The right side of the navigation bar has the color theme toggle and the search field.
+
+The mobile version of the recipe list (with the nav bar open) was mocked up as follows:
+
+![Wireframe for recipe list | mobile](readme-pics/wireframes/recipe-list-mobile-nav-open.png)
+
+#### Recipe detail wireframes
+
+I have made some more significant changes to the recipe detail page, since the way the data are stored is also more detailed than in the walkthrough project.
+
+I separated the space under the masthead into 2 columns: the smaller one on the left has concrete, bite-sized and easily parsable information like preparation time, cooking time and ingredients. The larger column on the right contained the instructions.
+
+![Wireframe for recipe detail page | desktop](readme-pics/wireframes/recipe-detail-desktop.png)
+
+Not shown on the wireframes is the **Comments** section – since this is very much the same as the walkthrough project, I did not make a separate mockup of this. One change I implemented was to show messages to do with comment creation/editing/deletion in the comment section rather than at the top of the page (see the section [UX improvements](#ux-improvements)).
+
+A further addition to the masthead on the recipe detail page is the inclusion of attribute tags.
+
+The mockup of the  mobile version of the recipe detail page is shown below (with the nav bar closed):
+
+![Wireframe for recipe detail page | mobile](readme-pics/wireframes/recipe-detail-mobile-nav-closed.png)
+
+I did not make separate wireframes for the profile list and profile detail templates, as these are analogous to their corresponding recipe counterparts.
 
 ### Surface
 
 Design
+
+#### UX Improvements
+
+The names of the navigation links were later changed to **Collection** and **Community**, to better reflect the names of the apps.
+
+ On the recipe list and the profile list, the whole card was made clickable instead of just the title, to accommodate those with below average motor coordination (another frequent occurrence within neurodivergent individuals).
+
+ Separated messages
 
 
 ## Project Management | Agile
