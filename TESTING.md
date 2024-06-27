@@ -1,5 +1,26 @@
 Back to  [`README.md`](README.md).
 
+## Testing User Stories
+
+At the end of the development process, a final check was made on the list of initially planned User Stories to document which ones have been completed.
+
+The results are summarized in the following table:
+
+![Themes, Epics & User Stories completed for version 1](/readme-pics/user-stories/pp4-user-stories-v1.png)
+
+As the table shows, all User Stories marked as part of the MVP (priority `must have`) have been completed, along with a significant number of User Stories that were outside the scope of the MVP.
+
+The Epic [Manage own About info](https://github.com/blahosyl/spicy/issues/52) and its User Stories were marked as duplicates of the ones relating to User Profiles.
+
+The Epics [Manage own ingredient quantities](https://github.com/blahosyl/spicy/issues/86) and [Manage own recipes](https://github.com/blahosyl/spicy/issues/57) have been implemented in the Admin panel by restricting the objects that Staff users have access to. 
+As this functionality was not part of the MVP, and the allotted time did not allow for completion of all User Stories, implementing the same functionality in the UI was deemed outside the scope of the current version.  
+
+Work items that were not part of the initial planning phase and were adding during the course of development as requirements became clarified are as follows:
+
+- The Epic [Manage own ingredients (Collaborators)](https://github.com/blahosyl/spicy/issues/123) and its User Stories
+- [the color theme selection functionality](https://github.com/blahosyl/spicy/issues/98)
+
+
 ## Code validation
 
 ### HTML validation
